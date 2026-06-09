@@ -1,46 +1,711 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>snu100</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            padding: 50px;
-            max-width: 600px;
-            text-align: center;
-        }
-        
-        h1 {
-            color: #667eea;
-            font-size: 2.5em;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김현철 · 서울대학교 총장후보</title>
+<meta name="description" content="Leader is everything — 김현철의 서울대 비전. 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --navy:#13294B;
+  --navy-2:#0C1B33;
+  --blue:#1F4FA0;
+  --blue-700:#173E80;
+  --blue-bright:#2C6BD6;
+  --ink:#19212E;
+  --muted:#5C6A80;
+  --muted-2:#8A95A6;
+  --line:#E4E8EF;
+  --line-2:#D5DBE5;
+  --soft:#EFF3F9;
+  --warm:#FAF7F2;
+  --paper:#FFFFFF;
+  --mono:'SF Mono',ui-monospace,'Roboto Mono',Menlo,monospace;
+  --maxw:1240px;
+  --pad:40px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:-0.01em;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- shared bits ---------- */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.eyebrow::before{
+  content:"";
+  width:26px;height:1px;background:var(--blue);display:inline-block;
+}
+.sec-index{
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:0.1em;
+  color:var(--muted-2);
+  font-weight:500;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-weight:600;font-size:15px;
+  padding:14px 24px;
+  border-radius:3px;
+  transition:.18s ease;
+  cursor:pointer;border:1px solid transparent;
+  line-height:1;
+}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-700)}
+.btn-ghost{background:transparent;color:var(--navy);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-light:hover{background:#EAEFF7}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);
+  transition:box-shadow .25s ease;
+}
+header.scrolled{box-shadow:0 1px 20px rgba(19,41,75,.07)}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.brand{display:flex;align-items:baseline;gap:11px}
+.brand .name{font-size:21px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;white-space:nowrap}
+.brand .role{white-space:nowrap}
+.nav-links a{white-space:nowrap}
+.btn{white-space:nowrap}
+.brand .role{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.08em;
+  color:var(--muted);text-transform:uppercase;
+  padding-left:11px;border-left:1px solid var(--line-2);
+}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{
+  font-size:15px;font-weight:500;color:var(--ink);
+  position:relative;padding:4px 0;transition:color .15s;
+}
+.nav-links a:hover{color:var(--blue)}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;
+  background:var(--blue);transition:width .2s ease;
+}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:20px}
+.menu-toggle{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+.menu-toggle span{width:24px;height:2px;background:var(--navy);display:block;transition:.2s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--paper)}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;
+  opacity:.4;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);
+  mask-image:linear-gradient(180deg,#000,transparent 70%);
+}
+.hero-grid{
+  position:relative;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:64px;
+  align-items:center;
+  padding:78px 0 64px;
+}
+.hero-eyebrow{margin-bottom:30px}
+.hero h1{
+  font-size:clamp(48px,7vw,92px);
+  line-height:.98;font-weight:800;letter-spacing:-0.035em;
+  color:var(--navy);
+}
+.hero h1 .dot{color:var(--blue)}
+.hero .kr{
+  margin-top:26px;font-size:clamp(22px,2.6vw,30px);font-weight:700;color:var(--ink);
+  letter-spacing:-0.02em;
+}
+.hero .lead{
+  margin-top:20px;font-size:18px;color:var(--muted);max-width:430px;line-height:1.7;
+}
+.hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+
+.hero-photo{position:relative}
+.hero-photo .frame{
+  position:absolute;inset:18px -18px -18px 18px;
+  border:1px solid var(--blue);background:var(--soft);z-index:0;border-radius:3px;
+}
+.hero-photo .imgbox{
+  position:relative;z-index:1;
+  aspect-ratio:2000/2520;overflow:hidden;border-radius:3px;
+  box-shadow:0 30px 70px -30px rgba(19,41,75,.4);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.hero-tag{
+  position:absolute;z-index:2;left:-14px;bottom:30px;
+  background:var(--navy);color:#fff;padding:11px 17px;border-radius:3px;
+  font-size:13px;font-weight:600;letter-spacing:.02em;
+  box-shadow:0 14px 30px -12px rgba(19,41,75,.5);
+}
+.hero-tag b{color:#8FB4EE;font-family:var(--mono);font-weight:700;margin-right:7px}
+
+/* credential strip */
+.creds{
+  position:relative;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(3,1fr);
+}
+.cred{
+  padding:26px 30px;border-right:1px solid var(--line);
+  display:flex;align-items:baseline;gap:14px;
+}
+.cred:last-child{border-right:0}
+.cred .n{font-family:var(--mono);font-size:13px;color:var(--blue);font-weight:600}
+.cred .t{font-size:16px;font-weight:600;color:var(--navy)}
+.cred .s{font-size:13.5px;color:var(--muted);display:block;margin-top:2px;font-weight:400}
+
+/* ---------- section frame ---------- */
+section{position:relative}
+.sec-head{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+  padding-bottom:28px;margin-bottom:48px;border-bottom:1px solid var(--line);
+}
+.sec-head .left{max-width:680px}
+.sec-head h2{
+  font-size:clamp(30px,4vw,46px);font-weight:800;color:var(--navy);
+  letter-spacing:-0.03em;line-height:1.08;margin-top:18px;
+}
+.sec-head .sub{font-size:17px;color:var(--muted);margin-top:14px;line-height:1.65}
+.pad-y{padding:104px 0}
+
+/* ---------- about ---------- */
+.about{background:var(--warm)}
+.about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:start}
+.about-photo{position:relative}
+.about-photo .imgbox{aspect-ratio:1644/2050;overflow:hidden;border-radius:3px;border:1px solid var(--line-2)}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.about-photo .cap{
+  margin-top:16px;font-family:var(--mono);font-size:12.5px;color:var(--muted);
+  letter-spacing:.02em;display:flex;gap:8px;align-items:center;
+}
+.about-photo .cap::before{content:"";width:18px;height:1px;background:var(--muted-2)}
+.about-body .quote{
+  font-size:25px;font-weight:700;color:var(--navy);line-height:1.4;
+  letter-spacing:-0.02em;margin-bottom:28px;
+  padding-left:22px;border-left:3px solid var(--blue);
+}
+.about-body p{font-size:16.5px;color:#384354;margin-bottom:17px;line-height:1.82;text-wrap:pretty}
+.about-body .sign{
+  margin-top:30px;display:flex;align-items:center;gap:16px;
+  padding-top:26px;border-top:1px solid var(--line-2);
+}
+.about-body .sign .who b{display:block;font-size:18px;color:var(--navy);font-weight:800}
+.about-body .sign .who span{font-size:14px;color:var(--muted)}
+.morelink{
+  display:inline-flex;align-items:center;gap:8px;margin-top:26px;
+  font-weight:600;color:var(--blue);font-size:15.5px;white-space:nowrap;
+}
+.morelink:hover{gap:13px;transition:gap .2s}
+
+/* ---------- vision ---------- */
+.vision{background:var(--paper)}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vcard{
+  border:1px solid var(--line);border-radius:4px;padding:26px 24px 24px;
+  background:#fff;transition:.2s ease;position:relative;
+  display:flex;flex-direction:column;min-height:230px;
+}
+.vcard .vn{font-family:var(--mono);font-size:13px;color:var(--muted-2);font-weight:600;letter-spacing:.06em}
+.vcard .vtitle{font-size:21px;font-weight:800;color:var(--navy);margin-top:auto;letter-spacing:-0.02em;line-height:1.25}
+.vcard .vlabel{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);font-weight:600;margin-top:9px;
+}
+.vcard .vdesc{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.6}
+.vcard .arrow{
+  position:absolute;top:24px;right:22px;width:30px;height:30px;
+  border:1px solid var(--line-2);border-radius:3px;display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:15px;transition:.2s;
+}
+.vcard.active{border-color:var(--blue);box-shadow:0 18px 40px -22px rgba(31,79,160,.5)}
+.vcard.active .vn{color:var(--blue)}
+.vcard.active .arrow{background:var(--blue);border-color:var(--blue);color:#fff}
+.vcard:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 18px 40px -24px rgba(19,41,75,.34)}
+.vcard.active:hover{border-color:var(--blue)}
+.vcard.ghost{background:repeating-linear-gradient(135deg,#fff,#fff 9px,#FAFBFD 9px,#FAFBFD 18px);border-style:dashed}
+.vcard.ghost .vtitle{color:var(--muted-2)}
+.vcard.ghost .vlabel{color:var(--muted-2)}
+.vintro{
+  display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:end;
+  margin-bottom:46px;
+}
+.vintro .big{font-size:clamp(26px,3.2vw,38px);font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.15}
+.vintro .txt{font-size:16.5px;color:var(--muted);line-height:1.8;max-width:520px;padding-bottom:6px}
+
+/* ---------- download cta ---------- */
+.download{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.download::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:64px 64px;
+}
+.dl-grid{position:relative;display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center}
+.download .eyebrow{color:#8FB4EE}
+.download .eyebrow::before{background:#8FB4EE}
+.dl-grid h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:22px 0 18px}
+.dl-grid p{font-size:18px;color:#B7C4D8;max-width:520px;line-height:1.7}
+.dl-actions{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.dl-meta{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:#7E8DA6}
+.dl-card{
+  border:1px solid rgba(255,255,255,.16);border-radius:5px;padding:32px;
+  background:rgba(255,255,255,.03);
+}
+.dl-card .ico{
+  width:46px;height:46px;border-radius:4px;background:var(--blue);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;
+  font-family:var(--mono);letter-spacing:.04em;
+}
+.dl-card .fname{font-size:17px;font-weight:700;margin:20px 0 4px}
+.dl-card .fmeta{font-size:13.5px;color:#9AA8BE}
+.dl-card .bar{height:1px;background:rgba(255,255,255,.12);margin:22px 0}
+
+/* ---------- publications ---------- */
+.pubs{background:var(--soft)}
+.pub-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:60px;align-items:start}
+.pub-photo{position:relative}
+.pub-photo .imgbox{aspect-ratio:3072/4000;overflow:hidden;border-radius:3px;border:1px solid var(--line-2)}
+.pub-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.pub-stat{
+  display:flex;gap:0;margin-bottom:34px;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff;
+}
+.pub-stat .item{flex:1;padding:20px 22px;border-right:1px solid var(--line)}
+.pub-stat .item:last-child{border-right:0}
+.pub-stat .num{font-size:30px;font-weight:800;color:var(--blue);letter-spacing:-0.03em;font-family:var(--mono)}
+.pub-stat .lab{font-size:13.5px;color:var(--muted);margin-top:2px}
+.pub-list{display:flex;flex-direction:column}
+.pub-item{
+  display:grid;grid-template-columns:auto 1fr;gap:26px;
+  padding:26px 0;border-top:1px solid var(--line-2);
+}
+.pub-item:last-child{border-bottom:1px solid var(--line-2)}
+.pub-item .pn{font-family:var(--mono);font-size:14px;color:var(--muted-2);font-weight:600;padding-top:5px}
+.pub-item .tag{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--blue);font-weight:600;
+}
+.pub-item h3{font-size:21px;font-weight:800;color:var(--navy);margin:8px 0 9px;letter-spacing:-0.02em}
+.pub-item p{font-size:15px;color:var(--muted);line-height:1.72;max-width:640px}
+
+/* ---------- closing band ---------- */
+.closing{position:relative;height:440px;overflow:hidden;display:flex;align-items:center}
+.closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.closing::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,21,42,.94),rgba(9,21,42,.66) 52%,rgba(9,21,42,.28))}
+.closing .inner{position:relative;z-index:2;color:#fff;width:100%}
+.closing blockquote,.closing .eyebrow{text-shadow:0 2px 24px rgba(8,18,38,.55)}
+.closing .eyebrow{color:#8FB4EE}
+.closing .eyebrow::before{background:#8FB4EE}
+.closing blockquote{
+  font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-0.03em;line-height:1.18;
+  margin-top:24px;max-width:760px;
+}
+
+/* ---------- footer ---------- */
+footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand .name{font-size:23px;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.foot-brand .desc{font-size:14.5px;color:#8593AC;margin-top:14px;line-height:1.7;max-width:300px}
+.foot-col h4{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#6E7E9A;font-weight:600;margin-bottom:18px}
+.foot-col a{display:block;font-size:15px;color:#B9C5DA;padding:7px 0;transition:.15s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px}
+.foot-bottom .cp{font-size:13px;color:#6E7E9A;font-family:var(--mono);letter-spacing:.02em}
+.foot-bottom .soc{display:flex;gap:10px}
+.foot-bottom .soc a{
+  font-size:12.5px;font-weight:600;color:#B9C5DA;border:1px solid rgba(255,255,255,.14);
+  padding:8px 14px;border-radius:3px;transition:.15s;
+}
+.foot-bottom .soc a:hover{border-color:#fff;color:#fff}
+
+/* ---------- reveal ---------- */
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
+
+/* ---------- responsive ---------- */
+@media(max-width:1080px){
+  :root{--pad:30px}
+  .hero-grid{gap:44px}
+  .vgrid{grid-template-columns:repeat(2,1fr)}
+  .vintro{grid-template-columns:1fr;gap:18px}
+}
+@media(max-width:860px){
+  .nav-links{display:none}
+  .menu-toggle{display:flex}
+  .nav-right .btn{display:none}
+  .hero-grid{grid-template-columns:1fr;padding:54px 0 40px}
+  .hero-photo{max-width:420px}
+  .hero-photo .frame{inset:14px -14px -14px 14px}
+  .creds{grid-template-columns:1fr}
+  .cred{border-right:0;border-bottom:1px solid var(--line)}
+  .about-grid,.pub-grid,.dl-grid{grid-template-columns:1fr;gap:40px}
+  .about-photo,.pub-photo{max-width:420px}
+  .pad-y{padding:72px 0}
+  .dl-grid h2{margin-top:16px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:8px}
+}
+@media(max-width:560px){
+  :root{--pad:20px}
+  .vgrid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .pub-item{grid-template-columns:1fr;gap:8px}
+  .pub-stat{flex-direction:column}
+  .pub-stat .item{border-right:0;border-bottom:1px solid var(--line)}
+}
+
+/* mobile menu */
+.m-menu{
+  display:none;position:fixed;inset:72px 0 auto 0;z-index:49;
+  background:#fff;border-bottom:1px solid var(--line);padding:18px var(--pad) 26px;
+  flex-direction:column;gap:4px;box-shadow:0 20px 40px -20px rgba(19,41,75,.2);
+}
+.m-menu.open{display:flex}
+.m-menu a{padding:13px 0;font-size:17px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line)}
+.m-menu .btn{margin-top:14px;justify-content:center}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>안녕하세요</h1>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="name">김현철</span>
+      <span class="role">서울대학교 총장후보</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">교수님 소개</a>
+      <a href="#vision">비전</a>
+      <a href="#download">발전계획서</a>
+      <a href="#pubs">이력·저서</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#download" class="btn btn-primary">발전계획서 다운로드</a>
+      <button class="menu-toggle" aria-label="메뉴" onclick="document.getElementById('mMenu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+</header>
+<div class="m-menu" id="mMenu">
+  <a href="#about" onclick="this.parentNode.classList.remove('open')">교수님 소개</a>
+  <a href="#vision" onclick="this.parentNode.classList.remove('open')">비전</a>
+  <a href="#download" onclick="this.parentNode.classList.remove('open')">발전계획서</a>
+  <a href="#pubs" onclick="this.parentNode.classList.remove('open')">이력·저서</a>
+  <a href="#download" class="btn btn-primary" onclick="this.parentNode.classList.remove('open')">발전계획서 다운로드</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="hero-eyebrow eyebrow">서울대학교 제29대 총장후보</div>
+      <h1>Leader<br>is everything<span class="dot">.</span></h1>
+      <p class="kr" data-reveal>안녕하십니까, 김현철입니다.</p>
+      <p class="lead" data-reveal>저는 오로지 저의 업적과 성과, 역량, 비전, 그리고 실행력으로 승부하고자 합니다. 서울대에 혁신의 바람을 일으키겠습니다.</p>
+      <div class="hero-actions" data-reveal>
+        <a href="#vision" class="btn btn-primary">비전 살펴보기 →</a>
+        <a href="#about" class="btn btn-ghost">인사말 전문 읽기</a>
+      </div>
+    </div>
+    <div class="hero-photo" data-reveal>
+      <div class="frame"></div>
+      <div class="imgbox"><img src="assets/web/portrait-hero.jpg" alt="김현철 서울대학교 총장후보"></div>
+      <div class="hero-tag"><b>SNU</b>서울대 국제대학원 교수</div>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0">
+    <div class="creds">
+      <div class="cred"><span class="n">01</span><span class="t">학자<span class="s">서울대 국제대학원 일본전공 교수</span></span></div>
+      <div class="cred"><span class="n">02</span><span class="t">정책<span class="s">前 대통령 경제보좌관 · 청와대 근무</span></span></div>
+      <div class="cred"><span class="n">03</span><span class="t">저술<span class="s">단독·공저 포함 저서 33권</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about pad-y" id="about" data-screen-label="About">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="left">
+        <span class="sec-index">02 / ABOUT</span>
+        <h2>김현철은?</h2>
+        <p class="sub">평생 한일 기업의 혁신을 연구해 온 학자. 이제 그 연구를 살려 서울대를 혁신하고자 합니다.</p>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo" data-reveal>
+        <div class="imgbox"><img src="assets/web/portrait-about.jpg" alt="연구실의 김현철 교수"></div>
+        <div class="cap">서울대 국제대학원 연구실에서</div>
+      </div>
+      <div class="about-body" data-reveal>
+        <p class="quote">“저는 학자 인생의 마지막으로 서울대에 봉사하고자 합니다. 제가 연구해 온 것을 살려, 서울대를 과감하게 혁신하겠습니다.”</p>
+        <p>학부와 대학원에서 경영학을 공부하였고, 일본에 유학한 뒤로는 저성장 위기 속에서 생존을 위하여 몸부림친 일본 기업들을 연구하였습니다. 서울대 국제대학원 일본전공 교수로 부임한 뒤에는 저성장 시대 한국과 한국 기업들의 혁신을 연구하였습니다.</p>
+        <p>저성장에 관한 저의 책이 베스트셀러가 되면서, 이를 애독한 한 독자 덕분에 대통령 경제보좌관으로 근무하였고, 청와대 근무 중에도 책을 출간하여 국가 비전으로 만든 진기록을 가지고 있습니다.</p>
+        <p>저는 오로지 저의 업적과 성과, 역량, 비전, 실행력으로 승부하고자 합니다. 이를 잘 살펴보시고 저와 함께 해 주시기를 바랍니다. 서울대에 혁신의 바람이 불 것입니다.</p>
+        <a href="#vision" class="morelink">8대 핵심 공약 보기 →</a>
+        <div class="sign">
+          <div class="who"><b>김현철</b><span>서울대학교 국제대학원 교수 · 前 대통령 경제보좌관</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISION ============ -->
+<section class="vision pad-y" id="vision" data-screen-label="Vision">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="left">
+        <span class="sec-index">03 / VISION</span>
+        <h2>김현철의 서울대 비전</h2>
+      </div>
+      <span class="eyebrow">8대 핵심 공약</span>
+    </div>
+    <div class="vintro" data-reveal>
+      <div class="big">투명한 리더십으로<br>신뢰받는 서울대.</div>
+      <div class="txt">총장의 권한과 활동을 구성원과 공유하고, 성과에 대해 책임지는 열린 대학 운영을 실현하겠습니다. 여덟 개의 약속으로 서울대의 대전환을 시작합니다.</div>
+    </div>
+    <div class="vgrid">
+      <a href="#" class="vcard active" data-reveal>
+        <div class="arrow">›</div>
+        <span class="vn">01</span>
+        <div class="vtitle">열린 총장실</div>
+        <div class="vlabel">Open Governance</div>
+        <div class="vdesc">총장의 활동과 성과를 투명하게 공개하고 구성원과 함께 평가받겠습니다.</div>
+      </a>
+      <a href="#" class="vcard" data-reveal>
+        <div class="arrow">›</div>
+        <span class="vn">02</span>
+        <div class="vtitle">법인화 2.0</div>
+        <div class="vlabel">Restructuring</div>
+        <div class="vdesc">법인화의 취지를 되살려 자율과 책임의 대학 운영 체계를 완성하겠습니다.</div>
+      </a>
+      <a href="#" class="vcard ghost" data-reveal>
+        <div class="arrow">›</div>
+        <span class="vn">03</span>
+        <div class="vtitle">공약 03</div>
+        <div class="vlabel">Coming soon</div>
+        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      </a>
+      <a href="#" class="vcard ghost" data-reveal>
+        <div class="arrow">›</div>
+        <span class="vn">04</span>
+        <div class="vtitle">공약 04</div>
+        <div class="vlabel">Coming soon</div>
+        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      </a>
+      <a href="#" class="vcard ghost" data-reveal>
+        <div class="arrow">›</div>
+        <span class="vn">05</span>
+        <div class="vtitle">공약 05</div>
+        <div class="vlabel">Coming soon</div>
+        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      </a>
+      <a href="#" class="vcard ghost" data-reveal>
+        <div class="arrow">›</div>
+        <span class="vn">06</span>
+        <div class="vtitle">공약 06</div>
+        <div class="vlabel">Coming soon</div>
+        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      </a>
+      <a href="#" class="vcard ghost" data-reveal>
+        <div class="arrow">›</div>
+        <span class="vn">07</span>
+        <div class="vtitle">공약 07</div>
+        <div class="vlabel">Coming soon</div>
+        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      </a>
+      <a href="#" class="vcard ghost" data-reveal>
+        <div class="arrow">›</div>
+        <span class="vn">08</span>
+        <div class="vtitle">공약 08</div>
+        <div class="vlabel">Coming soon</div>
+        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD CTA ============ -->
+<section class="download pad-y" id="download" data-screen-label="Download">
+  <div class="wrap dl-grid">
+    <div data-reveal>
+      <span class="eyebrow">04 / DOWNLOAD</span>
+      <h2>발전 계획서<br>다운로드</h2>
+      <p>김현철의 서울대 혁신 비전과 구체적인 실행 로드맵을 한 권에 담았습니다. 서울대의 다음 4년을 함께 그려 주십시오.</p>
+    </div>
+    <div class="dl-card" data-reveal>
+      <div class="ico">PDF</div>
+      <div class="fname">김현철 발전계획서</div>
+      <div class="fmeta">서울대학교 총장후보 · 2026</div>
+      <div class="bar"></div>
+      <div class="dl-actions">
+        <a href="#" class="btn btn-light">PDF 다운로드 ↓</a>
+        <span class="dl-meta">곧 공개됩니다</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section class="pubs pad-y" id="pubs" data-screen-label="Publications">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="left">
+        <span class="sec-index">05 / PUBLICATIONS</span>
+        <h2>김현철의 대표 저서들</h2>
+        <p class="sub">저성장 시대의 돌파구를 묻다 — 한국과 일본을 넘나든 30여 년 연구의 기록.</p>
+      </div>
+      <a href="#" class="morelink">전체 저서 보기 →</a>
+    </div>
+    <div class="pub-grid">
+      <div class="pub-photo" data-reveal>
+        <div class="imgbox"><img src="assets/web/books-lean.jpg" alt="저서와 함께한 김현철 교수"></div>
+      </div>
+      <div data-reveal>
+        <div class="pub-stat">
+          <div class="item"><div class="num">33</div><div class="lab">단독·공저 저서</div></div>
+          <div class="item"><div class="num">16</div><div class="lab">일본 출간 저서</div></div>
+          <div class="item"><div class="num">30+</div><div class="lab">년의 연구</div></div>
+        </div>
+        <div class="pub-list">
+          <div class="pub-item">
+            <span class="pn">01</span>
+            <div>
+              <span class="tag">경제·경영</span>
+              <h3>저성장시대 어떻게 돌파할 것인가</h3>
+              <p>한국 경제가 저성장에 빠져들면서, 이 시대를 어떻게 헤쳐 나가야 하는가는 많은 분들의 관심사였습니다. 일본과 한국에서의 연구 경험을 토대로 2015년 출간한 이 대중서는 큰 반향을 일으켰습니다.</p>
+            </div>
+          </div>
+          <div class="pub-item">
+            <span class="pn">02</span>
+            <div>
+              <span class="tag">인문·사회</span>
+              <h3>일본이 온다</h3>
+              <p>2023년 하반기, 국제대학원 원장직을 수행하며 출간한 대중서입니다. 일본의 대외적 팽창이 한국에 어떠한 영향을 미치는지를 설명한 책입니다.</p>
+            </div>
+          </div>
+          <div class="pub-item">
+            <span class="pn">03</span>
+            <div>
+              <span class="tag">학술·전문</span>
+              <h3>편의점 업태의 혁신</h3>
+              <p>일본에서 출간된 16권 중 가장 대표적인 저서입니다. 2001년 출간되어, 소매유통에 관한 일본의 기존 이론들을 바꾸어 놓은 책으로 평가받습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING BAND ============ -->
+<section class="closing" data-screen-label="Closing">
+  <img src="assets/web/books-row.jpg" alt="연구실의 김현철 교수">
+  <div class="wrap inner" data-reveal>
+    <span class="eyebrow">For Seoul National University</span>
+    <blockquote>서울대에 혁신의<br>바람이 불 것입니다.</blockquote>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer data-screen-label="Footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">김현철</div>
+        <div class="desc">서울대학교 제29대 총장후보. 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.</div>
+      </div>
+      <div class="foot-col">
+        <h4>교수님 소개</h4>
+        <a href="#about">인사말</a>
+        <a href="#about">프로필</a>
+        <a href="#pubs">이력·경력</a>
+      </div>
+      <div class="foot-col">
+        <h4>비전</h4>
+        <a href="#vision">8대 핵심 공약</a>
+        <a href="#download">발전계획서</a>
+        <a href="#pubs">대표 저서</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="/cdn-cgi/l/email-protection#ff9c90918b9e9c8bbf9a879e928f939ad19c9092"><span class="__cf_email__" data-cfemail="7a1915140e1b190e3a1f021b170a161f54191517">[email&#160;protected]</span></a>
+        <a href="#">서울특별시 관악구 관악로 1</a>
+        <a href="#">서울대학교 국제대학원</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="cp">© 2026 KIM HYUN-CHUL · ALL RIGHTS RESERVED</span>
+      <div class="soc">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// sticky header shadow
+const header=document.getElementById('top');
+addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>10)},{passive:true});
+
+// reveal on scroll (with failsafes so content never stays hidden)
+const reveals=[...document.querySelectorAll('[data-reveal]')];
+const show=el=>el.classList.add('in');
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})
+},{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+reveals.forEach(el=>io.observe(el));
+// reveal anything already on-screen right away
+function revealInView(){
+  const vh=innerHeight||document.documentElement.clientHeight;
+  reveals.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<vh*0.96&&r.bottom>0)show(el);});
+}
+addEventListener('load',revealInView);revealInView();
+// hard failsafe: never leave content invisible
+setTimeout(()=>reveals.forEach(show),1400);
+
+// active nav link
+const sections=[...document.querySelectorAll('section[id]')];
+const links=[...document.querySelectorAll('.nav-links a')];
+const navIO=new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+id));
+    }
+  })
+},{threshold:0.4});
+sections.forEach(s=>navIO.observe(s));
+</script>
 </body>
 </html>
