@@ -3,344 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>김현철 · 서울대학교 총장후보</title>
-<meta name="description" content="Leader is everything — 김현철의 서울대 비전. 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.">
+<title>김현철 · 서울대학교 총장후보 — 메인페이지 시안</title>
+<meta name="description" content="Leader is everything — 김현철의 서울대 비전">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root{
-  --navy:#13294B;
-  --navy-2:#0C1B33;
-  --blue:#1F4FA0;
-  --blue-700:#173E80;
-  --blue-bright:#2C6BD6;
-  --ink:#19212E;
-  --muted:#5C6A80;
-  --muted-2:#8A95A6;
-  --line:#E4E8EF;
-  --line-2:#D5DBE5;
-  --soft:#EFF3F9;
-  --warm:#FAF7F2;
+  --navy:#0E1C3F;
+  --navy-2:#0A1530;
+  --blue:#2D55D4;
+  --blue-2:#3961E0;
+  --blue-3:#1E40B0;
+  --blue-bright:#3A66E6;
+  --ink:#1A2230;
+  --muted:#5E6B80;
+  --muted-2:#94A0B2;
+  --line:#E5E8EE;
+  --line-2:#D5DAE3;
+  --gray:#EDEEF0;
+  --bluewash:#E7EDF8;
   --paper:#FFFFFF;
   --mono:'SF Mono',ui-monospace,'Roboto Mono',Menlo,monospace;
-  --maxw:1240px;
+  --maxw:1180px;
   --pad:40px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   font-family:'Pretendard',system-ui,sans-serif;
-  color:var(--ink);
-  background:var(--paper);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  letter-spacing:-0.01em;
+  color:var(--ink);background:var(--paper);line-height:1.6;
+  -webkit-font-smoothing:antialiased;letter-spacing:-0.01em;
 }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
 
-/* ---------- shared bits ---------- */
+/* ---------- shared ---------- */
 .eyebrow{
-  font-family:var(--mono);
-  font-size:13px;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--blue);
-  font-weight:600;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
+  font-size:14px;font-weight:700;color:var(--blue);
+  letter-spacing:0.01em;display:inline-block;
 }
-.eyebrow::before{
-  content:"";
-  width:26px;height:1px;background:var(--blue);display:inline-block;
+.eyebrow.light{color:#7FA0EE}
+.section-head{text-align:center;max-width:760px;margin:0 auto 56px}
+.section-head h2{
+  font-size:clamp(28px,3.6vw,40px);font-weight:800;color:var(--navy);
+  letter-spacing:-0.03em;line-height:1.18;margin-top:14px;
 }
-.sec-index{
-  font-family:var(--mono);
-  font-size:13px;
-  letter-spacing:0.1em;
-  color:var(--muted-2);
-  font-weight:500;
-}
+.section-head .sub{font-size:15.5px;color:var(--muted);margin-top:18px;line-height:1.7}
+.pad-y{padding:108px 0}
 .btn{
-  display:inline-flex;align-items:center;gap:9px;
-  font-weight:600;font-size:15px;
-  padding:14px 24px;
-  border-radius:3px;
-  transition:.18s ease;
-  cursor:pointer;border:1px solid transparent;
-  line-height:1;
+  display:inline-flex;align-items:center;gap:10px;
+  font-weight:600;font-size:15px;padding:15px 28px;
+  border-radius:5px;transition:.18s ease;cursor:pointer;
+  border:1px solid transparent;line-height:1;white-space:nowrap;
 }
-.btn-primary{background:var(--blue);color:#fff}
-.btn-primary:hover{background:var(--blue-700)}
-.btn-ghost{background:transparent;color:var(--navy);border-color:var(--line-2)}
-.btn-ghost:hover{border-color:var(--navy);background:var(--navy);color:#fff}
-.btn-light{background:#fff;color:var(--navy)}
-.btn-light:hover{background:#EAEFF7}
+.btn-outline{border-color:var(--line-2);color:var(--navy);background:#fff}
+.btn-outline:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+.btn-outline-light{border-color:rgba(255,255,255,.45);color:#fff;background:transparent}
+.btn-outline-light:hover{background:#fff;color:var(--navy)}
+.btn .arr{transition:transform .2s}
+.btn:hover .arr{transform:translateX(4px)}
 
-/* ---------- header ---------- */
-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.86);
-  backdrop-filter:saturate(180%) blur(14px);
-  border-bottom:1px solid var(--line);
-  transition:box-shadow .25s ease;
+/* ---------- A/B switch ---------- */
+.plan-switch{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:300;
+  display:flex;align-items:center;gap:3px;background:rgba(14,28,63,.92);
+  backdrop-filter:blur(10px);padding:5px;border-radius:9px;
+  box-shadow:0 14px 34px -12px rgba(0,0,0,.5);
 }
-header.scrolled{box-shadow:0 1px 20px rgba(19,41,75,.07)}
-.nav{
-  display:flex;align-items:center;justify-content:space-between;
-  height:72px;
+.plan-switch .lbl{color:#8493AC;font-size:10.5px;font-family:var(--mono);letter-spacing:.14em;padding:0 9px 0 7px}
+.plan-switch button{
+  border:0;background:transparent;color:#C4D0E2;font-family:'Pretendard',sans-serif;
+  font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;cursor:pointer;transition:.15s;
 }
-.brand{display:flex;align-items:baseline;gap:11px}
-.brand .name{font-size:21px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;white-space:nowrap}
-.brand .role{white-space:nowrap}
-.nav-links a{white-space:nowrap}
-.btn{white-space:nowrap}
-.brand .role{
-  font-family:var(--mono);font-size:11px;letter-spacing:0.08em;
-  color:var(--muted);text-transform:uppercase;
-  padding-left:11px;border-left:1px solid var(--line-2);
-}
-.nav-links{display:flex;align-items:center;gap:34px}
-.nav-links a{
-  font-size:15px;font-weight:500;color:var(--ink);
-  position:relative;padding:4px 0;transition:color .15s;
-}
-.nav-links a:hover{color:var(--blue)}
-.nav-links a::after{
-  content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;
-  background:var(--blue);transition:width .2s ease;
-}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-right{display:flex;align-items:center;gap:20px}
-.menu-toggle{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
-.menu-toggle span{width:24px;height:2px;background:var(--navy);display:block;transition:.2s}
+.plan-switch button:hover{color:#fff}
+.plan-switch button.on{background:#fff;color:var(--navy)}
 
-/* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;background:var(--paper)}
-.hero::before{
-  content:"";position:absolute;inset:0;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:64px 64px;
-  opacity:.4;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);
-  mask-image:linear-gradient(180deg,#000,transparent 70%);
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:600px;overflow:hidden;display:flex;align-items:flex-end;background:#0b1222}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg .imgA{display:block}
+.hero-bg .imgB{display:none}
+body[data-plan="b"] .hero-bg .imgA{display:none}
+body[data-plan="b"] .hero-bg .imgB{display:block}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(8,14,30,.82),rgba(8,14,30,.34) 46%,rgba(8,14,30,0) 70%),
+             linear-gradient(0deg,rgba(8,14,30,.7),rgba(8,14,30,0) 42%);
 }
-.hero-grid{
-  position:relative;
-  display:grid;grid-template-columns:1.05fr .95fr;gap:64px;
-  align-items:center;
-  padding:78px 0 64px;
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero-copy{padding:0 0 86px}
+.hero-copy .he{color:#9FB4DE;font-size:15px;font-weight:600;letter-spacing:.02em;margin-bottom:20px}
+.hero-copy h1{
+  color:#fff;font-size:clamp(46px,6.4vw,78px);font-weight:800;
+  line-height:1.0;letter-spacing:-0.035em;
 }
-.hero-eyebrow{margin-bottom:30px}
-.hero h1{
-  font-size:clamp(48px,7vw,92px);
-  line-height:.98;font-weight:800;letter-spacing:-0.035em;
-  color:var(--navy);
-}
-.hero h1 .dot{color:var(--blue)}
-.hero .kr{
-  margin-top:26px;font-size:clamp(22px,2.6vw,30px);font-weight:700;color:var(--ink);
-  letter-spacing:-0.02em;
-}
-.hero .lead{
-  margin-top:20px;font-size:18px;color:var(--muted);max-width:430px;line-height:1.7;
-}
-.hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.hero-copy .kr{color:#E3EAF6;font-size:clamp(17px,2vw,21px);font-weight:500;margin-top:24px;letter-spacing:-0.01em}
 
-.hero-photo{position:relative}
-.hero-photo .frame{
-  position:absolute;inset:18px -18px -18px 18px;
-  border:1px solid var(--blue);background:var(--soft);z-index:0;border-radius:3px;
+/* corner flyout nav */
+.corner-nav{position:absolute;top:0;right:0;z-index:6;display:flex;height:auto;font-size:0}
+.cn-main{list-style:none;background:rgba(14,28,63,.86);backdrop-filter:blur(6px);min-width:118px}
+.cn-main li{
+  color:#E7ECF6;font-size:14.5px;font-weight:600;padding:21px 22px;cursor:pointer;
+  border-bottom:1px solid rgba(255,255,255,.1);transition:.15s;letter-spacing:-0.01em;white-space:nowrap;
 }
-.hero-photo .imgbox{
-  position:relative;z-index:1;
-  aspect-ratio:2000/2520;overflow:hidden;border-radius:3px;
-  box-shadow:0 30px 70px -30px rgba(19,41,75,.4);
+.cn-main li:last-child{border-bottom:0}
+.cn-main li:hover{background:rgba(255,255,255,.08)}
+.cn-main li.active{background:var(--blue);color:#fff}
+.cn-sub{background:#F4F5F8;min-width:160px;padding:7px 0}
+.cn-sub a{
+  display:block;color:#3A4660;font-size:13.5px;font-weight:500;padding:12px 22px;
+  transition:.12s;white-space:nowrap;
 }
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.hero-tag{
-  position:absolute;z-index:2;left:-14px;bottom:30px;
-  background:var(--navy);color:#fff;padding:11px 17px;border-radius:3px;
-  font-size:13px;font-weight:600;letter-spacing:.02em;
-  box-shadow:0 14px 30px -12px rgba(19,41,75,.5);
-}
-.hero-tag b{color:#8FB4EE;font-family:var(--mono);font-weight:700;margin-right:7px}
+.cn-sub a:hover{background:#E7EBF3;color:var(--blue)}
+.cn-sub a.active{color:var(--blue);font-weight:700;background:#E7EBF3}
 
-/* credential strip */
-.creds{
-  position:relative;border-top:1px solid var(--line);
-  display:grid;grid-template-columns:repeat(3,1fr);
-}
-.cred{
-  padding:26px 30px;border-right:1px solid var(--line);
-  display:flex;align-items:baseline;gap:14px;
-}
-.cred:last-child{border-right:0}
-.cred .n{font-family:var(--mono);font-size:13px;color:var(--blue);font-weight:600}
-.cred .t{font-size:16px;font-weight:600;color:var(--navy)}
-.cred .s{font-size:13.5px;color:var(--muted);display:block;margin-top:2px;font-weight:400}
-
-/* ---------- section frame ---------- */
-section{position:relative}
-.sec-head{
-  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
-  padding-bottom:28px;margin-bottom:48px;border-bottom:1px solid var(--line);
-}
-.sec-head .left{max-width:680px}
-.sec-head h2{
-  font-size:clamp(30px,4vw,46px);font-weight:800;color:var(--navy);
-  letter-spacing:-0.03em;line-height:1.08;margin-top:18px;
-}
-.sec-head .sub{font-size:17px;color:var(--muted);margin-top:14px;line-height:1.65}
-.pad-y{padding:104px 0}
-
-/* ---------- about ---------- */
-.about{background:var(--warm)}
-.about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:start}
+/* ---------- ABOUT ---------- */
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:0.82fr 1.18fr;gap:72px;align-items:center}
 .about-photo{position:relative}
-.about-photo .imgbox{aspect-ratio:1644/2050;overflow:hidden;border-radius:3px;border:1px solid var(--line-2)}
-.about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
-.about-photo .cap{
-  margin-top:16px;font-family:var(--mono);font-size:12.5px;color:var(--muted);
-  letter-spacing:.02em;display:flex;gap:8px;align-items:center;
+.about-photo .box{aspect-ratio:3/3.5;overflow:hidden;background:var(--gray)}
+.about-photo .box img{width:100%;height:100%;object-fit:cover}
+.about-photo .box .pa{display:block}
+.about-photo .box .pb{display:none}
+body[data-plan="b"] .about-photo .box .pa{display:none}
+body[data-plan="b"] .about-photo .box .pb{display:block}
+.about-photo .tag{
+  position:absolute;right:0;bottom:34px;background:var(--navy);color:#fff;
+  padding:20px 26px;line-height:1.5;font-size:16px;font-weight:700;letter-spacing:-0.01em;
+  box-shadow:0 18px 40px -18px rgba(14,28,63,.5);
 }
-.about-photo .cap::before{content:"";width:18px;height:1px;background:var(--muted-2)}
-.about-body .quote{
-  font-size:25px;font-weight:700;color:var(--navy);line-height:1.4;
-  letter-spacing:-0.02em;margin-bottom:28px;
-  padding-left:22px;border-left:3px solid var(--blue);
-}
-.about-body p{font-size:16.5px;color:#384354;margin-bottom:17px;line-height:1.82;text-wrap:pretty}
-.about-body .sign{
-  margin-top:30px;display:flex;align-items:center;gap:16px;
-  padding-top:26px;border-top:1px solid var(--line-2);
-}
-.about-body .sign .who b{display:block;font-size:18px;color:var(--navy);font-weight:800}
-.about-body .sign .who span{font-size:14px;color:var(--muted)}
-.morelink{
-  display:inline-flex;align-items:center;gap:8px;margin-top:26px;
-  font-weight:600;color:var(--blue);font-size:15.5px;white-space:nowrap;
-}
-.morelink:hover{gap:13px;transition:gap .2s}
+.about-body .eyebrow{margin-bottom:16px}
+.about-body h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.2}
+.about-body .lead{margin-top:26px;font-size:15.5px;color:#46505F;line-height:1.95;text-wrap:pretty}
+.about-body .lead p{margin-bottom:18px}
+.about-body .btn{margin-top:30px}
 
-/* ---------- vision ---------- */
-.vision{background:var(--paper)}
-.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.vcard{
-  border:1px solid var(--line);border-radius:4px;padding:26px 24px 24px;
-  background:#fff;transition:.2s ease;position:relative;
-  display:flex;flex-direction:column;min-height:230px;
+/* ---------- VISION ---------- */
+.vision{background:var(--gray)}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.vcard{background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 0 rgba(20,30,55,.04);display:flex;flex-direction:column;transition:.2s}
+.vcard:hover{transform:translateY(-5px);box-shadow:0 24px 44px -26px rgba(20,40,90,.4)}
+.vcard .thumb{
+  aspect-ratio:1/0.62;
+  background:linear-gradient(135deg,var(--blue-2),var(--blue-3));
+  position:relative;overflow:hidden;
 }
-.vcard .vn{font-family:var(--mono);font-size:13px;color:var(--muted-2);font-weight:600;letter-spacing:.06em}
-.vcard .vtitle{font-size:21px;font-weight:800;color:var(--navy);margin-top:auto;letter-spacing:-0.02em;line-height:1.25}
-.vcard .vlabel{
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--blue);font-weight:600;margin-top:9px;
+.vcard .thumb::after{
+  content:"";position:absolute;width:150%;height:150%;right:-30%;bottom:-50%;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.16),rgba(255,255,255,0) 60%);
 }
-.vcard .vdesc{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.6}
+.vcard .body{padding:22px 22px 26px;position:relative;flex:1;display:flex;flex-direction:column}
+.vcard .vtitle{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;padding-right:40px}
+.vcard .vlabel{font-size:13px;font-weight:700;color:var(--blue);margin-top:6px}
+.vcard .vdesc{font-size:13.5px;color:var(--muted);margin-top:14px;line-height:1.65}
 .vcard .arrow{
-  position:absolute;top:24px;right:22px;width:30px;height:30px;
-  border:1px solid var(--line-2);border-radius:3px;display:flex;align-items:center;justify-content:center;
-  color:var(--muted);font-size:15px;transition:.2s;
+  position:absolute;top:22px;right:22px;width:34px;height:34px;border-radius:50%;
+  background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:15px;transition:.2s;
 }
-.vcard.active{border-color:var(--blue);box-shadow:0 18px 40px -22px rgba(31,79,160,.5)}
-.vcard.active .vn{color:var(--blue)}
-.vcard.active .arrow{background:var(--blue);border-color:var(--blue);color:#fff}
-.vcard:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 18px 40px -24px rgba(19,41,75,.34)}
-.vcard.active:hover{border-color:var(--blue)}
-.vcard.ghost{background:repeating-linear-gradient(135deg,#fff,#fff 9px,#FAFBFD 9px,#FAFBFD 18px);border-style:dashed}
-.vcard.ghost .vtitle{color:var(--muted-2)}
-.vcard.ghost .vlabel{color:var(--muted-2)}
-.vintro{
-  display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:end;
-  margin-bottom:46px;
-}
-.vintro .big{font-size:clamp(26px,3.2vw,38px);font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.15}
-.vintro .txt{font-size:16.5px;color:var(--muted);line-height:1.8;max-width:520px;padding-bottom:6px}
+.vcard:hover .arrow{background:var(--blue-3);transform:translateX(2px)}
+.vcard.ghost .thumb{background:linear-gradient(135deg,#6E7DA8,#4A5A85)}
+.vcard.ghost .vtitle{color:#7C879B}
+.vcard.ghost .arrow{background:#9AA5BB}
 
-/* ---------- download cta ---------- */
-.download{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.download::before{
-  content:"";position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
-  background-size:64px 64px;
+/* ---------- DOWNLOAD ---------- */
+.download{background:#080d18;color:#fff;position:relative;overflow:hidden}
+.download .wrap{position:relative;z-index:2;text-align:center;max-width:720px}
+.download h2{font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-0.03em;line-height:1.12;margin:16px 0 20px}
+.download p{font-size:16px;color:#9FAAC0;line-height:1.7;max-width:520px;margin:0 auto 34px}
+.download .photo{
+  position:absolute;right:0;top:0;bottom:0;width:42%;z-index:1;pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 55%);
+  mask-image:linear-gradient(90deg,transparent,#000 55%);
+  opacity:.85;
 }
-.dl-grid{position:relative;display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center}
-.download .eyebrow{color:#8FB4EE}
-.download .eyebrow::before{background:#8FB4EE}
-.dl-grid h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:22px 0 18px}
-.dl-grid p{font-size:18px;color:#B7C4D8;max-width:520px;line-height:1.7}
-.dl-actions{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
-.dl-meta{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:#7E8DA6}
-.dl-card{
-  border:1px solid rgba(255,255,255,.16);border-radius:5px;padding:32px;
-  background:rgba(255,255,255,.03);
-}
-.dl-card .ico{
-  width:46px;height:46px;border-radius:4px;background:var(--blue);
-  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;
-  font-family:var(--mono);letter-spacing:.04em;
-}
-.dl-card .fname{font-size:17px;font-weight:700;margin:20px 0 4px}
-.dl-card .fmeta{font-size:13.5px;color:#9AA8BE}
-.dl-card .bar{height:1px;background:rgba(255,255,255,.12);margin:22px 0}
+.download .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
 
-/* ---------- publications ---------- */
-.pubs{background:var(--soft)}
-.pub-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:60px;align-items:start}
-.pub-photo{position:relative}
-.pub-photo .imgbox{aspect-ratio:3072/4000;overflow:hidden;border-radius:3px;border:1px solid var(--line-2)}
-.pub-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.pub-stat{
-  display:flex;gap:0;margin-bottom:34px;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff;
-}
-.pub-stat .item{flex:1;padding:20px 22px;border-right:1px solid var(--line)}
-.pub-stat .item:last-child{border-right:0}
-.pub-stat .num{font-size:30px;font-weight:800;color:var(--blue);letter-spacing:-0.03em;font-family:var(--mono)}
-.pub-stat .lab{font-size:13.5px;color:var(--muted);margin-top:2px}
-.pub-list{display:flex;flex-direction:column}
-.pub-item{
-  display:grid;grid-template-columns:auto 1fr;gap:26px;
-  padding:26px 0;border-top:1px solid var(--line-2);
-}
-.pub-item:last-child{border-bottom:1px solid var(--line-2)}
-.pub-item .pn{font-family:var(--mono);font-size:14px;color:var(--muted-2);font-weight:600;padding-top:5px}
-.pub-item .tag{
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--blue);font-weight:600;
-}
-.pub-item h3{font-size:21px;font-weight:800;color:var(--navy);margin:8px 0 9px;letter-spacing:-0.02em}
-.pub-item p{font-size:15px;color:var(--muted);line-height:1.72;max-width:640px}
+/* ---------- PUBLICATIONS ---------- */
+.pubs{background:var(--bluewash)}
+.pubgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pubcard{background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 0 rgba(20,30,55,.04);transition:.2s}
+.pubcard:hover{transform:translateY(-5px);box-shadow:0 24px 44px -26px rgba(20,40,90,.4)}
+.pubcover{aspect-ratio:1/0.6;position:relative;overflow:hidden;background:linear-gradient(135deg,#1E40B0,#2D6FE0)}
+.pubcover .c1,.pubcover .c2{position:absolute;border-radius:50%}
+.pubcover .c1{width:74%;aspect-ratio:1;right:-12%;top:-26%;background:radial-gradient(circle at 35% 35%,rgba(120,170,255,.85),rgba(40,90,210,.2) 70%)}
+.pubcover .c2{width:52%;aspect-ratio:1;left:-8%;bottom:-30%;background:radial-gradient(circle at 60% 40%,rgba(90,140,250,.6),rgba(20,50,150,.1) 70%)}
+.pubcard .pbody{padding:22px 24px 28px}
+.pubcard .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.pubcard .cat{font-size:13px;font-weight:700;color:var(--blue)}
+.pubcard .date{font-size:12.5px;color:var(--muted-2)}
+.pubcard h3{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;margin-bottom:12px}
+.pubcard p{font-size:13.5px;color:var(--muted);line-height:1.72}
+.pubs .more{text-align:center;margin-top:54px}
 
-/* ---------- closing band ---------- */
-.closing{position:relative;height:440px;overflow:hidden;display:flex;align-items:center}
-.closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
-.closing::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,21,42,.94),rgba(9,21,42,.66) 52%,rgba(9,21,42,.28))}
-.closing .inner{position:relative;z-index:2;color:#fff;width:100%}
-.closing blockquote,.closing .eyebrow{text-shadow:0 2px 24px rgba(8,18,38,.55)}
-.closing .eyebrow{color:#8FB4EE}
-.closing .eyebrow::before{background:#8FB4EE}
-.closing blockquote{
-  font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-0.03em;line-height:1.18;
-  margin-top:24px;max-width:760px;
-}
-
-/* ---------- footer ---------- */
-footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
-.foot-brand .name{font-size:23px;font-weight:800;color:#fff;letter-spacing:-0.02em}
-.foot-brand .desc{font-size:14.5px;color:#8593AC;margin-top:14px;line-height:1.7;max-width:300px}
-.foot-col h4{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#6E7E9A;font-weight:600;margin-bottom:18px}
-.foot-col a{display:block;font-size:15px;color:#B9C5DA;padding:7px 0;transition:.15s}
+/* ---------- FOOTER ---------- */
+footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.09)}
+.foot-col h4{font-size:14.5px;font-weight:800;color:#fff;letter-spacing:-0.01em;margin-bottom:22px}
+.foot-col a{display:block;font-size:14px;color:#93A0B8;padding:8px 0;transition:.15s}
 .foot-col a:hover{color:#fff}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px}
-.foot-bottom .cp{font-size:13px;color:#6E7E9A;font-family:var(--mono);letter-spacing:.02em}
-.foot-bottom .soc{display:flex;gap:10px}
-.foot-bottom .soc a{
-  font-size:12.5px;font-weight:600;color:#B9C5DA;border:1px solid rgba(255,255,255,.14);
-  padding:8px 14px;border-radius:3px;transition:.15s;
-}
-.foot-bottom .soc a:hover{border-color:#fff;color:#fff}
+.foot-bottom{text-align:center;padding-top:30px;font-size:12.5px;color:#6E7C97;letter-spacing:.02em}
+.foot-bottom span{margin:0 8px}
 
 /* ---------- reveal ---------- */
 [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -348,270 +212,84 @@ footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
 @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
 
 /* ---------- responsive ---------- */
-@media(max-width:1080px){
+@media(max-width:1000px){
   :root{--pad:30px}
-  .hero-grid{gap:44px}
   .vgrid{grid-template-columns:repeat(2,1fr)}
-  .vintro{grid-template-columns:1fr;gap:18px}
+  .about-grid{gap:48px}
 }
-@media(max-width:860px){
-  .nav-links{display:none}
-  .menu-toggle{display:flex}
-  .nav-right .btn{display:none}
-  .hero-grid{grid-template-columns:1fr;padding:54px 0 40px}
-  .hero-photo{max-width:420px}
-  .hero-photo .frame{inset:14px -14px -14px 14px}
-  .creds{grid-template-columns:1fr}
-  .cred{border-right:0;border-bottom:1px solid var(--line)}
-  .about-grid,.pub-grid,.dl-grid{grid-template-columns:1fr;gap:40px}
-  .about-photo,.pub-photo{max-width:420px}
-  .pad-y{padding:72px 0}
-  .dl-grid h2{margin-top:16px}
-  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .sec-head{flex-direction:column;align-items:flex-start;gap:8px}
+@media(max-width:780px){
+  .corner-nav{position:static;width:100%}
+  .cn-main{display:flex;flex-wrap:wrap;width:100%}
+  .cn-main li{flex:1;text-align:center;padding:15px 10px;border-bottom:0;border-right:1px solid rgba(255,255,255,.1)}
+  .cn-sub{display:none}
+  .hero{min-height:0}
+  .hero-copy{padding:48px 0 56px}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-photo{max-width:420px}
+  .pubgrid{grid-template-columns:1fr}
+  .download .photo{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .pad-y{padding:74px 0}
 }
-@media(max-width:560px){
+@media(max-width:480px){
   :root{--pad:20px}
   .vgrid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
-  .pub-item{grid-template-columns:1fr;gap:8px}
-  .pub-stat{flex-direction:column}
-  .pub-stat .item{border-right:0;border-bottom:1px solid var(--line)}
-}
-
-/* mobile menu */
-.m-menu{
-  display:none;position:fixed;inset:72px 0 auto 0;z-index:49;
-  background:#fff;border-bottom:1px solid var(--line);padding:18px var(--pad) 26px;
-  flex-direction:column;gap:4px;box-shadow:0 20px 40px -20px rgba(19,41,75,.2);
-}
-.m-menu.open{display:flex}
-.m-menu a{padding:13px 0;font-size:17px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line)}
-.m-menu .btn{margin-top:14px;justify-content:center}
-
-/* ===== Hero 변형 (비교용 스위치) ===== */
-.hero-switch{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:200;display:flex;align-items:center;gap:4px;background:rgba(19,41,75,.92);backdrop-filter:blur(8px);padding:5px 6px;border-radius:7px;box-shadow:0 12px 30px -10px rgba(0,0,0,.45)}
-.hero-switch .lbl{color:#8493AC;font-size:10.5px;font-family:var(--mono);letter-spacing:.12em;padding:0 6px}
-.hero-switch button{border:0;background:transparent;color:#C4D0E2;font-family:'Pretendard',sans-serif;font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:5px;cursor:pointer;white-space:nowrap;transition:.15s}
-.hero-switch button:hover{color:#fff}
-.hero-switch button.on{background:#fff;color:var(--navy)}
-
-.heroV{display:none;background:var(--navy);color:#fff;position:relative}
-.heroV .eyebrow{color:#8FB4EE}
-.heroV .eyebrow::before{background:#8FB4EE}
-.heroV h1{font-size:clamp(40px,5vw,74px);line-height:1.0;font-weight:800;letter-spacing:-0.035em;margin-top:22px}
-.heroV h1 .dot{color:#8FB4EE}
-.heroV .kr{margin-top:22px;font-size:clamp(20px,2.4vw,28px);font-weight:700}
-body[data-hero="a"] #top,body[data-hero="a"] .hero,body[data-hero="b"] #top,body[data-hero="b"] .hero{display:none}
-body[data-hero="a"] .heroA{display:block}
-body[data-hero="b"] .heroB{display:block}
-
-/* A: 이미지 좌측 + 세로 메뉴 */
-.heroA-wrap{max-width:var(--maxw);margin:0 auto;padding:96px 232px 96px var(--pad);display:grid;grid-template-columns:minmax(0,0.92fr) 1fr;gap:56px;align-items:center;min-height:720px}
-.heroA-img{aspect-ratio:1/1.08;border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
-.heroA-img img{width:100%;height:100%;object-fit:cover;object-position:50% 16%}
-.vnav{display:flex;flex-direction:column;list-style:none}
-.vnav>li{position:relative}
-.vnav>li>a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:92px;padding:20px 8px;color:#fff;font-weight:600;font-size:13.5px;line-height:1.25;text-align:center;transition:.15s;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.13)}
-.vnav>li:last-child>a{border-bottom:0}
-.vnav .vico{width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.92}
-.vnav .vico svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.vnav>li:hover>a{background:#fff;color:var(--navy)}
-.vnav .submenu{display:none;position:absolute;top:0;right:100%;min-width:194px;background:#fff;box-shadow:-20px 26px 50px -22px rgba(0,0,0,.45);overflow:hidden;z-index:5;border-right:1px solid var(--line)}
-.vnav>li:hover .submenu{display:block}
-.vnav .submenu .smt{display:block;padding:15px 18px 11px;font-size:11.5px;font-family:var(--mono);letter-spacing:.07em;color:var(--muted-2);border-bottom:1px solid var(--line)}
-.vnav .submenu a{display:block;padding:13px 18px;color:var(--ink);font-size:14px;border-bottom:1px solid var(--line);transition:.12s;white-space:nowrap}
-.vnav .submenu a:last-child{border-bottom:0}
-.vnav .submenu a:hover,.vnav .submenu a.active{background:var(--soft);color:var(--blue);font-weight:600}
-/* 세로 메뉴 — 우측 고정 + 좌측 플라이아웃 패널 */
-body[data-hero="a"] .vnav{position:fixed;top:50%;transform:translateY(-50%);right:max(0px,calc((100vw - 1240px)/2));z-index:120;background:var(--navy);border-radius:5px;box-shadow:0 22px 55px -18px rgba(0,0,0,.6)}
-
-/* B: 이미지 좌측 + 가로 드롭다운 */
-.heroB-top{max-width:var(--maxw);margin:0 auto;padding:30px var(--pad) 0;display:flex;justify-content:flex-end}
-.hnav{display:flex;gap:42px;list-style:none}
-.hnav>li{position:relative}
-.hnav>li>a{display:block;color:#fff;font-weight:600;font-size:15.5px;padding-bottom:20px;white-space:nowrap}
-.hnav>li>a:hover{color:#8FB4EE}
-.hnav .dd{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:182px;background:#fff;border-radius:4px;box-shadow:0 24px 50px -16px rgba(0,0,0,.45);overflow:hidden;z-index:5}
-.hnav>li:hover .dd{display:block}
-.hnav .dd a{display:block;padding:13px 18px;color:var(--ink);font-size:14px;border-bottom:1px solid var(--line);white-space:nowrap}
-.hnav .dd a:last-child{border-bottom:0}
-.hnav .dd a:hover{background:var(--soft);color:var(--blue);font-weight:600}
-.heroB-wrap{max-width:var(--maxw);margin:0 auto;padding:24px var(--pad) 92px;display:grid;grid-template-columns:1fr 1.02fr;gap:50px;align-items:center;min-height:620px}
-.heroB-img{aspect-ratio:5/4;border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
-.heroB-img img{width:100%;height:100%;object-fit:cover;object-position:50% 16%}
-.heroB-text .sub{margin-top:22px;font-size:18px;color:#B7C4D8;max-width:460px;line-height:1.7}
-
-@media(max-width:900px){
-  .heroA-wrap{grid-template-columns:1fr;gap:28px;min-height:0;padding:54px var(--pad) 40px}
-  .vnav{flex-direction:row;flex-wrap:wrap}
-  body[data-hero="a"] .vnav{position:static;transform:none;right:auto;background:transparent;box-shadow:none;padding:0}
-  .vnav>li>a{min-width:0}
-  .vnav .submenu{position:static;right:auto;margin-top:0;box-shadow:none;border:0}
-  .vnav>li:hover .submenu{display:none}
-  .heroB-top{justify-content:flex-start;padding-top:48px}
-  .hnav{gap:22px;flex-wrap:wrap}
-  .hnav .dd{position:static;transform:none;box-shadow:none;display:none}
-  .heroB-wrap{grid-template-columns:1fr;gap:28px}
-  .hero-switch{top:8px}
 }
 </style>
 </head>
-<body>
+<body data-plan="a">
 
-<!-- Hero 디자인 비교 컨트롤 (배포 시 제거) -->
-<div class="hero-switch" role="tablist" aria-label="Hero 디자인 선택">
-  <span class="lbl">HERO</span>
-  <button data-v="cur" class="on">현재안</button>
-  <button data-v="a">A · 세로메뉴</button>
-  <button data-v="b">B · 드롭다운</button>
-</div>
-
-<!-- ============ HEADER ============ -->
-<header id="top">
-  <div class="wrap nav">
-    <a href="#top" class="brand">
-      <span class="name">김현철</span>
-      <span class="role">서울대학교 총장후보</span>
-    </a>
-    <nav class="nav-links">
-      <a href="#about">교수님 소개</a>
-      <a href="#vision">비전</a>
-      <a href="#download">발전계획서</a>
-      <a href="#pubs">이력·저서</a>
-    </nav>
-    <div class="nav-right">
-      <a href="#download" class="btn btn-primary">발전계획서 다운로드</a>
-      <button class="menu-toggle" aria-label="메뉴" onclick="document.getElementById('mMenu').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-<div class="m-menu" id="mMenu">
-  <a href="#about" onclick="this.parentNode.classList.remove('open')">교수님 소개</a>
-  <a href="#vision" onclick="this.parentNode.classList.remove('open')">비전</a>
-  <a href="#download" onclick="this.parentNode.classList.remove('open')">발전계획서</a>
-  <a href="#pubs" onclick="this.parentNode.classList.remove('open')">이력·저서</a>
-  <a href="#download" class="btn btn-primary" onclick="this.parentNode.classList.remove('open')">발전계획서 다운로드</a>
+<!-- ===== A/B 시안 전환 ===== -->
+<div class="plan-switch" role="tablist" aria-label="시안 선택">
+  <span class="lbl">시안</span>
+  <button data-p="a" class="on">A안</button>
+  <button data-p="b">B안</button>
 </div>
 
 <!-- ============ HERO ============ -->
 <section class="hero" data-screen-label="Hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <div class="hero-eyebrow eyebrow">서울대학교 제29대 총장후보</div>
-      <h1>Leader<br>is everything<span class="dot">.</span></h1>
-      <p class="kr" data-reveal>안녕하십니까, 김현철입니다.</p>
-      <p class="lead" data-reveal>저는 오로지 저의 업적과 성과, 역량, 비전, 그리고 실행력으로 승부하고자 합니다. 서울대에 혁신의 바람을 일으키겠습니다.</p>
-      <div class="hero-actions" data-reveal>
-        <a href="#vision" class="btn btn-primary">비전 살펴보기 →</a>
-        <a href="#about" class="btn btn-ghost">인사말 전문 읽기</a>
-      </div>
-    </div>
-    <div class="hero-photo" data-reveal>
-      <div class="frame"></div>
-      <div class="imgbox"><img src="assets/web/portrait-hero.jpg" alt="김현철 서울대학교 총장후보"></div>
-      <div class="hero-tag"><b>SNU</b>서울대 국제대학원 교수</div>
-    </div>
+  <div class="hero-bg">
+    <img class="imgA" src="assets/web/portrait-seated.jpg" alt="김현철 총장후보">
+    <img class="imgB" src="assets/web/books-row.jpg" alt="김현철 총장후보">
   </div>
-  <div class="wrap" style="padding:0">
-    <div class="creds">
-      <div class="cred"><span class="n">01</span><span class="t">학자<span class="s">서울대 국제대학원 일본전공 교수</span></span></div>
-      <div class="cred"><span class="n">02</span><span class="t">정책<span class="s">前 대통령 경제보좌관 · 청와대 근무</span></span></div>
-      <div class="cred"><span class="n">03</span><span class="t">저술<span class="s">단독·공저 포함 저서 33권</span></span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== HERO 변형 A : 이미지 좌측 + 세로 메뉴(플라이아웃) ===== -->
-<section class="heroV heroA" data-screen-label="Hero A">
-  <div class="heroA-wrap">
-    <div class="heroA-img"><img src="assets/web/portrait-hero.jpg" alt="김현철 총장후보"></div>
-    <div class="heroA-text">
-      <span class="eyebrow">서울대학교 제29대 총장후보</span>
-      <h1>Leader is<br>everything<span class="dot">.</span></h1>
-      <p class="kr">안녕하십니까, 김현철입니다.</p>
-    </div>
-    <ul class="vnav">
-      <li><a href="#top"><span class="vico"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/></svg></span><span class="vlab">홈페이지</span></a></li>
-      <li><a href="#about"><span class="vico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 19c1.6-3.8 11.8-3.8 14 0"/></svg></span><span class="vlab">교수님 소개</span></a>
-        <div class="submenu">
-          <span class="smt">교수님 소개</span>
-          <a href="#about">인사말</a>
-          <a href="#about">프로필</a>
-          <a href="#pubs">이력 · 경력</a>
-        </div>
-      </li>
-      <li><a href="#vision"><span class="vico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.2"/><circle cx="12" cy="12" r="2.4"/></svg></span><span class="vlab">비전</span></a>
-        <div class="submenu">
-          <span class="smt">비전</span>
-          <a href="#vision">8대 핵심 공약</a>
-          <a href="#download">발전계획서</a>
-        </div>
-      </li>
-      <li><a href="#pubs"><span class="vico"><svg viewBox="0 0 24 24"><path d="M12 6v13"/><path d="M12 6c-2-1.4-5-1.4-7 0v13c2-1.4 5-1.4 7 0"/><path d="M12 6c2-1.4 5-1.4 7 0v13c-2-1.4-5-1.4-7 0"/></svg></span><span class="vlab">이력과 경력</span></a>
-        <div class="submenu">
-          <span class="smt">이력과 경력</span>
-          <a href="#pubs">대표 저서</a>
-          <a href="#pubs">주요 활동</a>
-        </div>
-      </li>
+  <!-- corner flyout nav -->
+  <nav class="corner-nav" aria-label="주요 메뉴">
+    <ul class="cn-main">
+      <li data-key="home">홈페이지</li>
+      <li data-key="about" class="active">교수님 소개</li>
+      <li data-key="vision">비전</li>
+      <li data-key="history">이력과 경력</li>
     </ul>
-  </div>
-</section>
-
-<!-- ===== HERO 변형 B : 이미지 좌측 + 가로 드롭다운 ===== -->
-<section class="heroV heroB" data-screen-label="Hero B">
-  <div class="heroB-top">
-    <ul class="hnav">
-      <li><a href="#top">메인 페이지</a></li>
-      <li><a href="#about">교수님 소개</a>
-        <div class="dd"><a href="#about">인사말</a><a href="#about">프로필</a></div>
-      </li>
-      <li><a href="#vision">비전</a>
-        <div class="dd"><a href="#vision">8대 핵심 공약</a><a href="#download">발전계획서</a></div>
-      </li>
-      <li><a href="#pubs">이력·경력</a>
-        <div class="dd"><a href="#pubs">대표 저서</a><a href="#pubs">주요 활동</a></div>
-      </li>
-    </ul>
-  </div>
-  <div class="heroB-wrap">
-    <div class="heroB-img"><img src="assets/web/portrait-hero.jpg" alt="김현철 총장후보"></div>
-    <div class="heroB-text">
-      <span class="eyebrow">서울대학교 제29대 총장후보</span>
-      <h1>Leader is<br>everything<span class="dot">.</span></h1>
-      <p class="sub">안녕하십니까, 김현철입니다. 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.</p>
+    <div class="cn-sub" id="cnSub"></div>
+  </nav>
+  <div class="hero-inner wrap">
+    <div class="hero-copy">
+      <div class="he">서울대학교 제29대 총장후보</div>
+      <h1>Leader is<br>everything</h1>
+      <p class="kr">안녕하십니까 김현철입니다.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
 <section class="about pad-y" id="about" data-screen-label="About">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <div class="left">
-        <span class="sec-index">02 / ABOUT</span>
-        <h2>김현철은?</h2>
-        <p class="sub">평생 한일 기업의 혁신을 연구해 온 학자. 이제 그 연구를 살려 서울대를 혁신하고자 합니다.</p>
+  <div class="wrap about-grid">
+    <div class="about-photo" data-reveal>
+      <div class="box">
+        <img class="pa" src="assets/web/books-lean.jpg" alt="연구실의 김현철 교수">
+        <img class="pb" src="assets/web/portrait-about.jpg" alt="책을 든 김현철 교수">
       </div>
+      <div class="tag">서울대학교<br>제 00대<br>총장후보</div>
     </div>
-    <div class="about-grid">
-      <div class="about-photo" data-reveal>
-        <div class="imgbox"><img src="assets/web/portrait-about.jpg" alt="연구실의 김현철 교수"></div>
-        <div class="cap">서울대 국제대학원 연구실에서</div>
+    <div class="about-body" data-reveal>
+      <span class="eyebrow">Leader is everything</span>
+      <h2>안녕하십니까 김현철입니다.</h2>
+      <div class="lead">
+        <p>저는 평생 한일기업의 혁신을 연구하였습니다. 학부와 대학원에서 경영학을 공부하였고 일본에 유학한 뒤로는 저성장 위기 속에서 생존을 위하여 몸부림친 일본기업들을 연구하였습니다. 서울대 국제대학원 일본전공 교수로 부임한 뒤에는 저성장 시대 한국과 한국기업들의 혁신을 연구하였습니다. 저성장에 관한 저의 책이 베스트셀러가 되면서 이것을 애독한 독자 한 분 때문에 대통령 경제보좌관으로 근무하였고, 청와대 근무 중에도 책을 출간하여 국가 비전으로 만든 진기록도 가지고 있습니다.</p>
+        <p>저는 이제 학자 인생 마지막으로 서울대에 봉사하고자 합니다. 그것도 제가 연구해 온 것을 살려서 서울대를 과감하게 혁신하고자 합니다. 저는 오로지 저의 업적과 성과, 역량, 비전, 실행력으로 승부하고자 합니다. 이를 잘 살펴보시고 저와 함께 해 주시기를 바랍니다. 서울대에 혁신의 바람이 불 것입니다.</p>
       </div>
-      <div class="about-body" data-reveal>
-        <p class="quote">“저는 학자 인생의 마지막으로 서울대에 봉사하고자 합니다. 제가 연구해 온 것을 살려, 서울대를 과감하게 혁신하겠습니다.”</p>
-        <p>학부와 대학원에서 경영학을 공부하였고, 일본에 유학한 뒤로는 저성장 위기 속에서 생존을 위하여 몸부림친 일본 기업들을 연구하였습니다. 서울대 국제대학원 일본전공 교수로 부임한 뒤에는 저성장 시대 한국과 한국 기업들의 혁신을 연구하였습니다.</p>
-        <p>저성장에 관한 저의 책이 베스트셀러가 되면서, 이를 애독한 한 독자 덕분에 대통령 경제보좌관으로 근무하였고, 청와대 근무 중에도 책을 출간하여 국가 비전으로 만든 진기록을 가지고 있습니다.</p>
-        <p>저는 오로지 저의 업적과 성과, 역량, 비전, 실행력으로 승부하고자 합니다. 이를 잘 살펴보시고 저와 함께 해 주시기를 바랍니다. 서울대에 혁신의 바람이 불 것입니다.</p>
-        <a href="#vision" class="morelink">8대 핵심 공약 보기 →</a>
-        <div class="sign">
-          <div class="who"><b>김현철</b><span>서울대학교 국제대학원 교수 · 前 대통령 경제보좌관</span></div>
-        </div>
-      </div>
+      <a href="#vision" class="btn btn-outline">More Information <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -619,157 +297,135 @@ body[data-hero="a"] .vnav{position:fixed;top:50%;transform:translateY(-50%);righ
 <!-- ============ VISION ============ -->
 <section class="vision pad-y" id="vision" data-screen-label="Vision">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <div class="left">
-        <span class="sec-index">03 / VISION</span>
-        <h2>김현철의 서울대 비전</h2>
-      </div>
+    <div class="section-head" data-reveal>
       <span class="eyebrow">8대 핵심 공약</span>
+      <h2>김현철의 서울대 비전</h2>
+      <p class="sub">투명한 리더십으로 신뢰받는 서울대를 만들겠습니다. 총장의 권한과 활동을 구성원과 공유하고, 성과에 대해 책임지는 열린 대학 운영을 실현하겠습니다.</p>
     </div>
-    <div class="vintro" data-reveal>
-      <div class="big">투명한 리더십으로<br>신뢰받는 서울대.</div>
-      <div class="txt">총장의 권한과 활동을 구성원과 공유하고, 성과에 대해 책임지는 열린 대학 운영을 실현하겠습니다. 여덟 개의 약속으로 서울대의 대전환을 시작합니다.</div>
-    </div>
-    <div class="vgrid">
-      <a href="#" class="vcard active" data-reveal>
-        <div class="arrow">›</div>
-        <span class="vn">01</span>
-        <div class="vtitle">열린 총장실</div>
-        <div class="vlabel">Open Governance</div>
-        <div class="vdesc">총장의 활동과 성과를 투명하게 공개하고 구성원과 함께 평가받겠습니다.</div>
+    <div class="vgrid" data-reveal>
+      <a href="#" class="vcard">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">열린 총장실</div>
+          <div class="vlabel">Open Governance</div>
+          <div class="vdesc">총장의 활동과 성과를 투명하게 공개하고 구성원과 함께 평가받겠습니다.</div>
+        </div>
       </a>
-      <a href="#" class="vcard" data-reveal>
-        <div class="arrow">›</div>
-        <span class="vn">02</span>
-        <div class="vtitle">법인화 2.0</div>
-        <div class="vlabel">Restructuring</div>
-        <div class="vdesc">법인화의 취지를 되살려 자율과 책임의 대학 운영 체계를 완성하겠습니다.</div>
+      <a href="#" class="vcard">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">법인화 2.0</div>
+          <div class="vlabel">Restructuring</div>
+          <div class="vdesc">법인화의 취지를 되살려 자율과 책임의 대학 운영 체계를 완성하겠습니다.</div>
+        </div>
       </a>
-      <a href="#" class="vcard ghost" data-reveal>
-        <div class="arrow">›</div>
-        <span class="vn">03</span>
-        <div class="vtitle">공약 03</div>
-        <div class="vlabel">Coming soon</div>
-        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      <a href="#" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 03</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
       </a>
-      <a href="#" class="vcard ghost" data-reveal>
-        <div class="arrow">›</div>
-        <span class="vn">04</span>
-        <div class="vtitle">공약 04</div>
-        <div class="vlabel">Coming soon</div>
-        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      <a href="#" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 04</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
       </a>
-      <a href="#" class="vcard ghost" data-reveal>
-        <div class="arrow">›</div>
-        <span class="vn">05</span>
-        <div class="vtitle">공약 05</div>
-        <div class="vlabel">Coming soon</div>
-        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      <a href="#" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 05</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
       </a>
-      <a href="#" class="vcard ghost" data-reveal>
-        <div class="arrow">›</div>
-        <span class="vn">06</span>
-        <div class="vtitle">공약 06</div>
-        <div class="vlabel">Coming soon</div>
-        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      <a href="#" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 06</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
       </a>
-      <a href="#" class="vcard ghost" data-reveal>
-        <div class="arrow">›</div>
-        <span class="vn">07</span>
-        <div class="vtitle">공약 07</div>
-        <div class="vlabel">Coming soon</div>
-        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      <a href="#" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 07</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
       </a>
-      <a href="#" class="vcard ghost" data-reveal>
-        <div class="arrow">›</div>
-        <span class="vn">08</span>
-        <div class="vtitle">공약 08</div>
-        <div class="vlabel">Coming soon</div>
-        <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+      <a href="#" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 08</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ============ DOWNLOAD CTA ============ -->
+<!-- ============ DOWNLOAD ============ -->
 <section class="download pad-y" id="download" data-screen-label="Download">
-  <div class="wrap dl-grid">
-    <div data-reveal>
-      <span class="eyebrow">04 / DOWNLOAD</span>
-      <h2>발전 계획서<br>다운로드</h2>
-      <p>김현철의 서울대 혁신 비전과 구체적인 실행 로드맵을 한 권에 담았습니다. 서울대의 다음 4년을 함께 그려 주십시오.</p>
-    </div>
-    <div class="dl-card" data-reveal>
-      <div class="ico">PDF</div>
-      <div class="fname">김현철 발전계획서</div>
-      <div class="fmeta">서울대학교 총장후보 · 2026</div>
-      <div class="bar"></div>
-      <div class="dl-actions">
-        <a href="#" class="btn btn-light">PDF 다운로드 ↓</a>
-        <span class="dl-meta">곧 공개됩니다</span>
-      </div>
-    </div>
+  <div class="photo"><img src="assets/web/portrait-hero.jpg" alt="김현철 교수"></div>
+  <div class="wrap" data-reveal>
+    <span class="eyebrow light">자료</span>
+    <h2>발전 계획서 다운로드</h2>
+    <p>김현철의 서울대 혁신 비전과 구체적인 실행 로드맵을 한 권에 담았습니다. 서울대의 다음 4년을 함께 그려 주십시오.</p>
+    <a href="#" class="btn btn-outline-light">Download <span class="arr">→</span></a>
   </div>
 </section>
 
 <!-- ============ PUBLICATIONS ============ -->
 <section class="pubs pad-y" id="pubs" data-screen-label="Publications">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <div class="left">
-        <span class="sec-index">05 / PUBLICATIONS</span>
-        <h2>김현철의 대표 저서들</h2>
-        <p class="sub">저성장 시대의 돌파구를 묻다 — 한국과 일본을 넘나든 30여 년 연구의 기록.</p>
-      </div>
-      <a href="#" class="morelink">전체 저서 보기 →</a>
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">저서 및 출간물</span>
+      <h2>김현철의 대표 저서들</h2>
     </div>
-    <div class="pub-grid">
-      <div class="pub-photo" data-reveal>
-        <div class="imgbox"><img src="assets/web/books-lean.jpg" alt="저서와 함께한 김현철 교수"></div>
-      </div>
-      <div data-reveal>
-        <div class="pub-stat">
-          <div class="item"><div class="num">33</div><div class="lab">단독·공저 저서</div></div>
-          <div class="item"><div class="num">16</div><div class="lab">일본 출간 저서</div></div>
-          <div class="item"><div class="num">30+</div><div class="lab">년의 연구</div></div>
+    <div class="pubgrid" data-reveal>
+      <article class="pubcard">
+        <div class="pubcover"><span class="c1"></span><span class="c2"></span></div>
+        <div class="pbody">
+          <div class="meta"><span class="cat">경제·경영</span><span class="date">2015 · More Info</span></div>
+          <h3>저성장시대 어떻게 돌파할 것인가</h3>
+          <p>한국 경제가 저성장에 빠져들면서 저성장 시대를 어떻게 헤쳐 나가야 하는가는 많은 분들의 관심사였습니다. 일본과 한국에서의 연구 경험을 토대로 2015년에 출간한 대중서 《저성장시대 어떻게 돌파할 것인가》는 큰 반향을 일으켰습니다.</p>
         </div>
-        <div class="pub-list">
-          <div class="pub-item">
-            <span class="pn">01</span>
-            <div>
-              <span class="tag">경제·경영</span>
-              <h3>저성장시대 어떻게 돌파할 것인가</h3>
-              <p>한국 경제가 저성장에 빠져들면서, 이 시대를 어떻게 헤쳐 나가야 하는가는 많은 분들의 관심사였습니다. 일본과 한국에서의 연구 경험을 토대로 2015년 출간한 이 대중서는 큰 반향을 일으켰습니다.</p>
-            </div>
-          </div>
-          <div class="pub-item">
-            <span class="pn">02</span>
-            <div>
-              <span class="tag">인문·사회</span>
-              <h3>일본이 온다</h3>
-              <p>2023년 하반기, 국제대학원 원장직을 수행하며 출간한 대중서입니다. 일본의 대외적 팽창이 한국에 어떠한 영향을 미치는지를 설명한 책입니다.</p>
-            </div>
-          </div>
-          <div class="pub-item">
-            <span class="pn">03</span>
-            <div>
-              <span class="tag">학술·전문</span>
-              <h3>편의점 업태의 혁신</h3>
-              <p>일본에서 출간된 16권 중 가장 대표적인 저서입니다. 2001년 출간되어, 소매유통에 관한 일본의 기존 이론들을 바꾸어 놓은 책으로 평가받습니다.</p>
-            </div>
-          </div>
+      </article>
+      <article class="pubcard">
+        <div class="pubcover"><span class="c1"></span><span class="c2"></span></div>
+        <div class="pbody">
+          <div class="meta"><span class="cat">인문·사회</span><span class="date">2023 · More Info</span></div>
+          <h3>일본이 온다</h3>
+          <p>2023년 하반기에 출간한 이 책은 국제대학원 원장직을 수행하면서 출간한 대중서입니다. 글이 적힌 일본의 대외적인 팽창이 한국에 어떠한 영향을 미치는지를 설명한 책입니다.</p>
         </div>
-      </div>
+      </article>
+      <article class="pubcard">
+        <div class="pubcover"><span class="c1"></span><span class="c2"></span></div>
+        <div class="pbody">
+          <div class="meta"><span class="cat">학술·전문</span><span class="date">2001 · More Info</span></div>
+          <h3>편의점 업태의 혁신</h3>
+          <p>33권의 저서 중 일본에서 출간된 책은 16권(단독 저서 3권과 공저 13권)입니다. 이들 중 가장 대표적인 저서가 2001년 출간한 《편의점 업태의 혁신》입니다. 이 책은 소매유통에 관한 일본의 기존 이론들을 바꾸어 놓은 책입니다.</p>
+        </div>
+      </article>
     </div>
-  </div>
-</section>
-
-<!-- ============ CLOSING BAND ============ -->
-<section class="closing" data-screen-label="Closing">
-  <img src="assets/web/books-row.jpg" alt="연구실의 김현철 교수">
-  <div class="wrap inner" data-reveal>
-    <span class="eyebrow">For Seoul National University</span>
-    <blockquote>서울대에 혁신의<br>바람이 불 것입니다.</blockquote>
+    <div class="more" data-reveal>
+      <a href="#" class="btn btn-outline">More Articles <span class="arr">→</span></a>
+    </div>
   </div>
 </section>
 
@@ -777,84 +433,91 @@ body[data-hero="a"] .vnav{position:fixed;top:50%;transform:translateY(-50%);righ
 <footer data-screen-label="Footer">
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="name">김현철</div>
-        <div class="desc">서울대학교 제29대 총장후보. 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.</div>
-      </div>
       <div class="foot-col">
         <h4>교수님 소개</h4>
         <a href="#about">인사말</a>
         <a href="#about">프로필</a>
-        <a href="#pubs">이력·경력</a>
+        <a href="#about">연구 분야</a>
       </div>
       <div class="foot-col">
         <h4>비전</h4>
         <a href="#vision">8대 핵심 공약</a>
         <a href="#download">발전계획서</a>
+        <a href="#vision">추진 로드맵</a>
+        <a href="#vision">열린 총장실</a>
+      </div>
+      <div class="foot-col">
+        <h4>이력과 경력</h4>
         <a href="#pubs">대표 저서</a>
+        <a href="#pubs">주요 활동</a>
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
-        <a href="/cdn-cgi/l/email-protection#e685898892878592a6839e878b968a83c885898b"><span class="__cf_email__" data-cfemail="167579786277756256736e777b667a733875797b">[email&#160;protected]</span></a>
-        <a href="#">서울특별시 관악구 관악로 1</a>
-        <a href="#">서울대학교 국제대학원</a>
+        <a href="/cdn-cgi/l/email-protection#97f4f8f9e3f6f4e3d7f2eff6fae7fbf2b9f4f8fa">Email Address</a>
+        <a href="#">Social Link</a>
+        <a href="#">More Information</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span class="cp">© 2026 KIM HYUN-CHUL · ALL RIGHTS RESERVED</span>
-      <div class="soc">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">YouTube</a>
-      </div>
+      © Copyright Text<span>·</span>All rights reserved<span>·</span>More information
     </div>
   </div>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// sticky header shadow
-const header=document.getElementById('top');
-addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>10)},{passive:true});
+// ----- corner flyout submenu -----
+const subData={
+  home:[],
+  about:[['인사말',0],['프로필',1],['학력',2],['주요 경력',3],['연구 분야',4]],
+  vision:[['8대 핵심 공약',0],['발전계획서',1],['추진 로드맵',2]],
+  history:[['대표 저서',0],['주요 활동',1],['언론 보도',2]]
+};
+const activeSub={about:2}; // 기본 활성: 교수님 소개 > 3번째
+const cnSub=document.getElementById('cnSub');
+const cnItems=[...document.querySelectorAll('.cn-main li')];
+function renderSub(key){
+  const items=subData[key]||[];
+  const act=(key==='about')?2:-1;
+  cnSub.innerHTML=items.map((it,i)=>`<a href="#${key==='home'?'top':key}" class="${i===act?'active':''}">${it[0]}</a>`).join('');
+  cnSub.style.display=items.length?'block':'none';
+}
+cnItems.forEach(li=>{
+  li.addEventListener('mouseenter',()=>{
+    cnItems.forEach(x=>x.classList.remove('active'));
+    li.classList.add('active');
+    renderSub(li.dataset.key);
+  });
+});
+const cornerNav=document.querySelector('.corner-nav');
+cornerNav.addEventListener('mouseleave',()=>{
+  cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key==='about'));
+  renderSub('about');
+});
+renderSub('about');
 
-// reveal on scroll (with failsafes so content never stays hidden)
+// ----- reveal on scroll -----
 const reveals=[...document.querySelectorAll('[data-reveal]')];
 const show=el=>el.classList.add('in');
 const io=new IntersectionObserver((es)=>{
   es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})
 },{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
 reveals.forEach(el=>io.observe(el));
-// reveal anything already on-screen right away
 function revealInView(){
   const vh=innerHeight||document.documentElement.clientHeight;
   reveals.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<vh*0.96&&r.bottom>0)show(el);});
 }
 addEventListener('load',revealInView);revealInView();
-// hard failsafe: never leave content invisible
 setTimeout(()=>reveals.forEach(show),1400);
 
-// active nav link
-const sections=[...document.querySelectorAll('section[id]')];
-const links=[...document.querySelectorAll('.nav-links a')];
-const navIO=new IntersectionObserver((es)=>{
-  es.forEach(e=>{
-    if(e.isIntersecting){
-      const id=e.target.id;
-      links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+id));
-    }
-  })
-},{threshold:0.4});
-sections.forEach(s=>navIO.observe(s));
-
-// Hero 디자인 전환 (비교용)
-const hsBtns=document.querySelectorAll('.hero-switch button');
-function setHero(v){
-  document.body.setAttribute('data-hero',v);
-  hsBtns.forEach(b=>b.classList.toggle('on',b.dataset.v===v));
-  try{localStorage.setItem('heroVariant',v)}catch(e){}
-  window.scrollTo(0,0);
+// ----- A/B switch -----
+const psBtns=document.querySelectorAll('.plan-switch button');
+function setPlan(p){
+  document.body.setAttribute('data-plan',p);
+  psBtns.forEach(b=>b.classList.toggle('on',b.dataset.p===p));
+  try{localStorage.setItem('snuPlan',p)}catch(e){}
 }
-hsBtns.forEach(b=>b.addEventListener('click',()=>setHero(b.dataset.v)));
-setHero(localStorage.getItem('heroVariant')||'cur');
+psBtns.forEach(b=>b.addEventListener('click',()=>setPlan(b.dataset.p)));
+setPlan(localStorage.getItem('snuPlan')||'a');
 </script>
 </body>
 </html>
