@@ -206,6 +206,42 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .foot-bottom{text-align:center;padding-top:30px;font-size:12.5px;color:#6E7C97;letter-spacing:.02em}
 .foot-bottom span{margin:0 8px}
 
+/* ---------- mobile nav ---------- */
+.m-toggle{
+  display:none;position:fixed;top:18px;right:18px;z-index:202;
+  width:46px;height:46px;padding:0;
+  background:rgba(14,28,63,.9);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.m-toggle span{width:20px;height:2px;background:#fff;border-radius:1px;display:block;transition:.25s;transform-origin:center}
+.m-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.m-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.m-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.m-menu{
+  display:none;position:fixed;inset:0;z-index:201;
+  background:var(--navy);overflow-y:auto;
+  flex-direction:column;padding:88px var(--pad) 48px;
+}
+.m-menu.open{display:flex}
+.m-home{
+  display:block;padding:20px 0;font-size:24px;font-weight:800;color:#fff;
+  letter-spacing:-0.025em;border-bottom:1px solid rgba(255,255,255,.12);
+}
+.m-group{margin-top:26px}
+.m-cat{
+  display:block;font-size:10.5px;font-weight:700;color:#7FA0EE;
+  letter-spacing:0.12em;text-transform:uppercase;padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:4px;
+}
+.m-group a{
+  display:block;padding:13px 0;font-size:17px;font-weight:600;color:#C4D0E2;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.m-group a:last-child{border-bottom:0}
+.m-group a:active{color:#fff}
+.m-dl{margin-top:36px;justify-content:center;font-size:15px;padding:16px 28px;background:var(--blue);color:#fff;border-color:transparent}
+
 /* ---------- reveal ---------- */
 [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 [data-reveal].in{opacity:1;transform:none}
@@ -218,11 +254,12 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   .about-grid{gap:48px}
 }
 @media(max-width:780px){
-  .corner-nav{position:static;width:100%}
-  .cn-main{display:flex;flex-wrap:wrap;width:100%}
-  .cn-main li{flex:1;text-align:center;padding:15px 10px;border-bottom:0;border-right:1px solid rgba(255,255,255,.1)}
-  .cn-sub{display:none}
-  .hero{min-height:0}
+  .corner-nav{display:none}
+  .m-toggle{display:flex}
+  .hero{min-height:100vh}
+  .hero-bg .imgA{display:none!important}
+  .hero-bg .imgB{display:block!important}
+  .hero-bg img{object-position:61% center}
   .hero-copy{padding:48px 0 56px}
   .about-grid{grid-template-columns:1fr;gap:36px}
   .about-photo{max-width:420px}
@@ -246,6 +283,36 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   <button data-p="a" class="on">A안</button>
   <button data-p="b">B안</button>
 </div>
+
+<!-- Mobile hamburger button -->
+<button class="m-toggle" id="mToggle" aria-label="메뉴 열기">
+  <span></span><span></span><span></span>
+</button>
+<!-- Mobile nav panel -->
+<nav class="m-menu" id="mMenu" aria-hidden="true">
+  <a href="#top" class="m-home" onclick="closeMMenu()">홈페이지</a>
+  <div class="m-group">
+    <span class="m-cat">교수님 소개</span>
+    <a href="#about" onclick="closeMMenu()">인사말</a>
+    <a href="#about" onclick="closeMMenu()">프로필</a>
+    <a href="#about" onclick="closeMMenu()">학력</a>
+    <a href="#about" onclick="closeMMenu()">주요 경력</a>
+    <a href="#about" onclick="closeMMenu()">연구 분야</a>
+  </div>
+  <div class="m-group">
+    <span class="m-cat">비전</span>
+    <a href="#vision" onclick="closeMMenu()">8대 핵심 공약</a>
+    <a href="#download" onclick="closeMMenu()">발전계획서</a>
+    <a href="#vision" onclick="closeMMenu()">추진 로드맵</a>
+  </div>
+  <div class="m-group">
+    <span class="m-cat">이력과 경력</span>
+    <a href="#pubs" onclick="closeMMenu()">대표 저서</a>
+    <a href="#pubs" onclick="closeMMenu()">주요 활동</a>
+    <a href="#pubs" onclick="closeMMenu()">언론 보도</a>
+  </div>
+  <a href="#download" class="btn m-dl" onclick="closeMMenu()">발전계획서 다운로드 →</a>
+</nav>
 
 <!-- ============ HERO ============ -->
 <section class="hero" data-screen-label="Hero">
@@ -508,6 +575,20 @@ function revealInView(){
 }
 addEventListener('load',revealInView);revealInView();
 setTimeout(()=>reveals.forEach(show),1400);
+
+// ----- mobile menu -----
+const mToggle=document.getElementById('mToggle');
+const mMenuEl=document.getElementById('mMenu');
+function closeMMenu(){
+  mToggle.classList.remove('open');
+  mMenuEl.classList.remove('open');
+  mMenuEl.setAttribute('aria-hidden','true');
+}
+mToggle.addEventListener('click',()=>{
+  const open=mMenuEl.classList.toggle('open');
+  mToggle.classList.toggle('open',open);
+  mMenuEl.setAttribute('aria-hidden',String(!open));
+});
 
 // ----- A/B switch -----
 const psBtns=document.querySelectorAll('.plan-switch button');
