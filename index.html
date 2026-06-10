@@ -5,26 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>김현철 · 서울대학교 총장후보</title>
 <meta name="description" content="Leader is everything — 김현철의 서울대 비전. 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.">
-<link rel="canonical" href="https://snu100.github.io/">
-
-<!-- Open Graph / 링크 공유 미리보기 (카카오톡·문자·SNS) -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="김현철 · 서울대학교 총장후보">
-<meta property="og:url" content="https://snu100.github.io/">
-<meta property="og:title" content="김현철 · 서울대학교 총장후보">
-<meta property="og:description" content="Leader is everything — 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.">
-<meta property="og:image" content="https://snu100.github.io/assets/web/portrait-hero.jpg">
-<meta property="og:image:width" content="1400">
-<meta property="og:image:height" content="1960">
-<meta property="og:image:alt" content="김현철 서울대학교 총장후보">
-<meta property="og:locale" content="ko_KR">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="김현철 · 서울대학교 총장후보">
-<meta name="twitter:description" content="Leader is everything — 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.">
-<meta name="twitter:image" content="https://snu100.github.io/assets/web/portrait-hero.jpg">
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root{
@@ -149,7 +129,7 @@ header.scrolled{box-shadow:0 1px 20px rgba(19,41,75,.07)}
   position:relative;
   display:grid;grid-template-columns:1.05fr .95fr;gap:64px;
   align-items:center;
-  padding:78px var(--pad) 64px;
+  padding:78px 0 64px;
 }
 .hero-eyebrow{margin-bottom:30px}
 .hero h1{
@@ -355,6 +335,12 @@ footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
 .foot-col a:hover{color:#fff}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px}
 .foot-bottom .cp{font-size:13px;color:#6E7E9A;font-family:var(--mono);letter-spacing:.02em}
+.foot-bottom .soc{display:flex;gap:10px}
+.foot-bottom .soc a{
+  font-size:12.5px;font-weight:600;color:#B9C5DA;border:1px solid rgba(255,255,255,.14);
+  padding:8px 14px;border-radius:3px;transition:.15s;
+}
+.foot-bottom .soc a:hover{border-color:#fff;color:#fff}
 
 /* ---------- reveal ---------- */
 [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -372,7 +358,7 @@ footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
   .nav-links{display:none}
   .menu-toggle{display:flex}
   .nav-right .btn{display:none}
-  .hero-grid{grid-template-columns:1fr;padding:54px var(--pad) 40px}
+  .hero-grid{grid-template-columns:1fr;padding:54px 0 40px}
   .hero-photo{max-width:420px}
   .hero-photo .frame{inset:14px -14px -14px 14px}
   .creds{grid-template-columns:1fr}
@@ -385,7 +371,7 @@ footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
   .sec-head{flex-direction:column;align-items:flex-start;gap:8px}
 }
 @media(max-width:560px){
-  :root{--pad:24px}
+  :root{--pad:20px}
   .vgrid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .pub-item{grid-template-columns:1fr;gap:8px}
@@ -402,10 +388,84 @@ footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
 .m-menu.open{display:flex}
 .m-menu a{padding:13px 0;font-size:17px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line)}
 .m-menu .btn{margin-top:14px;justify-content:center}
-.m-menu .btn-primary{color:#fff}
+
+/* ===== Hero 변형 (비교용 스위치) ===== */
+.hero-switch{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:200;display:flex;align-items:center;gap:4px;background:rgba(19,41,75,.92);backdrop-filter:blur(8px);padding:5px 6px;border-radius:7px;box-shadow:0 12px 30px -10px rgba(0,0,0,.45)}
+.hero-switch .lbl{color:#8493AC;font-size:10.5px;font-family:var(--mono);letter-spacing:.12em;padding:0 6px}
+.hero-switch button{border:0;background:transparent;color:#C4D0E2;font-family:'Pretendard',sans-serif;font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:5px;cursor:pointer;white-space:nowrap;transition:.15s}
+.hero-switch button:hover{color:#fff}
+.hero-switch button.on{background:#fff;color:var(--navy)}
+
+.heroV{display:none;background:var(--navy);color:#fff;position:relative}
+.heroV .eyebrow{color:#8FB4EE}
+.heroV .eyebrow::before{background:#8FB4EE}
+.heroV h1{font-size:clamp(40px,5vw,74px);line-height:1.0;font-weight:800;letter-spacing:-0.035em;margin-top:22px}
+.heroV h1 .dot{color:#8FB4EE}
+.heroV .kr{margin-top:22px;font-size:clamp(20px,2.4vw,28px);font-weight:700}
+body[data-hero="a"] #top,body[data-hero="a"] .hero,body[data-hero="b"] #top,body[data-hero="b"] .hero{display:none}
+body[data-hero="a"] .heroA{display:block}
+body[data-hero="b"] .heroB{display:block}
+
+/* A: 이미지 좌측 + 세로 메뉴 */
+.heroA-wrap{max-width:var(--maxw);margin:0 auto;padding:96px 232px 96px var(--pad);display:grid;grid-template-columns:minmax(0,0.92fr) 1fr;gap:56px;align-items:center;min-height:720px}
+.heroA-img{aspect-ratio:1/1.08;border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.heroA-img img{width:100%;height:100%;object-fit:cover;object-position:50% 16%}
+.vnav{display:flex;flex-direction:column;list-style:none}
+.vnav>li{position:relative}
+.vnav>li>a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:92px;padding:20px 8px;color:#fff;font-weight:600;font-size:13.5px;line-height:1.25;text-align:center;transition:.15s;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.13)}
+.vnav>li:last-child>a{border-bottom:0}
+.vnav .vico{width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.92}
+.vnav .vico svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.vnav>li:hover>a{background:#fff;color:var(--navy)}
+.vnav .submenu{display:none;position:absolute;top:0;right:100%;min-width:194px;background:#fff;box-shadow:-20px 26px 50px -22px rgba(0,0,0,.45);overflow:hidden;z-index:5;border-right:1px solid var(--line)}
+.vnav>li:hover .submenu{display:block}
+.vnav .submenu .smt{display:block;padding:15px 18px 11px;font-size:11.5px;font-family:var(--mono);letter-spacing:.07em;color:var(--muted-2);border-bottom:1px solid var(--line)}
+.vnav .submenu a{display:block;padding:13px 18px;color:var(--ink);font-size:14px;border-bottom:1px solid var(--line);transition:.12s;white-space:nowrap}
+.vnav .submenu a:last-child{border-bottom:0}
+.vnav .submenu a:hover,.vnav .submenu a.active{background:var(--soft);color:var(--blue);font-weight:600}
+/* 세로 메뉴 — 우측 고정 + 좌측 플라이아웃 패널 */
+body[data-hero="a"] .vnav{position:fixed;top:50%;transform:translateY(-50%);right:max(0px,calc((100vw - 1240px)/2));z-index:120;background:var(--navy);border-radius:5px;box-shadow:0 22px 55px -18px rgba(0,0,0,.6)}
+
+/* B: 이미지 좌측 + 가로 드롭다운 */
+.heroB-top{max-width:var(--maxw);margin:0 auto;padding:30px var(--pad) 0;display:flex;justify-content:flex-end}
+.hnav{display:flex;gap:42px;list-style:none}
+.hnav>li{position:relative}
+.hnav>li>a{display:block;color:#fff;font-weight:600;font-size:15.5px;padding-bottom:20px;white-space:nowrap}
+.hnav>li>a:hover{color:#8FB4EE}
+.hnav .dd{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:182px;background:#fff;border-radius:4px;box-shadow:0 24px 50px -16px rgba(0,0,0,.45);overflow:hidden;z-index:5}
+.hnav>li:hover .dd{display:block}
+.hnav .dd a{display:block;padding:13px 18px;color:var(--ink);font-size:14px;border-bottom:1px solid var(--line);white-space:nowrap}
+.hnav .dd a:last-child{border-bottom:0}
+.hnav .dd a:hover{background:var(--soft);color:var(--blue);font-weight:600}
+.heroB-wrap{max-width:var(--maxw);margin:0 auto;padding:24px var(--pad) 92px;display:grid;grid-template-columns:1fr 1.02fr;gap:50px;align-items:center;min-height:620px}
+.heroB-img{aspect-ratio:5/4;border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.heroB-img img{width:100%;height:100%;object-fit:cover;object-position:50% 16%}
+.heroB-text .sub{margin-top:22px;font-size:18px;color:#B7C4D8;max-width:460px;line-height:1.7}
+
+@media(max-width:900px){
+  .heroA-wrap{grid-template-columns:1fr;gap:28px;min-height:0;padding:54px var(--pad) 40px}
+  .vnav{flex-direction:row;flex-wrap:wrap}
+  body[data-hero="a"] .vnav{position:static;transform:none;right:auto;background:transparent;box-shadow:none;padding:0}
+  .vnav>li>a{min-width:0}
+  .vnav .submenu{position:static;right:auto;margin-top:0;box-shadow:none;border:0}
+  .vnav>li:hover .submenu{display:none}
+  .heroB-top{justify-content:flex-start;padding-top:48px}
+  .hnav{gap:22px;flex-wrap:wrap}
+  .hnav .dd{position:static;transform:none;box-shadow:none;display:none}
+  .heroB-wrap{grid-template-columns:1fr;gap:28px}
+  .hero-switch{top:8px}
+}
 </style>
 </head>
 <body>
+
+<!-- Hero 디자인 비교 컨트롤 (배포 시 제거) -->
+<div class="hero-switch" role="tablist" aria-label="Hero 디자인 선택">
+  <span class="lbl">HERO</span>
+  <button data-v="cur" class="on">현재안</button>
+  <button data-v="a">A · 세로메뉴</button>
+  <button data-v="b">B · 드롭다운</button>
+</div>
 
 <!-- ============ HEADER ============ -->
 <header id="top">
@@ -460,6 +520,69 @@ footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
       <div class="cred"><span class="n">01</span><span class="t">학자<span class="s">서울대 국제대학원 일본전공 교수</span></span></div>
       <div class="cred"><span class="n">02</span><span class="t">정책<span class="s">前 대통령 경제보좌관 · 청와대 근무</span></span></div>
       <div class="cred"><span class="n">03</span><span class="t">저술<span class="s">단독·공저 포함 저서 33권</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HERO 변형 A : 이미지 좌측 + 세로 메뉴(플라이아웃) ===== -->
+<section class="heroV heroA" data-screen-label="Hero A">
+  <div class="heroA-wrap">
+    <div class="heroA-img"><img src="assets/web/portrait-hero.jpg" alt="김현철 총장후보"></div>
+    <div class="heroA-text">
+      <span class="eyebrow">서울대학교 제29대 총장후보</span>
+      <h1>Leader is<br>everything<span class="dot">.</span></h1>
+      <p class="kr">안녕하십니까, 김현철입니다.</p>
+    </div>
+    <ul class="vnav">
+      <li><a href="#top"><span class="vico"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/></svg></span><span class="vlab">홈페이지</span></a></li>
+      <li><a href="#about"><span class="vico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 19c1.6-3.8 11.8-3.8 14 0"/></svg></span><span class="vlab">교수님 소개</span></a>
+        <div class="submenu">
+          <span class="smt">교수님 소개</span>
+          <a href="#about">인사말</a>
+          <a href="#about">프로필</a>
+          <a href="#pubs">이력 · 경력</a>
+        </div>
+      </li>
+      <li><a href="#vision"><span class="vico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.2"/><circle cx="12" cy="12" r="2.4"/></svg></span><span class="vlab">비전</span></a>
+        <div class="submenu">
+          <span class="smt">비전</span>
+          <a href="#vision">8대 핵심 공약</a>
+          <a href="#download">발전계획서</a>
+        </div>
+      </li>
+      <li><a href="#pubs"><span class="vico"><svg viewBox="0 0 24 24"><path d="M12 6v13"/><path d="M12 6c-2-1.4-5-1.4-7 0v13c2-1.4 5-1.4 7 0"/><path d="M12 6c2-1.4 5-1.4 7 0v13c-2-1.4-5-1.4-7 0"/></svg></span><span class="vlab">이력과 경력</span></a>
+        <div class="submenu">
+          <span class="smt">이력과 경력</span>
+          <a href="#pubs">대표 저서</a>
+          <a href="#pubs">주요 활동</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== HERO 변형 B : 이미지 좌측 + 가로 드롭다운 ===== -->
+<section class="heroV heroB" data-screen-label="Hero B">
+  <div class="heroB-top">
+    <ul class="hnav">
+      <li><a href="#top">메인 페이지</a></li>
+      <li><a href="#about">교수님 소개</a>
+        <div class="dd"><a href="#about">인사말</a><a href="#about">프로필</a></div>
+      </li>
+      <li><a href="#vision">비전</a>
+        <div class="dd"><a href="#vision">8대 핵심 공약</a><a href="#download">발전계획서</a></div>
+      </li>
+      <li><a href="#pubs">이력·경력</a>
+        <div class="dd"><a href="#pubs">대표 저서</a><a href="#pubs">주요 활동</a></div>
+      </li>
+    </ul>
+  </div>
+  <div class="heroB-wrap">
+    <div class="heroB-img"><img src="assets/web/portrait-hero.jpg" alt="김현철 총장후보"></div>
+    <div class="heroB-text">
+      <span class="eyebrow">서울대학교 제29대 총장후보</span>
+      <h1>Leader is<br>everything<span class="dot">.</span></h1>
+      <p class="sub">안녕하십니까, 김현철입니다. 투명한 리더십으로 신뢰받는 서울대를 만들겠습니다.</p>
     </div>
   </div>
 </section>
@@ -672,18 +795,23 @@ footer{background:#0C1B33;color:#9DABC2;padding:72px 0 34px}
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
-        <a href="mailto:energy-ecology@naver.com">energy-ecology@naver.com</a>
+        <a href="/cdn-cgi/l/email-protection#e685898892878592a6839e878b968a83c885898b"><span class="__cf_email__" data-cfemail="167579786277756256736e777b667a733875797b">[email&#160;protected]</span></a>
         <a href="#">서울특별시 관악구 관악로 1</a>
         <a href="#">서울대학교 국제대학원</a>
       </div>
     </div>
     <div class="foot-bottom">
       <span class="cp">© 2026 KIM HYUN-CHUL · ALL RIGHTS RESERVED</span>
+      <div class="soc">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // sticky header shadow
 const header=document.getElementById('top');
 addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>10)},{passive:true});
@@ -716,6 +844,17 @@ const navIO=new IntersectionObserver((es)=>{
   })
 },{threshold:0.4});
 sections.forEach(s=>navIO.observe(s));
+
+// Hero 디자인 전환 (비교용)
+const hsBtns=document.querySelectorAll('.hero-switch button');
+function setHero(v){
+  document.body.setAttribute('data-hero',v);
+  hsBtns.forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  try{localStorage.setItem('heroVariant',v)}catch(e){}
+  window.scrollTo(0,0);
+}
+hsBtns.forEach(b=>b.addEventListener('click',()=>setHero(b.dataset.v)));
+setHero(localStorage.getItem('heroVariant')||'cur');
 </script>
 </body>
 </html>
