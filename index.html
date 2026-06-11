@@ -63,62 +63,12 @@ a{color:inherit;text-decoration:none}
 .btn .arr{transition:transform .2s}
 .btn:hover .arr{transform:translateX(4px)}
 
-/* ---------- A/B switch ---------- */
-.plan-switch{
-  position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:300;
-  display:flex;align-items:center;gap:3px;background:rgba(14,28,63,.92);
-  backdrop-filter:blur(10px);padding:5px;border-radius:9px;
-  box-shadow:0 14px 34px -12px rgba(0,0,0,.5);
-}
-.plan-switch .lbl{color:#8493AC;font-size:10.5px;font-family:var(--mono);letter-spacing:.14em;padding:0 9px 0 7px}
-.plan-switch button{
-  border:0;background:transparent;color:#C4D0E2;font-family:'Pretendard',sans-serif;
-  font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;cursor:pointer;transition:.15s;
-}
-.plan-switch button:hover{color:#fff}
-.plan-switch button.on{background:#fff;color:var(--navy)}
-
-/* ---------- menu-switch control ---------- */
-.menu-switch{
-  position:fixed;top:18px;left:18px;z-index:300;
-  display:flex;align-items:center;gap:3px;background:rgba(14,28,63,.92);
-  backdrop-filter:blur(10px);padding:5px;border-radius:9px;
-  box-shadow:0 14px 34px -12px rgba(0,0,0,.5);
-}
-.menu-switch .lbl{color:#8493AC;font-size:10.5px;font-family:var(--mono);letter-spacing:.14em;padding:0 9px 0 7px}
-.menu-switch button{
-  border:0;background:transparent;color:#C4D0E2;font-family:'Pretendard',sans-serif;
-  font-size:13px;font-weight:700;padding:8px 14px;border-radius:6px;cursor:pointer;transition:.15s;
-}
-.menu-switch button:hover{color:#fff}
-.menu-switch button.on{background:#fff;color:var(--navy)}
-
-/* MENU_1: 서브메뉴 항목에 border-bottom */
-body[data-menu="1"] .cn-sub a{border-bottom:1px solid rgba(58,70,96,.12)}
-body[data-menu="1"] .cn-sub a:last-child{border-bottom:0}
-
-/* MENU_3: horizontal top nav */
-body[data-menu="3"] .corner-nav{display:none}
-.top-nav{display:none;position:absolute;top:0;left:0;right:0;z-index:6;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,transparent 100%)}
-body[data-menu="3"] .top-nav{display:flex;justify-content:flex-end}
-.tn-list{list-style:none;display:flex;padding:0 150px 0 var(--pad)}
-.tn-list>li{position:relative}
-.tn-list>li>a{display:block;padding:22px 22px;color:#E7ECF6;font-size:14.5px;font-weight:600;white-space:nowrap;letter-spacing:-0.01em;transition:.15s;}
-.tn-list>li:hover>a{background:rgba(255,255,255,.08)}
-.tn-list>li.active>a{background:var(--blue);color:#fff}
-.tn-drop{display:none;position:absolute;top:100%;left:0;min-width:150px;background:#F4F5F8;padding:7px 0;box-shadow:0 20px 40px -16px rgba(0,0,0,.45);z-index:7;}
-.tn-list>li:hover .tn-drop{display:block}
-.tn-drop a{display:block;color:#3A4660;font-size:13.5px;font-weight:500;padding:12px 22px;transition:.12s;white-space:nowrap;}
-.tn-drop a:hover{background:#E7EBF3;color:var(--blue)}
-
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:845px;overflow:hidden;display:flex;align-items:flex-end;background:#0b1222}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:130%;object-fit:cover}
 .hero-bg .imgA{display:block}
 .hero-bg .imgB{display:none}
-body[data-plan="b"] .hero-bg .imgA{display:none}
-body[data-plan="b"] .hero-bg .imgB{display:block}
 .hero::after{
   content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(90deg,rgba(8,14,30,.82),rgba(8,14,30,.34) 46%,rgba(8,14,30,0) 70%),
@@ -159,8 +109,6 @@ body[data-plan="b"] .hero-bg .imgB{display:block}
 .about-photo .box img{width:100%;height:100%;object-fit:cover}
 .about-photo .box .pa{display:block}
 .about-photo .box .pb{display:none}
-body[data-plan="b"] .about-photo .box .pa{display:none}
-body[data-plan="b"] .about-photo .box .pb{display:block}
 .about-photo .tag{
   position:absolute;right:0;bottom:34px;background:var(--navy);color:#fff;
   padding:20px 26px;line-height:1.5;font-size:16px;font-weight:700;letter-spacing:-0.01em;
@@ -206,12 +154,12 @@ body[data-plan="b"] .about-photo .box .pb{display:block}
 .download h2{font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-0.03em;line-height:1.12;margin:16px 0 20px}
 .download p{font-size:16px;color:#9FAAC0;line-height:1.7;max-width:520px;margin:0 auto 34px}
 .download .photo{
-  position:absolute;right:max(0px,calc((100% - var(--maxw))/2));top:0;bottom:0;width:42%;z-index:1;pointer-events:none;
+  position:absolute;right:max(0px,calc((87% - var(--maxw))/2));top:0;bottom:0;width:42%;z-index:1;pointer-events:none;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 55%);
   mask-image:linear-gradient(90deg,transparent,#000 55%);
   opacity:.85;
 }
-.download .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.download .photo img{width:620px;height:100%;object-fit:cover;object-position:50% 28%}
 
 /* ---------- PUBLICATIONS ---------- */
 .pubs{background:var(--bluewash)}
@@ -290,8 +238,7 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   .corner-nav{display:none}
   .m-toggle{display:flex}
   .hero{min-height:100vh}
-  .hero-bg img{object-position:61% center}
-  body[data-plan="a"] .hero-bg img{object-position:54% center}
+  .hero-bg img{object-position:54% center}
   .hero-copy{padding:48px 0 56px}
   .about-grid{grid-template-columns:1fr;gap:36px}
   .about-photo{max-width:420px}
@@ -299,8 +246,6 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   .download .photo{display:none}
   .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
   .pad-y{padding:74px 0}
-  .top-nav{display:none!important}
-  .menu-switch{display:none}
 }
 @media(max-width:480px){
   :root{--pad:20px}
@@ -310,21 +255,6 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 </style>
 </head>
 <body data-plan="a">
-
-<!-- ===== A/B 시안 전환 ===== -->
-<div class="plan-switch" role="tablist" aria-label="시안 선택">
-  <span class="lbl">시안</span>
-  <button data-p="a" class="on">A안</button>
-  <button data-p="b">B안</button>
-</div>
-
-<!-- ===== 메뉴 형태 전환 ===== -->
-<div class="menu-switch" role="tablist" aria-label="메뉴 형태 선택">
-  <span class="lbl">메뉴</span>
-  <button data-m="1">1형</button>
-  <button data-m="2" class="on">2형</button>
-  <button data-m="3">3형</button>
-</div>
 
 <!-- Mobile hamburger button -->
 <button class="m-toggle" id="mToggle" aria-label="메뉴 열기">
@@ -371,38 +301,6 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
       <li data-key="history">이력과 경력</li>
     </ul>
     <div class="cn-sub" id="cnSub"></div>
-  </nav>
-  <!-- MENU_3: 가로 드롭다운 nav -->
-  <nav class="top-nav" aria-label="주요 메뉴">
-    <ul class="tn-list">
-      <li data-key="home"><a href="#top">홈페이지</a></li>
-      <li data-key="about">
-        <a href="#about">교수님 소개</a>
-        <div class="tn-drop">
-          <a href="#about">인사말</a>
-          <a href="#about">프로필</a>
-          <a href="#about">학력</a>
-          <a href="#about">주요 경력</a>
-          <a href="#about">연구 분야</a>
-        </div>
-      </li>
-      <li data-key="vision">
-        <a href="#vision">비전</a>
-        <div class="tn-drop">
-          <a href="#vision">8대 핵심 공약</a>
-          <a href="#download">발전계획서</a>
-          <a href="#vision">추진 로드맵</a>
-        </div>
-      </li>
-      <li data-key="history">
-        <a href="#pubs">이력과 경력</a>
-        <div class="tn-drop">
-          <a href="#pubs">대표 저서</a>
-          <a href="#pubs">주요 활동</a>
-          <a href="#pubs">언론 보도</a>
-        </div>
-      </li>
-    </ul>
   </nav>
   <div class="hero-inner wrap">
     <div class="hero-copy">
@@ -522,7 +420,7 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 
 <!-- ============ DOWNLOAD ============ -->
 <section class="download pad-y" id="download" data-screen-label="Download">
-  <div class="photo"><img src="assets/web/download-section.jpg" alt="김현철 교수"></div>
+  <div class="photo"><img src="assets/web/download-section.png" alt="김현철 교수"></div>
   <div class="wrap" data-reveal>
     <span class="eyebrow light">자료</span>
     <h2>발전 계획서 다운로드</h2>
@@ -664,25 +562,6 @@ mToggle.addEventListener('click',()=>{
   mMenuEl.setAttribute('aria-hidden',String(!open));
 });
 
-// ----- A/B switch -----
-const psBtns=document.querySelectorAll('.plan-switch button');
-function setPlan(p){
-  document.body.setAttribute('data-plan',p);
-  psBtns.forEach(b=>b.classList.toggle('on',b.dataset.p===p));
-  try{localStorage.setItem('snuPlan',p)}catch(e){}
-}
-psBtns.forEach(b=>b.addEventListener('click',()=>setPlan(b.dataset.p)));
-setPlan(localStorage.getItem('snuPlan')||'a');
-
-// ----- menu type switch -----
-const msBtns=document.querySelectorAll('.menu-switch button');
-function setMenu(m){
-  document.body.setAttribute('data-menu',m);
-  msBtns.forEach(b=>b.classList.toggle('on',b.dataset.m===m));
-  try{localStorage.setItem('snuMenu',m)}catch(e){}
-}
-msBtns.forEach(b=>b.addEventListener('click',()=>setMenu(b.dataset.m)));
-setMenu(localStorage.getItem('snuMenu')||'2');
 </script>
 </body>
 </html>
