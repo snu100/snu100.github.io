@@ -35,11 +35,20 @@ a{color:inherit;text-decoration:none}
 .subhead .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
 .subhead .brand{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
 .subhead .brand span{font-size:13px;font-weight:600;color:#9FB4DE;margin-left:10px;letter-spacing:-0.01em}
-.subnav{display:flex;align-items:center;gap:30px}
+.subnav{display:flex;align-items:center;gap:30px;height:100%}
 .subnav a{font-size:14.5px;font-weight:600;color:#C4D0E2;transition:.15s;letter-spacing:-0.01em}
 .subnav a:hover{color:#fff}
 .subnav a.active{color:#fff}
 .subnav .btn{padding:11px 20px;font-size:13.5px}
+.subnav a.btn-outline-light{color:#fff}
+.subnav a.btn-outline-light:hover{color:var(--navy)}
+.navgroup{position:relative;height:100%;display:flex;align-items:center}
+.navgroup:hover > a{color:#fff}
+.navgroup .dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(4px);background:#fff;min-width:174px;padding:7px 0;border-radius:0 0 8px 8px;box-shadow:0 18px 40px -14px rgba(8,18,45,.34);border:1px solid var(--line);border-top:0;opacity:0;visibility:hidden;transition:opacity .16s ease,transform .16s ease;z-index:70}
+.navgroup:hover .dd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.navgroup .dd a{display:block;padding:11px 20px;font-size:13.5px;font-weight:500;color:#3A4660;white-space:nowrap;letter-spacing:-0.01em;transition:.12s}
+.navgroup .dd a:hover{background:#F1F4FA;color:var(--blue)}
+.navgroup .dd a.active{color:var(--blue);font-weight:700;background:#F1F4FA}
 
 /* banner */
 .page-banner{background:linear-gradient(180deg,#fff,var(--gray));border-bottom:1px solid var(--line);text-align:center;padding:62px 0 70px}
@@ -142,9 +151,33 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
     <a href="index.html#top" class="brand">김현철<span>· 서울대학교 제29대 총장후보</span></a>
     <nav class="subnav" aria-label="주요 메뉴">
       <a href="index.html#top">홈페이지</a>
-      <a href="index.html#about">교수님 소개</a>
-      <a href="index.html#vision">비전</a>
-      <a href="index.html#pubs" class="active">이력과 경력</a>
+      <div class="navgroup">
+        <a href="index.html#about">교수님 소개</a>
+        <div class="dd">
+          <a href="index.html#about">인사말</a>
+          <a href="index.html#about">프로필</a>
+          <a href="index.html#about">학력</a>
+          <a href="index.html#about">주요 경력</a>
+          <a href="index.html#about">연구 분야</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <a href="index.html#vision">비전</a>
+        <div class="dd">
+          <a href="index.html#vision">8대 핵심 공약</a>
+          <a href="vision-incorporation.html">법인화 2.0</a>
+          <a href="index.html#download">발전계획서</a>
+          <a href="index.html#vision">추진 로드맵</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <a href="index.html#pubs" class="active">이력과 경력</a>
+        <div class="dd">
+          <a href="index.html#pubs">대표 저서</a>
+          <a href="history-activities.html">주요 활동</a>
+          <a href="history-press.html" class="active">언론 보도</a>
+        </div>
+      </div>
       <a href="index.html#download" class="btn btn-outline-light">발전계획서 <span class="arr">→</span></a>
     </nav>
   </div>
