@@ -479,12 +479,19 @@ const subData={
   history:[['대표 저서',0],['주요 활동',1],['언론 보도',2]]
 };
 const activeSub={about:2}; // 기본 활성: 교수님 소개 > 3번째
+const keyToId={home:'top',about:'about',vision:'vision',history:'pubs'}; // 메뉴 키 → 실제 섹션 id
 const cnSub=document.getElementById('cnSub');
 const cnItems=[...document.querySelectorAll('.cn-main li')];
+function navTo(key){
+  const id=keyToId[key]||key;
+  if(id==='top'){scrollTo({top:0,behavior:'smooth'});return;}
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
 function renderSub(key){
   const items=subData[key]||[];
   const act=(key==='about')?2:-1;
-  cnSub.innerHTML=items.map((it,i)=>`<a href="#${key==='home'?'top':key}" class="${i===act?'active':''}">${it[0]}</a>`).join('');
+  cnSub.innerHTML=items.map((it,i)=>`<a href="#${keyToId[key]||key}" class="${i===act?'active':''}">${it[0]}</a>`).join('');
   cnSub.style.visibility=items.length?'visible':'hidden';
 }
 cnItems.forEach(li=>{
@@ -493,6 +500,7 @@ cnItems.forEach(li=>{
     li.classList.add('active');
     renderSub(li.dataset.key);
   });
+  li.addEventListener('click',()=>navTo(li.dataset.key));
 });
 const cornerNav=document.querySelector('.corner-nav');
 cornerNav.addEventListener('mouseleave',()=>{
