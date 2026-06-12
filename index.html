@@ -283,8 +283,8 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   <div class="m-group">
     <span class="m-cat">이력과 경력</span>
     <a href="#pubs" onclick="closeMMenu()">대표 저서</a>
-    <a href="#pubs" onclick="closeMMenu()">주요 활동</a>
-    <a href="#pubs" onclick="closeMMenu()">언론 보도</a>
+    <a href="history-activities.html">주요 활동</a>
+    <a href="history-press.html">언론 보도</a>
   </div>
   <a href="#download" class="btn m-dl" onclick="closeMMenu()">발전계획서 다운로드 →</a>
 </nav>
@@ -455,7 +455,8 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
       <div class="foot-col">
         <h4>이력과 경력</h4>
         <a href="#pubs">대표 저서</a>
-        <a href="#pubs">주요 활동</a>
+        <a href="history-activities.html">주요 활동</a>
+        <a href="history-press.html">언론 보도</a>
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
@@ -476,7 +477,7 @@ const subData={
   home:[],
   about:[['인사말',0],['프로필',1],['학력',2],['주요 경력',3],['연구 분야',4]],
   vision:[['8대 핵심 공약',0],['발전계획서',1],['추진 로드맵',2]],
-  history:[['대표 저서',0],['주요 활동',1],['언론 보도',2]]
+  history:[['대표 저서','#pubs'],['주요 활동','history-activities.html'],['언론 보도','history-press.html']]
 };
 const activeSub={about:2}; // 기본 활성: 교수님 소개 > 3번째
 const keyToId={home:'top',about:'about',vision:'vision',history:'pubs'}; // 메뉴 키 → 실제 섹션 id
@@ -491,7 +492,7 @@ function navTo(key){
 function renderSub(key){
   const items=subData[key]||[];
   const act=(key==='about')?2:-1;
-  cnSub.innerHTML=items.map((it,i)=>`<a href="#${keyToId[key]||key}" class="${i===act?'active':''}">${it[0]}</a>`).join('');
+  cnSub.innerHTML=items.map((it,i)=>{const href=(typeof it[1]==='string')?it[1]:('#'+(keyToId[key]||key));return `<a href="${href}" class="${i===act?'active':''}">${it[0]}</a>`;}).join('');
   cnSub.style.visibility=items.length?'visible':'hidden';
 }
 cnItems.forEach(li=>{
