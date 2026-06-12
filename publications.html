@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전체 저서 · 김현철 서울대학교 제29대 총장후보</title>
+<meta name="description" content="김현철 교수의 국내외 저서와 번역판 전체 목록">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --navy:#0E1C3F;--navy-2:#0A1530;--blue:#2D55D4;--blue-2:#3961E0;--blue-3:#1E40B0;
+  --blue-bright:#3A66E6;--ink:#1A2230;--muted:#5E6B80;--muted-2:#94A0B2;
+  --line:#E5E8EE;--line-2:#D5DAE3;--gray:#EDEEF0;--bluewash:#E7EDF8;--paper:#FFFFFF;
+  --maxw:1180px;--pad:40px;--headh:68px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+
+.eyebrow{font-size:14px;font-weight:700;color:var(--blue);letter-spacing:0.01em;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:15px 28px;border-radius:5px;transition:.18s ease;cursor:pointer;border:1px solid transparent;line-height:1;white-space:nowrap}
+.btn-outline{border-color:var(--line-2);color:var(--navy);background:#fff}
+.btn-outline:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+.btn-outline-light{border-color:rgba(255,255,255,.45);color:#fff;background:transparent}
+.btn-outline-light:hover{background:#fff;color:var(--navy)}
+.btn .arr{transition:transform .2s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* top header */
+.subhead{position:sticky;top:0;z-index:60;height:var(--headh);background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.subhead .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
+.subhead .brand{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.subhead .brand span{font-size:13px;font-weight:600;color:#9FB4DE;margin-left:10px;letter-spacing:-0.01em}
+.subnav{display:flex;align-items:center;gap:30px;height:100%}
+.subnav a{font-size:14.5px;font-weight:600;color:#C4D0E2;transition:.15s;letter-spacing:-0.01em}
+.subnav a:hover{color:#fff}
+.subnav a.active{color:#fff}
+.subnav .btn{padding:11px 20px;font-size:13.5px}
+.subnav a.btn-outline-light{color:#fff}
+.subnav a.btn-outline-light:hover{color:var(--navy)}
+.navgroup{position:relative;height:100%;display:flex;align-items:center}
+.navgroup:hover > a{color:#fff}
+.navgroup .dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(4px);background:#fff;min-width:174px;padding:7px 0;border-radius:0 0 8px 8px;box-shadow:0 18px 40px -14px rgba(8,18,45,.34);border:1px solid var(--line);border-top:0;opacity:0;visibility:hidden;transition:opacity .16s ease,transform .16s ease;z-index:70}
+.navgroup:hover .dd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.navgroup .dd a{display:block;padding:11px 20px;font-size:13.5px;font-weight:500;color:#3A4660;white-space:nowrap;letter-spacing:-0.01em;transition:.12s}
+.navgroup .dd a:hover{background:#F1F4FA;color:var(--blue)}
+.navgroup .dd a.active{color:var(--blue);font-weight:700;background:#F1F4FA}
+
+/* banner */
+.page-banner{background:linear-gradient(180deg,#fff,var(--gray));border-bottom:1px solid var(--line);text-align:center;padding:62px 0 70px}
+.page-banner .eyebrow{margin-bottom:16px}
+.page-banner h1{font-size:clamp(34px,4.6vw,54px);font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.1}
+.page-banner .bsub{font-size:15.5px;color:var(--muted);margin-top:18px;line-height:1.7}
+
+/* publications grid */
+.pubsall{padding:64px 0 100px}
+.gsec{margin-bottom:56px}
+.gsec:last-child{margin-bottom:0}
+.gsec > h2{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;padding-bottom:13px;border-bottom:2px solid var(--navy);margin-bottom:24px;display:flex;align-items:baseline;gap:10px}
+.gsec > h2 .en{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.04em}
+.gsec > h2 .cnt{margin-left:auto;font-size:13px;font-weight:700;color:var(--muted-2)}
+.allgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.bk{display:flex;flex-direction:column;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 0 rgba(20,30,55,.04);transition:.2s}
+.bk:hover{transform:translateY(-5px);box-shadow:0 24px 44px -26px rgba(20,40,90,.4)}
+.bk .cov{aspect-ratio:1/1.16;background:linear-gradient(180deg,#F2F3F5,#E6E8EC);display:flex;align-items:center;justify-content:center;padding:26px;position:relative}
+.bk .cov img{width:auto;max-width:74%;max-height:100%;object-fit:contain;border-radius:1px;box-shadow:0 0 0 1px rgba(20,30,55,.07),0 2px 5px rgba(20,30,55,.13),0 16px 30px -14px rgba(20,30,55,.4);transition:transform .22s}
+.bk:hover .cov img{transform:translateY(-3px)}
+.bk .cov .more{position:absolute;right:14px;bottom:14px;font-size:11.5px;font-weight:700;color:var(--blue);background:var(--bluewash);padding:5px 10px;border-radius:4px}
+.bk .ib{padding:18px 18px 22px;flex:1;display:flex;flex-direction:column}
+.bk .cat{font-size:12px;font-weight:700;color:var(--blue);margin-bottom:8px}
+.bk h3{font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.42}
+.bk .desc{font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:10px}
+
+/* footer */
+footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.09)}
+.foot-col h4{font-size:14.5px;font-weight:800;color:#fff;letter-spacing:-0.01em;margin-bottom:22px}
+.foot-col a{display:block;font-size:14px;color:#93A0B8;padding:8px 0;transition:.15s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{text-align:center;padding-top:30px;font-size:12.5px;color:#6E7C97;letter-spacing:.02em}
+.foot-bottom span{margin:0 8px}
+
+/* mobile nav */
+.m-toggle{display:none;position:fixed;top:11px;right:18px;z-index:202;width:46px;height:46px;padding:0;background:rgba(14,28,63,.9);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:6px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.m-toggle span{width:20px;height:2px;background:#fff;border-radius:1px;display:block;transition:.25s;transform-origin:center}
+.m-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.m-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.m-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.m-menu{display:none;position:fixed;inset:0;z-index:201;background:var(--navy);overflow-y:auto;flex-direction:column;padding:88px var(--pad) 48px}
+.m-menu.open{display:flex}
+.m-home{display:block;padding:20px 0;font-size:24px;font-weight:800;color:#fff;letter-spacing:-0.025em;border-bottom:1px solid rgba(255,255,255,.12)}
+.m-group{margin-top:26px}
+.m-cat{display:block;font-size:10.5px;font-weight:700;color:#7FA0EE;letter-spacing:0.12em;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:4px}
+.m-group a{display:block;padding:13px 0;font-size:17px;font-weight:600;color:#C4D0E2;border-bottom:1px solid rgba(255,255,255,.06)}
+.m-group a:last-child{border-bottom:0}
+.m-dl{margin-top:36px;justify-content:center;font-size:15px;padding:16px 28px;background:var(--blue);color:#fff;border-color:transparent}
+
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
+
+@media(max-width:1000px){:root{--pad:30px}.allgrid{grid-template-columns:repeat(3,1fr);gap:22px}}
+@media(max-width:780px){.subnav{display:none}.m-toggle{display:flex}.page-banner{padding:48px 0 54px}.pubsall{padding:46px 0 72px}.allgrid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:480px){:root{--pad:20px}.allgrid{grid-template-columns:1fr 1fr;gap:16px}.foot-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<button class="m-toggle" id="mToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+<nav class="m-menu" id="mMenu" aria-hidden="true">
+  <a href="index.html#top" class="m-home">홈페이지</a>
+  <div class="m-group">
+    <span class="m-cat">교수님 소개</span>
+    <a href="index.html#about">인사말</a>
+    <a href="index.html#about">프로필</a>
+    <a href="index.html#about">연구 분야</a>
+  </div>
+  <div class="m-group">
+    <span class="m-cat">비전 · 8대 핵심 공약</span>
+    <a href="vision-incorporation.html">법인화 2.0</a>
+    <a href="index.html#vision">열린 총장실</a>
+    <a href="index.html#download">발전계획서</a>
+  </div>
+  <div class="m-group">
+    <span class="m-cat">이력과 경력</span>
+    <a href="publications.html">대표 저서</a>
+    <a href="history-activities.html">주요 활동</a>
+    <a href="history-press.html">언론 보도</a>
+  </div>
+  <a href="index.html#download" class="btn m-dl">발전계획서 다운로드 →</a>
+</nav>
+
+<header class="subhead">
+  <div class="wrap">
+    <a href="index.html#top" class="brand">김현철<span>· 서울대학교 제29대 총장후보</span></a>
+    <nav class="subnav" aria-label="주요 메뉴">
+      <a href="index.html#top">홈페이지</a>
+      <div class="navgroup">
+        <a href="index.html#about">교수님 소개</a>
+        <div class="dd">
+          <a href="index.html#about">인사말</a>
+          <a href="index.html#about">프로필</a>
+          <a href="index.html#about">학력</a>
+          <a href="index.html#about">주요 경력</a>
+          <a href="index.html#about">연구 분야</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <a href="index.html#vision">비전</a>
+        <div class="dd">
+          <a href="index.html#vision">8대 핵심 공약</a>
+          <a href="vision-incorporation.html">법인화 2.0</a>
+          <a href="index.html#download">발전계획서</a>
+          <a href="index.html#vision">추진 로드맵</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <a href="index.html#pubs" class="active">이력과 경력</a>
+        <div class="dd">
+          <a href="publications.html" class="active">대표 저서</a>
+          <a href="history-activities.html">주요 활동</a>
+          <a href="history-press.html">언론 보도</a>
+        </div>
+      </div>
+      <a href="index.html#download" class="btn btn-outline-light">발전계획서 <span class="arr">→</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="wrap">
+    <span class="eyebrow">이력과 경력 · 대표 저서</span>
+    <h1>전체 저서</h1>
+    <p class="bsub">국내외에서 출간된 김현철 교수의 저서와 번역판입니다. 일본에서만 16권을 포함해 모두 33권을 집필하였습니다.</p>
+  </div>
+</section>
+
+<section class="pubsall">
+  <div class="wrap">
+
+    <div class="gsec" data-reveal>
+      <h2>국내 저서 <span class="en">Korea</span><span class="cnt">4</span></h2>
+      <div class="allgrid">
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-low-growth.webp" alt="저성장시대 어떻게 돌파할 것인가 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">경제·경영</div>
+            <h3>저성장시대 어떻게 돌파할 것인가</h3>
+            <div class="desc">다산북스 · 2015 · 베스트셀러</div>
+          </div>
+        </article>
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-japan-is-coming.webp" alt="일본이 온다 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">인문·사회</div>
+            <h3>일본이 온다</h3>
+            <div class="desc">쌤앤파커스 · 2023</div>
+          </div>
+        </article>
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-strongest-mgmt.webp" alt="세계를 제패한 최강경영 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">경영 · 공저</div>
+            <h3>세계를 제패한 최강경영</h3>
+            <div class="desc">미니플러스 · 노나카 이쿠지로 외 공저</div>
+          </div>
+        </article>
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-inclusive-state.webp" alt="포용국가 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">사회 · 공저</div>
+            <h3>포용국가</h3>
+            <div class="desc">21세기북스 · 성경륭 외 공저</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="gsec" data-reveal>
+      <h2>해외 저서·번역판 <span class="en">Overseas</span><span class="cnt">6</span></h2>
+      <div class="allgrid">
+        <a class="bk" href="history-publications.html">
+          <div class="cov"><img src="assets/web/book-convenience-store.webp" alt="편의점 업태의 혁신 표지" loading="lazy"><span class="more">자세히 ↗</span></div>
+          <div class="ib">
+            <div class="cat">학술·전문</div>
+            <h3>편의점 업태의 혁신</h3>
+            <div class="desc">일본 有斐閣 · 2001 · コンビニエンス・ストア 業態の革新</div>
+          </div>
+        </a>
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-asia-mgmt-jp.webp" alt="アジア最強の経営を考える 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">경영 · 공저</div>
+            <h3 lang="ja">アジア最強の経営を考える</h3>
+            <div class="desc">일본 다이아몬드사 · 노나카 이쿠지로 외 공저</div>
+          </div>
+        </article>
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-asia-conquer-tw.webp" alt="亞洲企業正在征服全世界 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">번역판 · 대만</div>
+            <h3 lang="zh">亞洲企業正在征服全世界</h3>
+            <div class="desc">대만 출간 ·『アジア最強の経営』 중문판</div>
+          </div>
+        </article>
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-jpn-mfg-kor-mkt.webp" alt="日本的製造對上韓國的行銷 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">번역판 · 중화권</div>
+            <h3 lang="zh">日本的製造對上韓國的行銷</h3>
+            <div class="desc">중화권 출간 · 日·韓 기업의 경쟁과 협력</div>
+          </div>
+        </article>
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-emperor-mgmt-jp.webp" alt="殿様経営の日本 皇帝経営の韓国 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">경영 · 일본</div>
+            <h3 lang="ja">殿様経営の日本 皇帝経営の韓国</h3>
+            <div class="desc">일본 United Books · 最強企業のつくり方</div>
+          </div>
+        </article>
+        <article class="bk">
+          <div class="cov"><img src="assets/web/book-systemic-innovation-ru.webp" alt="Эпоха системных инноваций 표지" loading="lazy"></div>
+          <div class="ib">
+            <div class="cat">번역판 · 러시아</div>
+            <h3 lang="ru">Эпоха системных инноваций</h3>
+            <div class="desc">러시아 출간 · 「시스템 혁신의 시대」 번역판</div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:60px" data-reveal>
+      <a href="index.html#pubs" class="btn btn-outline">← 대표 저서로 돌아가기</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col"><h4>교수님 소개</h4><a href="index.html#about">인사말</a><a href="index.html#about">프로필</a><a href="index.html#about">연구 분야</a></div>
+      <div class="foot-col"><h4>비전</h4><a href="index.html#vision">8대 핵심 공약</a><a href="index.html#download">발전계획서</a><a href="vision-incorporation.html">법인화 2.0</a></div>
+      <div class="foot-col"><h4>이력과 경력</h4><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a><a href="history-press.html">언론 보도</a></div>
+      <div class="foot-col"><h4>Contact</h4><a href="mailto:energy-ecology@naver.com">이메일 문의</a><a href="#">Social Link</a><a href="#">More Information</a></div>
+    </div>
+    <div class="foot-bottom">© Copyright Text<span>·</span>All rights reserved<span>·</span>More information</div>
+  </div>
+</footer>
+
+<script>
+const reveals=[...document.querySelectorAll('[data-reveal]')];
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+reveals.forEach(el=>io.observe(el));
+addEventListener('load',()=>reveals.forEach(el=>el.classList.add('in')));
+
+const mToggle=document.getElementById('mToggle'),mMenuEl=document.getElementById('mMenu');
+function closeMMenu(){mToggle.classList.remove('open');mMenuEl.classList.remove('open');mMenuEl.setAttribute('aria-hidden','true')}
+mToggle.addEventListener('click',()=>{const open=mMenuEl.classList.toggle('open');mToggle.classList.toggle('open',open);mMenuEl.setAttribute('aria-hidden',String(!open))});
+mMenuEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMMenu));
+</script>
+</body>
+</html>
