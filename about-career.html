@@ -49,12 +49,12 @@ a{color:inherit;text-decoration:none}
 .navgroup .dd a:hover{background:#F1F4FA;color:var(--blue)}
 .navgroup .dd a.active{color:var(--blue);font-weight:700;background:#F1F4FA}
 
-.page-banner{background:linear-gradient(180deg,#fff,var(--gray));border-bottom:1px solid var(--line);text-align:center;padding:62px 0 70px}
+.page-banner{position:relative;background:linear-gradient(180deg,#fff,var(--gray));border-bottom:1px solid var(--line);text-align:center;height:265px;display:flex;flex-direction:column;justify-content:center;padding:44px 0}
 .page-banner .eyebrow{margin-bottom:16px}
 .page-banner h1{font-size:clamp(34px,4.6vw,54px);font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.1}
 
 .detail{padding:64px 0 100px}
-.detail-grid{display:grid;grid-template-columns:262px 1fr;gap:58px;align-items:start}
+.detail-grid{display:block}
 .side{position:sticky;top:calc(var(--headh) + 24px)}
 .side .cat{background:var(--gray);border:1px solid var(--line-2);font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;padding:17px 20px}
 .side ul{list-style:none;border:1px solid var(--line-2);border-top:0}
@@ -111,13 +111,25 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .m-group a:last-child{border-bottom:0}
 .m-dl{margin-top:36px;justify-content:center;font-size:15px;padding:16px 28px;background:var(--blue);color:#fff;border-color:transparent}
 
+/* corner flyout nav */
+.corner-nav{position:absolute;top:0;right:0;z-index:6;display:flex;height:auto;font-size:0}
+.cn-main{list-style:none;background:rgba(14,28,63,.86);backdrop-filter:blur(6px);min-width:118px}
+.cn-main li{color:#E7ECF6;font-size:14.5px;font-weight:600;padding:21px 22px;cursor:pointer;text-align:center;border-bottom:1px solid rgba(255,255,255,.1);transition:.15s;letter-spacing:-0.01em;white-space:nowrap}
+.cn-main li:last-child{border-bottom:0}
+.cn-main li:hover{background:rgba(255,255,255,.08)}
+.cn-main li.active{background:var(--blue);color:#fff}
+.cn-sub{background:#F4F5F8;min-width:160px;padding:7px 0}
+.cn-sub a{display:block;text-align:center;color:#3A4660;font-size:13.5px;font-weight:500;padding:12px 22px;transition:.12s;white-space:nowrap}
+.cn-sub a:hover{background:#E7EBF3;color:var(--blue)}
+.cn-sub a.active{color:var(--blue);font-weight:700;background:#E7EBF3}
+
 [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 [data-reveal].in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
 
 @media(max-width:1000px){:root{--pad:30px}.detail-grid{gap:42px}}
 @media(max-width:900px){.detail-grid{grid-template-columns:1fr;gap:34px}.side{position:static}}
-@media(max-width:780px){.subnav{display:none}.m-toggle{display:flex}.page-banner{padding:48px 0 54px}.detail{padding:46px 0 72px}.foot-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:780px){.subnav,.corner-nav{display:none}.m-toggle{display:flex}.page-banner{height:150px;padding:48px 0 54px}.detail{padding:46px 0 72px}.foot-grid{grid-template-columns:1fr 1fr;gap:30px}}
 @media(max-width:480px){:root{--pad:20px}.foot-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -135,10 +147,11 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
     <a href="about-research.html">연구 분야</a>
   </div>
   <div class="m-group">
-    <span class="m-cat">비전 · 8대 핵심 공약</span>
+    <span class="m-cat">비전 · 12대 핵심 공약</span>
+    <a href="vision.html">열린 총장실</a>
     <a href="vision-incorporation.html">법인화 2.0</a>
-    <a href="index.html#vision">열린 총장실</a>
-    <a href="index.html#download">발전계획서</a>
+    <a href="vision.html">핵심 공약 03</a>
+    <a href="vision.html">핵심 공약 04</a>
   </div>
   <div class="m-group">
     <span class="m-cat">이력과 경력</span>
@@ -149,44 +162,17 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   <a href="index.html#download" class="btn m-dl">발전계획서 다운로드 →</a>
 </nav>
 
-<header class="subhead">
-  <div class="wrap">
-    <a href="index.html#top" class="brand">김현철<span>· 서울대학교 제29대 총장후보</span></a>
-    <nav class="subnav" aria-label="주요 메뉴">
-      <a href="index.html#top">홈페이지</a>
-      <div class="navgroup">
-        <a href="about-greeting.html" class="active">교수님 소개</a>
-        <div class="dd">
-          <a href="about-greeting.html">인사말</a>
-          <a href="about-profile.html">프로필</a>
-          <a href="about-education.html">학력</a>
-          <a href="about-career.html" class="active">주요 경력</a>
-          <a href="about-research.html">연구 분야</a>
-        </div>
-      </div>
-      <div class="navgroup">
-        <a href="index.html#vision">비전</a>
-        <div class="dd">
-          <a href="index.html#vision">8대 핵심 공약</a>
-          <a href="vision-incorporation.html">법인화 2.0</a>
-          <a href="index.html#download">발전계획서</a>
-          <a href="index.html#vision">추진 로드맵</a>
-        </div>
-      </div>
-      <div class="navgroup">
-        <a href="index.html#pubs">이력과 경력</a>
-        <div class="dd">
-          <a href="publications.html">대표 저서</a>
-          <a href="history-activities.html">주요 활동</a>
-          <a href="history-press.html">언론 보도</a>
-        </div>
-      </div>
-      <a href="index.html#download" class="btn btn-outline-light">발전계획서 <span class="arr">→</span></a>
-    </nav>
-  </div>
-</header>
 
 <section class="page-banner">
+  <nav class="corner-nav" aria-label="주요 메뉴">
+    <ul class="cn-main">
+      <li data-key="home">홈페이지</li>
+      <li data-key="about">교수님 소개</li>
+      <li data-key="vision">비전</li>
+      <li data-key="history">이력과 경력</li>
+    </ul>
+    <div class="cn-sub" id="cnSub"></div>
+  </nav>
   <div class="wrap">
     <span class="eyebrow">교수님 소개</span>
     <h1>주요 경력</h1>
@@ -195,17 +181,6 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 
 <section class="detail">
   <div class="wrap detail-grid">
-
-    <aside class="side" data-reveal>
-      <div class="cat">교수님 소개</div>
-      <ul>
-        <li><a href="about-greeting.html">인사말</a></li>
-        <li><a href="about-profile.html">프로필</a></li>
-        <li><a href="about-education.html">학력</a></li>
-        <li><a href="about-career.html" class="active">주요 경력</a></li>
-        <li><a href="about-research.html">연구 분야</a></li>
-      </ul>
-    </aside>
 
     <div class="detail-body" data-reveal>
       <h2 class="bhead">주요 경력</h2>
@@ -226,7 +201,7 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col"><h4>교수님 소개</h4><a href="about-greeting.html">인사말</a><a href="about-profile.html">프로필</a><a href="about-research.html">연구 분야</a></div>
-      <div class="foot-col"><h4>비전</h4><a href="index.html#vision">8대 핵심 공약</a><a href="index.html#download">발전계획서</a><a href="vision-incorporation.html">법인화 2.0</a></div>
+      <div class="foot-col"><h4>비전</h4><a href="vision.html">12대 핵심 공약</a><a href="index.html#download">발전계획서</a><a href="vision-incorporation.html">법인화 2.0</a></div>
       <div class="foot-col"><h4>이력과 경력</h4><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a><a href="history-press.html">언론 보도</a></div>
       <div class="foot-col"><h4>Contact</h4><a href="mailto:energy-ecology@naver.com">이메일 문의</a><a href="#">Social Link</a><a href="#">More Information</a></div>
     </div>
@@ -243,6 +218,18 @@ const mToggle=document.getElementById('mToggle'),mMenuEl=document.getElementById
 function closeMMenu(){mToggle.classList.remove('open');mMenuEl.classList.remove('open');mMenuEl.setAttribute('aria-hidden','true')}
 mToggle.addEventListener('click',()=>{const open=mMenuEl.classList.toggle('open');mToggle.classList.toggle('open',open);mMenuEl.setAttribute('aria-hidden',String(!open))});
 mMenuEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMMenu));
+
+// ----- corner flyout menu -----
+const subData={home:[],about:[['인사말','about-greeting.html'],['프로필','about-profile.html'],['학력','about-education.html'],['주요 경력','about-career.html'],['연구 분야','about-research.html']],vision:[['열린 총장실','vision.html'],['법인화 2.0','vision-incorporation.html'],['핵심 공약 03','vision.html'],['핵심 공약 04','vision.html']],history:[['대표 저서','publications.html'],['주요 활동','history-activities.html'],['언론 보도','history-press.html']]};
+const PAGE_KEY='about',PAGE_SUB='about-career.html';
+const keyHref={home:'index.html#top',about:'about-greeting.html',vision:'vision.html',history:'publications.html'};
+const cnSub=document.getElementById('cnSub');
+const cnItems=[...document.querySelectorAll('.cn-main li')];
+function renderSub(key){const items=subData[key]||[];cnSub.innerHTML=items.map(it=>`<a href="${it[1]}"${it[1]===PAGE_SUB?' class="active"':''}>${it[0]}</a>`).join('');cnSub.style.visibility=items.length?'visible':'hidden';}
+cnItems.forEach(li=>{li.addEventListener('mouseenter',()=>{cnItems.forEach(x=>x.classList.remove('active'));li.classList.add('active');renderSub(li.dataset.key);});li.addEventListener('click',()=>{location.href=keyHref[li.dataset.key]||'index.html';});});
+document.querySelector('.corner-nav').addEventListener('mouseleave',()=>{cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);});
+cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);
+
 </script>
 </body>
 </html>

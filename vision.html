@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>인사말 · 김현철 서울대학교 제29대 총장후보</title>
-<meta name="description" content="김현철 교수 인사말 — Leader is everything">
+<title>12대 핵심 공약 · 김현철 서울대학교 제29대 총장후보</title>
+<meta name="description" content="김현철의 서울대 비전 — 12대 핵심 공약 전체 보기">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -25,70 +25,46 @@ a{color:inherit;text-decoration:none}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:15px 28px;border-radius:5px;transition:.18s ease;cursor:pointer;border:1px solid transparent;line-height:1;white-space:nowrap}
 .btn-outline{border-color:var(--line-2);color:var(--navy);background:#fff}
 .btn-outline:hover{border-color:var(--navy);background:var(--navy);color:#fff}
-.btn-outline-light{border-color:rgba(255,255,255,.45);color:#fff;background:transparent}
-.btn-outline-light:hover{background:#fff;color:var(--navy)}
 .btn .arr{transition:transform .2s}
 .btn:hover .arr{transform:translateX(4px)}
 
-.subhead{position:sticky;top:0;z-index:60;height:var(--headh);background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
-.subhead .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
-.subhead .brand{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
-.subhead .brand span{font-size:13px;font-weight:600;color:#9FB4DE;margin-left:10px;letter-spacing:-0.01em}
-.subnav{display:flex;align-items:center;gap:30px;height:100%}
-.subnav a{font-size:14.5px;font-weight:600;color:#C4D0E2;transition:.15s;letter-spacing:-0.01em}
-.subnav a:hover{color:#fff}
-.subnav a.active{color:#fff}
-.subnav .btn{padding:11px 20px;font-size:13.5px}
-.subnav a.btn-outline-light{color:#fff}
-.subnav a.btn-outline-light:hover{color:var(--navy)}
-.navgroup{position:relative;height:100%;display:flex;align-items:center}
-.navgroup:hover > a{color:#fff}
-.navgroup .dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(4px);background:#fff;min-width:174px;padding:7px 0;border-radius:0 0 8px 8px;box-shadow:0 18px 40px -14px rgba(8,18,45,.34);border:1px solid var(--line);border-top:0;opacity:0;visibility:hidden;transition:opacity .16s ease,transform .16s ease;z-index:70}
-.navgroup:hover .dd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.navgroup .dd a{display:block;padding:11px 20px;font-size:13.5px;font-weight:500;color:#3A4660;white-space:nowrap;letter-spacing:-0.01em;transition:.12s}
-.navgroup .dd a:hover{background:#F1F4FA;color:var(--blue)}
-.navgroup .dd a.active{color:var(--blue);font-weight:700;background:#F1F4FA}
+/* corner flyout nav */
+.corner-nav{position:absolute;top:0;right:0;z-index:6;display:flex;height:auto;font-size:0}
+.cn-main{list-style:none;background:rgba(14,28,63,.86);backdrop-filter:blur(6px);min-width:118px}
+.cn-main li{color:#E7ECF6;font-size:14.5px;font-weight:600;padding:21px 22px;cursor:pointer;text-align:center;border-bottom:1px solid rgba(255,255,255,.1);transition:.15s;letter-spacing:-0.01em;white-space:nowrap}
+.cn-main li:last-child{border-bottom:0}
+.cn-main li:hover{background:rgba(255,255,255,.08)}
+.cn-main li.active{background:var(--blue);color:#fff}
+.cn-sub{background:#F4F5F8;min-width:160px;padding:7px 0}
+.cn-sub a{display:block;text-align:center;color:#3A4660;font-size:13.5px;font-weight:500;padding:12px 22px;transition:.12s;white-space:nowrap}
+.cn-sub a:hover{background:#E7EBF3;color:var(--blue)}
+.cn-sub a.active{color:var(--blue);font-weight:700;background:#E7EBF3}
 
+/* banner */
 .page-banner{position:relative;background:linear-gradient(180deg,#fff,var(--gray));border-bottom:1px solid var(--line);text-align:center;height:265px;display:flex;flex-direction:column;justify-content:center;padding:44px 0}
 .page-banner .eyebrow{margin-bottom:16px}
 .page-banner h1{font-size:clamp(34px,4.6vw,54px);font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.1}
+.page-banner .bsub{font-size:15.5px;color:var(--muted);margin-top:18px;line-height:1.7;max-width:680px;margin-left:auto;margin-right:auto}
 
-.detail{padding:64px 0 100px}
-.detail-grid{display:block}
-.side{position:sticky;top:calc(var(--headh) + 24px)}
-.side .cat{background:var(--gray);border:1px solid var(--line-2);font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;padding:17px 20px}
-.side ul{list-style:none;border:1px solid var(--line-2);border-top:0}
-.side li a{display:block;padding:15px 20px;font-size:14.5px;color:#46505F;border-bottom:1px solid var(--line);transition:.15s;letter-spacing:-0.01em}
-.side li:last-child a{border-bottom:0}
-.side li a:hover{background:#F4F6FA;color:var(--blue)}
-.side li a.active{background:var(--bluewash);color:var(--navy);font-weight:700;box-shadow:inset 3px 0 0 var(--blue)}
+/* vision grid */
+.visionsec{padding:64px 0 100px}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.vcard{background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 0 rgba(20,30,55,.04);display:flex;flex-direction:column;transition:.2s}
+.vcard:hover{transform:translateY(-5px);box-shadow:0 24px 44px -26px rgba(20,40,90,.4)}
+.vcard .thumb{aspect-ratio:1/0.62;background:linear-gradient(135deg,var(--blue-2),var(--blue-3));position:relative;overflow:hidden}
+.vcard .thumb::after{content:"";position:absolute;width:150%;height:150%;right:-30%;bottom:-50%;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.16),rgba(255,255,255,0) 60%)}
+.vcard .body{padding:22px 22px 26px;position:relative;flex:1;display:flex;flex-direction:column}
+.vcard .vtitle{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;padding-right:40px}
+.vcard .vlabel{font-size:13px;font-weight:700;color:var(--blue);margin-top:6px}
+.vcard .vdesc{font-size:13.5px;color:var(--muted);margin-top:14px;line-height:1.65}
+.vcard .arrow{position:absolute;top:22px;right:22px;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;transition:.2s}
+.vcard:hover .arrow{background:var(--blue-3);transform:translateX(2px)}
+.vcard.ghost .thumb{background:linear-gradient(135deg,#6E7DA8,#4A5A85)}
+.vcard.ghost .vtitle{color:#7C879B}
+.vcard.ghost .arrow{background:#9AA5BB}
+.vback{text-align:center;margin-top:60px}
 
-.detail-body .bhead{font-size:clamp(24px,2.9vw,32px);font-weight:800;color:var(--blue);letter-spacing:-0.02em;line-height:1.3;margin-bottom:28px}
-.gquote{border-left:5px solid var(--navy);padding:4px 0 4px 26px;margin-bottom:36px}
-.gquote p{font-size:clamp(19px,2.3vw,24px);font-weight:800;color:var(--navy);line-height:1.5;letter-spacing:-0.02em}
-.prose p{font-size:15.5px;color:#46505F;line-height:1.98;margin-bottom:20px;text-wrap:pretty}
-.prose p:last-child{margin-bottom:0}
-.gphoto{float:right;width:240px;margin:0 0 22px 30px;border-radius:6px;overflow:hidden;box-shadow:0 18px 40px -18px rgba(14,28,63,.5)}
-.gphoto img{width:100%;height:auto;display:block}
-.detail-body .back{margin-top:46px;clear:both}
-@media(max-width:560px){.gphoto{float:none;width:100%;max-width:300px;margin:0 0 24px}}
-.factlist{list-style:none;border:1px solid var(--line-2);border-radius:8px;overflow:hidden}
-.factlist li{display:flex;gap:18px;padding:16px 22px;border-bottom:1px solid var(--line);font-size:14.5px}
-.factlist li:last-child{border-bottom:0}
-.factlist .k{flex-shrink:0;width:104px;font-weight:700;color:var(--navy)}
-.factlist .v{color:#46505F;line-height:1.65}
-.note-ph{margin-top:18px;padding:20px 24px;background:var(--gray);border:1px dashed var(--line-2);border-radius:8px;color:var(--muted);font-size:14px;line-height:1.75}
-.timeline{list-style:none;border-left:2px solid var(--line-2);margin-left:6px;padding-left:26px;display:flex;flex-direction:column;gap:24px}
-.timeline li{position:relative}
-.timeline li::before{content:"";position:absolute;left:-33px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px #fff}
-.timeline .role{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:-0.01em}
-.timeline .org{font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.6}
-.topics{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.topic{border:1px solid var(--line-2);border-radius:8px;padding:24px;background:#fff}
-.topic h3{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin-bottom:10px}
-.topic p{font-size:13.5px;color:var(--muted);line-height:1.72}
-@media(max-width:560px){.topics{grid-template-columns:1fr}}
-
+/* footer */
 footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.09)}
 .foot-col h4{font-size:14.5px;font-weight:800;color:#fff;letter-spacing:-0.01em;margin-bottom:22px}
@@ -97,6 +73,7 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .foot-bottom{text-align:center;padding-top:30px;font-size:12.5px;color:#6E7C97;letter-spacing:.02em}
 .foot-bottom span{margin:0 8px}
 
+/* mobile nav */
 .m-toggle{display:none;position:fixed;top:11px;right:18px;z-index:202;width:46px;height:46px;padding:0;background:rgba(14,28,63,.9);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:6px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
 .m-toggle span{width:20px;height:2px;background:#fff;border-radius:1px;display:block;transition:.25s;transform-origin:center}
 .m-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -111,26 +88,13 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .m-group a:last-child{border-bottom:0}
 .m-dl{margin-top:36px;justify-content:center;font-size:15px;padding:16px 28px;background:var(--blue);color:#fff;border-color:transparent}
 
-/* corner flyout nav */
-.corner-nav{position:absolute;top:0;right:0;z-index:6;display:flex;height:auto;font-size:0}
-.cn-main{list-style:none;background:rgba(14,28,63,.86);backdrop-filter:blur(6px);min-width:118px}
-.cn-main li{color:#E7ECF6;font-size:14.5px;font-weight:600;padding:21px 22px;cursor:pointer;text-align:center;border-bottom:1px solid rgba(255,255,255,.1);transition:.15s;letter-spacing:-0.01em;white-space:nowrap}
-.cn-main li:last-child{border-bottom:0}
-.cn-main li:hover{background:rgba(255,255,255,.08)}
-.cn-main li.active{background:var(--blue);color:#fff}
-.cn-sub{background:#F4F5F8;min-width:160px;padding:7px 0}
-.cn-sub a{display:block;text-align:center;color:#3A4660;font-size:13.5px;font-weight:500;padding:12px 22px;transition:.12s;white-space:nowrap}
-.cn-sub a:hover{background:#E7EBF3;color:var(--blue)}
-.cn-sub a.active{color:var(--blue);font-weight:700;background:#E7EBF3}
-
 [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 [data-reveal].in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
 
-@media(max-width:1000px){:root{--pad:30px}.detail-grid{gap:42px}}
-@media(max-width:900px){.detail-grid{grid-template-columns:1fr;gap:34px}.side{position:static}}
-@media(max-width:780px){.subnav,.corner-nav{display:none}.m-toggle{display:flex}.page-banner{height:150px;padding:48px 0 54px}.detail{padding:46px 0 72px}.foot-grid{grid-template-columns:1fr 1fr;gap:30px}}
-@media(max-width:480px){:root{--pad:20px}.foot-grid{grid-template-columns:1fr}}
+@media(max-width:1000px){:root{--pad:30px}.vgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:780px){.corner-nav{display:none}.m-toggle{display:flex}.page-banner{height:150px;padding:48px 0 54px}.visionsec{padding:46px 0 72px}.foot-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:480px){:root{--pad:20px}.vgrid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -162,7 +126,6 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   <a href="index.html#download" class="btn m-dl">발전계획서 다운로드 →</a>
 </nav>
 
-
 <section class="page-banner">
   <nav class="corner-nav" aria-label="주요 메뉴">
     <ul class="cn-main">
@@ -174,28 +137,126 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
     <div class="cn-sub" id="cnSub"></div>
   </nav>
   <div class="wrap">
-    <span class="eyebrow">교수님 소개</span>
-    <h1>인사말</h1>
+    <span class="eyebrow">비전</span>
+    <h1>12대 핵심 공약</h1>
   </div>
 </section>
 
-<section class="detail">
-  <div class="wrap detail-grid">
-
-    <div class="detail-body" data-reveal>
-      <h2 class="bhead">안녕하십니까, 김현철입니다.</h2>
-      <blockquote class="gquote">
-        <p>“Leader is everything — 저는 오로지 저의 업적과 성과, 역량, 비전, 실행력으로 승부하고자 합니다.”</p>
-      </blockquote>
-      <div class="prose">
-        <div class="gphoto"><img src="assets/web/portrait-seated.jpg" alt="김현철 교수" loading="lazy"></div>
-        <p>저는 평생 한일 기업의 혁신을 연구하였습니다. 학부와 대학원에서 경영학을 공부하였고, 일본에 유학한 뒤로는 저성장 위기 속에서 생존을 위하여 몸부림친 일본 기업들을 연구하였습니다. 서울대 국제대학원 일본전공 교수로 부임한 뒤에는 저성장 시대 한국과 한국 기업들의 혁신을 연구하였습니다.</p>
-        <p>저성장에 관한 저의 책이 베스트셀러가 되면서, 이를 애독한 한 독자 덕분에 대통령 경제보좌관으로 근무하였고, 청와대 근무 중에도 책을 출간하여 국가 비전으로 만든 진기록도 가지고 있습니다.</p>
-        <p>저는 이제 학자 인생의 마지막으로 서울대에 봉사하고자 합니다. 그것도 제가 연구해 온 것을 살려서 서울대를 과감하게 혁신하고자 합니다. 저는 오로지 저의 업적과 성과, 역량, 비전, 실행력으로 승부하고자 합니다. 이를 잘 살펴보시고 저와 함께 해 주시기를 바랍니다. 서울대에 혁신의 바람이 불 것입니다.</p>
-      </div>
-      <a href="index.html#about" class="btn btn-outline back">← 메인으로 돌아가기</a>
+<section class="visionsec">
+  <div class="wrap">
+    <div class="vgrid" data-reveal>
+      <a href="vision.html" class="vcard">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">열린 총장실</div>
+          <div class="vlabel">Open Governance</div>
+          <div class="vdesc">총장의 활동과 성과를 투명하게 공개하고 구성원과 함께 평가받겠습니다.</div>
+        </div>
+      </a>
+      <a href="vision-incorporation.html" class="vcard">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">법인화 2.0</div>
+          <div class="vlabel">Restructuring</div>
+          <div class="vdesc">법인화의 취지를 되살려 자율과 책임의 대학 운영 체계를 완성하겠습니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 03</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 04</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 05</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 06</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 07</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 08</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 09</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 10</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 11</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
+      <a href="vision.html" class="vcard ghost">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">핵심 공약 12</div>
+          <div class="vlabel">Coming soon</div>
+          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+        </div>
+      </a>
     </div>
-
+    <div class="vback" data-reveal>
+      <a href="index.html#top" class="btn btn-outline">← 메인으로 돌아가기</a>
+    </div>
   </div>
 </section>
 
@@ -216,6 +277,7 @@ const reveals=[...document.querySelectorAll('[data-reveal]')];
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
 reveals.forEach(el=>io.observe(el));
 addEventListener('load',()=>reveals.forEach(el=>el.classList.add('in')));
+
 const mToggle=document.getElementById('mToggle'),mMenuEl=document.getElementById('mMenu');
 function closeMMenu(){mToggle.classList.remove('open');mMenuEl.classList.remove('open');mMenuEl.setAttribute('aria-hidden','true')}
 mToggle.addEventListener('click',()=>{const open=mMenuEl.classList.toggle('open');mToggle.classList.toggle('open',open);mMenuEl.setAttribute('aria-hidden',String(!open))});
@@ -223,7 +285,7 @@ mMenuEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMMenu))
 
 // ----- corner flyout menu -----
 const subData={home:[],about:[['인사말','about-greeting.html'],['프로필','about-profile.html'],['학력','about-education.html'],['주요 경력','about-career.html'],['연구 분야','about-research.html']],vision:[['열린 총장실','vision.html'],['법인화 2.0','vision-incorporation.html'],['핵심 공약 03','vision.html'],['핵심 공약 04','vision.html']],history:[['대표 저서','publications.html'],['주요 활동','history-activities.html'],['언론 보도','history-press.html']]};
-const PAGE_KEY='about',PAGE_SUB='about-greeting.html';
+const PAGE_KEY='vision',PAGE_SUB='';
 const keyHref={home:'index.html#top',about:'about-greeting.html',vision:'vision.html',history:'publications.html'};
 const cnSub=document.getElementById('cnSub');
 const cnItems=[...document.querySelectorAll('.cn-main li')];
@@ -231,7 +293,6 @@ function renderSub(key){const items=subData[key]||[];cnSub.innerHTML=items.map(i
 cnItems.forEach(li=>{li.addEventListener('mouseenter',()=>{cnItems.forEach(x=>x.classList.remove('active'));li.classList.add('active');renderSub(li.dataset.key);});li.addEventListener('click',()=>{location.href=keyHref[li.dataset.key]||'index.html';});});
 document.querySelector('.corner-nav').addEventListener('mouseleave',()=>{cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);});
 cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);
-
 </script>
 </body>
 </html>
