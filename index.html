@@ -66,7 +66,7 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:845px;overflow:hidden;display:flex;align-items:flex-end;background:#0b1222}
-.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:1920px;z-index:0}
 .hero-bg img{width:100%;height:130%;object-fit:cover}
 .hero-bg .imgA{display:block}
 .hero-bg .imgB{display:none}
@@ -268,11 +268,11 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   <a href="#top" class="m-home" onclick="closeMMenu()">홈페이지</a>
   <div class="m-group">
     <span class="m-cat">교수님 소개</span>
-    <a href="#about" onclick="closeMMenu()">인사말</a>
-    <a href="#about" onclick="closeMMenu()">프로필</a>
-    <a href="#about" onclick="closeMMenu()">학력</a>
-    <a href="#about" onclick="closeMMenu()">주요 경력</a>
-    <a href="#about" onclick="closeMMenu()">연구 분야</a>
+    <a href="about-greeting.html">인사말</a>
+    <a href="about-profile.html">프로필</a>
+    <a href="about-education.html">학력</a>
+    <a href="about-career.html">주요 경력</a>
+    <a href="about-research.html">연구 분야</a>
   </div>
   <div class="m-group">
     <span class="m-cat">비전</span>
@@ -441,9 +441,9 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
     <div class="foot-grid">
       <div class="foot-col">
         <h4>교수님 소개</h4>
-        <a href="#about">인사말</a>
-        <a href="#about">프로필</a>
-        <a href="#about">연구 분야</a>
+        <a href="about-greeting.html">인사말</a>
+        <a href="about-profile.html">프로필</a>
+        <a href="about-research.html">연구 분야</a>
       </div>
       <div class="foot-col">
         <h4>비전</h4>
@@ -475,7 +475,7 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 // ----- corner flyout submenu -----
 const subData={
   home:[],
-  about:[['인사말',0],['프로필',1],['학력',2],['주요 경력',3],['연구 분야',4]],
+  about:[['인사말','about-greeting.html'],['프로필','about-profile.html'],['학력','about-education.html'],['주요 경력','about-career.html'],['연구 분야','about-research.html']],
   vision:[['8대 핵심 공약',0],['발전계획서',1],['추진 로드맵',2]],
   history:[['대표 저서','#pubs'],['주요 활동','history-activities.html'],['언론 보도','history-press.html']]
 };
