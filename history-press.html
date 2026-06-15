@@ -41,7 +41,7 @@ a{color:inherit;text-decoration:none}
 .subnav a.active{color:#fff}
 .subnav .btn{padding:11px 20px;font-size:13.5px}
 .subnav a.btn-outline-light{color:#fff}
-.subnav a.btn-outline-light:hover{color:var(--navy)}
+.subnav a.btn-outline-light:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.7)}
 .navgroup{position:relative;height:100%;display:flex;align-items:center}
 .navgroup:hover > a{color:#fff}
 .navgroup .dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(4px);background:#fff;min-width:174px;padding:7px 0;border-radius:0 0 8px 8px;box-shadow:0 18px 40px -14px rgba(8,18,45,.34);border:1px solid var(--line);border-top:0;opacity:0;visibility:hidden;transition:opacity .16s ease,transform .16s ease;z-index:70}
@@ -121,6 +121,37 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .cn-sub a:hover{background:#E7EBF3;color:var(--blue)}
 .cn-sub a.active{color:var(--blue);font-weight:700;background:#E7EBF3}
 
+/* ===== menu A/B toggle ===== */
+.subhead{position:sticky;top:0;z-index:60;height:var(--headh);background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08);display:none}
+.subhead .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
+.subhead .brand{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.subhead .brand span{font-size:13px;font-weight:600;color:#9FB4DE;margin-left:10px;letter-spacing:-0.01em}
+.subnav{display:flex;align-items:center;gap:30px;height:100%}
+.subnav a{font-size:14.5px;font-weight:600;color:#C4D0E2;transition:.15s;letter-spacing:-0.01em}
+.subnav a:hover{color:#fff}
+.subnav a.btn-outline-light{color:#fff}
+.subnav a.btn-outline-light:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.7)}
+.subnav .btn{padding:11px 20px;font-size:13.5px}
+.navgroup{position:relative;height:100%;display:flex;align-items:center}
+.navgroup:hover > a{color:#fff}
+.navgroup .dd{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(4px);background:#fff;min-width:174px;padding:7px 0;border-radius:0 0 8px 8px;box-shadow:0 18px 40px -14px rgba(8,18,45,.34);border:1px solid var(--line);border-top:0;opacity:0;visibility:hidden;transition:opacity .16s,transform .16s;z-index:70}
+.navgroup:hover .dd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.navgroup .dd a{display:block;text-align:center;padding:11px 20px;font-size:13.5px;font-weight:500;color:#3A4660;white-space:nowrap;transition:.12s}
+.navgroup .dd a:hover{background:#F1F4FA;color:var(--blue)}
+body[data-menu="bar"] .subhead{display:block}
+body[data-menu="bar"] .corner-nav{display:none}
+.menu-toggle{position:fixed;right:18px;bottom:18px;z-index:300;background:var(--navy);color:#fff;border:0;border-radius:30px;padding:11px 18px;font:600 13px/1 'Pretendard',system-ui,sans-serif;cursor:pointer;box-shadow:0 10px 26px -8px rgba(8,18,45,.5);letter-spacing:-0.01em}
+.menu-toggle:hover{background:var(--blue)}
+@media(max-width:780px){.menu-toggle{display:none}}
+
+/* ===== option C: in-page left nav (.side) ===== */
+.side{display:none}
+body[data-menu="side"] .subhead{display:block}
+body[data-menu="side"] .corner-nav{display:none}
+body[data-menu="side"] .side{display:block}
+body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr;gap:58px;align-items:start}
+@media(max-width:900px){body[data-menu="side"] .detail-grid{grid-template-columns:1fr;gap:30px}}
+
 [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 [data-reveal].in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
@@ -133,6 +164,19 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 </style>
 </head>
 <body>
+<button id="menuToggle" class="menu-toggle" type="button">메뉴 스타일 전환</button>
+<header class="subhead">
+  <div class="wrap">
+    <a href="index.html#top" class="brand">김현철<span>· 서울대학교 제29대 총장후보</span></a>
+    <nav class="subnav" aria-label="주요 메뉴 (바형)">
+      <a href="index.html#top">홈페이지</a>
+      <div class="navgroup"><a href="about-greeting.html">교수님 소개</a><div class="dd"><a href="about-greeting.html">인사말</a><a href="about-profile.html">프로필</a><a href="about-education.html">학력</a><a href="about-career.html">주요 경력</a><a href="about-research.html">연구 분야</a></div></div>
+      <div class="navgroup"><a href="vision.html">비전</a><div class="dd"><a href="vision.html">열린 총장실</a><a href="vision-incorporation.html">법인화 2.0</a><a href="vision.html">핵심 공약 03</a><a href="vision.html">핵심 공약 04</a></div></div>
+      <div class="navgroup"><a href="publications.html">이력과 경력</a><div class="dd"><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a><a href="history-press.html">언론 보도</a></div></div>
+      <a href="index.html#download" class="btn btn-outline-light">발전계획서 <span class="arr">→</span></a>
+    </nav>
+  </div>
+</header>
 
 <button class="m-toggle" id="mToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
 <nav class="m-menu" id="mMenu" aria-hidden="true">
@@ -181,6 +225,14 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 <section class="detail">
   <div class="wrap detail-grid">
 
+    <aside class="side" data-reveal>
+      <div class="cat">언론 보도</div>
+      <ul>
+        <li><a href="#gov" class="active">대통령·정부 언급</a></li>
+        <li><a href="#interview">언론 인터뷰</a></li>
+        <li><a href="#review">저서 서평·소개</a></li>
+      </ul>
+    </aside>
     <div class="detail-body" data-reveal>
 
       <section class="csec" id="gov">
@@ -294,6 +346,15 @@ function renderSub(key){const items=subData[key]||[];cnSub.innerHTML=items.map(i
 cnItems.forEach(li=>{li.addEventListener('mouseenter',()=>{cnItems.forEach(x=>x.classList.remove('active'));li.classList.add('active');renderSub(li.dataset.key);});li.addEventListener('click',()=>{location.href=keyHref[li.dataset.key]||'index.html';});});
 document.querySelector('.corner-nav').addEventListener('mouseleave',()=>{cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);});
 cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);
+
+
+// ----- menu toggle (corner / bar / side) -----
+const _mb=document.getElementById('menuToggle');
+const _mOrder=['corner','bar','side'];
+const _mLabel={corner:'메뉴: 코너형 ▸',bar:'메뉴: 상단바 ▸',side:'메뉴: 좌측 네비형 ▸'};
+function setMenuStyle(m){if(_mOrder.indexOf(m)<0)m='corner';document.body.dataset.menu=m;try{localStorage.setItem('menuStyle',m)}catch(e){}_mb.textContent=_mLabel[m];}
+setMenuStyle((function(){try{return localStorage.getItem('menuStyle')}catch(e){return null}})()||'corner');
+_mb.addEventListener('click',()=>{var i=_mOrder.indexOf(document.body.dataset.menu);setMenuStyle(_mOrder[(i+1)%_mOrder.length]);});
 
 </script>
 </body>
