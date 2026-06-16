@@ -164,14 +164,13 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
 @media(max-width:480px){:root{--pad:20px}.foot-grid{grid-template-columns:1fr}}
 </style>
 </head>
-<body>
-<button id="menuToggle" class="menu-toggle" type="button">메뉴 스타일 전환</button>
+<body data-menu="side">
 <header class="subhead">
   <div class="wrap">
     <a href="index.html#top" class="brand">김현철<span>· 서울대학교 제29대 총장후보</span></a>
     <nav class="subnav" aria-label="주요 메뉴 (바형)">
       <a href="index.html#top">홈페이지</a>
-      <div class="navgroup"><a href="about-greeting.html">교수님 소개</a><div class="dd"><a href="about-greeting.html">인사말</a><a href="about-profile.html">프로필</a><a href="about-education.html">학력</a><a href="about-career.html">주요 경력</a><a href="about-research.html">연구 분야</a></div></div>
+      <div class="navgroup"><a href="about-greeting.html">교수님 소개</a><div class="dd"><a href="about-greeting.html">인사말</a><a href="about-profile.html">프로필</a><a href="about-career.html">주요 경력</a><a href="about-research.html">연구 분야</a></div></div>
       <div class="navgroup"><a href="vision.html">비전</a><div class="dd"><a href="vision.html">열린 총장실</a><a href="vision-incorporation.html">법인화 2.0</a><a href="vision.html">핵심 공약 03</a><a href="vision.html">핵심 공약 04</a></div></div>
       <div class="navgroup"><a href="publications.html">이력과 경력</a><div class="dd"><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a><a href="history-press.html">언론 보도</a></div></div>
       <a href="index.html#download" class="btn btn-outline-light">발전계획서 <span class="arr">→</span></a>
@@ -186,7 +185,6 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
     <span class="m-cat">교수님 소개</span>
     <a href="about-greeting.html">인사말</a>
     <a href="about-profile.html">프로필</a>
-    <a href="about-education.html">학력</a>
     <a href="about-career.html">주요 경력</a>
     <a href="about-research.html">연구 분야</a>
   </div>
@@ -231,7 +229,6 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
       <ul>
         <li><a href="about-greeting.html" class="active">인사말</a></li>
         <li><a href="about-profile.html">프로필</a></li>
-        <li><a href="about-education.html">학력</a></li>
         <li><a href="about-career.html">주요 경력</a></li>
         <li><a href="about-research.html">연구 분야</a></li>
       </ul>
@@ -247,7 +244,6 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
         <p>저성장에 관한 저의 책이 베스트셀러가 되면서, 이를 애독한 한 독자 덕분에 대통령 경제보좌관으로 근무하였고, 청와대 근무 중에도 책을 출간하여 국가 비전으로 만든 진기록도 가지고 있습니다.</p>
         <p>저는 이제 학자 인생의 마지막으로 서울대에 봉사하고자 합니다. 그것도 제가 연구해 온 것을 살려서 서울대를 과감하게 혁신하고자 합니다. 저는 오로지 저의 업적과 성과, 역량, 비전, 실행력으로 승부하고자 합니다. 이를 잘 살펴보시고 저와 함께 해 주시기를 바랍니다. 서울대에 혁신의 바람이 불 것입니다.</p>
       </div>
-      <a href="index.html#about" class="btn btn-outline back">← 메인으로 돌아가기</a>
     </div>
 
   </div>
@@ -257,7 +253,7 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col"><h4>교수님 소개</h4><a href="about-greeting.html">인사말</a><a href="about-profile.html">프로필</a><a href="about-research.html">연구 분야</a></div>
-      <div class="foot-col"><h4>비전</h4><a href="vision.html">12대 핵심 공약</a><a href="index.html#download">발전계획서</a><a href="vision-incorporation.html">법인화 2.0</a></div>
+      <div class="foot-col"><h4>비전</h4><a href="vision.html">열린 총장실</a><a href="vision-incorporation.html">법인화 2.0</a><a href="vision.html">핵심 공약 03</a><a href="vision.html">핵심 공약 04</a></div>
       <div class="foot-col"><h4>이력과 경력</h4><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a><a href="history-press.html">언론 보도</a></div>
       <div class="foot-col"><h4>Contact</h4><a href="mailto:energy-ecology@naver.com">이메일 문의</a><a href="#">Social Link</a><a href="#">More Information</a></div>
     </div>
@@ -276,7 +272,7 @@ mToggle.addEventListener('click',()=>{const open=mMenuEl.classList.toggle('open'
 mMenuEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMMenu));
 
 // ----- corner flyout menu -----
-const subData={home:[],about:[['인사말','about-greeting.html'],['프로필','about-profile.html'],['학력','about-education.html'],['주요 경력','about-career.html'],['연구 분야','about-research.html']],vision:[['열린 총장실','vision.html'],['법인화 2.0','vision-incorporation.html'],['핵심 공약 03','vision.html'],['핵심 공약 04','vision.html']],history:[['대표 저서','publications.html'],['주요 활동','history-activities.html'],['언론 보도','history-press.html']]};
+const subData={home:[],about:[['인사말','about-greeting.html'],['프로필','about-profile.html'],['주요 경력','about-career.html'],['연구 분야','about-research.html']],vision:[['열린 총장실','vision.html'],['법인화 2.0','vision-incorporation.html'],['핵심 공약 03','vision.html'],['핵심 공약 04','vision.html']],history:[['대표 저서','publications.html'],['주요 활동','history-activities.html'],['언론 보도','history-press.html']]};
 const PAGE_KEY='about',PAGE_SUB='about-greeting.html';
 const keyHref={home:'index.html#top',about:'about-greeting.html',vision:'vision.html',history:'publications.html'};
 const cnSub=document.getElementById('cnSub');
@@ -287,13 +283,6 @@ document.querySelector('.corner-nav').addEventListener('mouseleave',()=>{cnItems
 cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);
 
 
-// ----- menu toggle (corner / bar / side) -----
-const _mb=document.getElementById('menuToggle');
-const _mOrder=['corner','bar','side'];
-const _mLabel={corner:'메뉴: 코너형 ▸',bar:'메뉴: 상단바 ▸',side:'메뉴: 좌측 네비형 ▸'};
-function setMenuStyle(m){if(_mOrder.indexOf(m)<0)m='corner';document.body.dataset.menu=m;try{localStorage.setItem('menuStyle',m)}catch(e){}_mb.textContent=_mLabel[m];}
-setMenuStyle((function(){try{return localStorage.getItem('menuStyle')}catch(e){return null}})()||'corner');
-_mb.addEventListener('click',()=>{var i=_mOrder.indexOf(document.body.dataset.menu);setMenuStyle(_mOrder[(i+1)%_mOrder.length]);});
 
 </script>
 </body>
