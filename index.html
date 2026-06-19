@@ -153,6 +153,9 @@ a{color:inherit;text-decoration:none}
 /* ---------- DOWNLOAD ---------- */
 .download{background:#080d18;color:#fff;position:relative;overflow:hidden}
 .download .wrap{position:relative;z-index:2;text-align:center;max-width:720px}
+.download .dlbg{position:absolute;inset:0;z-index:0}
+.download .dlbg img{width:100%;height:100%;object-fit:cover;object-position:right center}
+.download::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,13,24,.7),rgba(8,13,24,.3) 50%,rgba(8,13,24,0) 78%)}
 .download h2{font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-0.03em;line-height:1.12;margin:16px 0 20px}
 .download p{font-size:16px;color:#9FAAC0;line-height:1.7;max-width:520px;margin:0 auto 34px}
 .download .photo{
@@ -248,7 +251,7 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   .about-body .btn{margin:30px auto 0;display:flex;width:fit-content}
   .about-photo{max-width:420px}
   .pubgrid{grid-template-columns:1fr}
-  .download .photo{display:none}
+  .download .dlbg{display:none}
   .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
   .pad-y{padding:74px 0}
 }
@@ -392,7 +395,7 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 
 <!-- ============ DOWNLOAD ============ -->
 <section class="download pad-y" id="download" data-screen-label="Download">
-  <div class="photo"><img src="assets/web/download-section.webp" alt="김현철 교수"></div>
+  <div class="dlbg"><img src="assets/web/download-banner-1920.webp" srcset="assets/web/download-banner-768.webp 768w, assets/web/download-banner-1280.webp 1280w, assets/web/download-banner-1920.webp 1920w" sizes="100vw" alt="김현철 교수" loading="lazy"></div>
   <div class="wrap" data-reveal>
     <span class="eyebrow light">자료</span>
     <h2>발전 계획서 다운로드</h2>
