@@ -3,8 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>대표 저서 · 김현철 서울대학교 제29대 총장후보</title>
+<title>대표 저서 · 김현철 · 서울대 교수 홈페이지</title>
 <meta name="description" content="김현철 교수의 국내외 저서와 번역판 전체 목록">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="김현철 · 서울대 교수 홈페이지">
+<meta property="og:title" content="대표 저서 · 김현철 · 서울대 교수 홈페이지">
+<meta property="og:description" content="김현철 교수의 국내외 저서와 번역판 전체 목록">
+<meta property="og:url" content="https://snu100.github.io/publications.html">
+<meta property="og:image" content="https://snu100.github.io/assets/web/books-row.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="대표 저서 · 김현철 · 서울대 교수 홈페이지">
+<meta name="twitter:description" content="김현철 교수의 국내외 저서와 번역판 전체 목록">
+<meta name="twitter:image" content="https://snu100.github.io/assets/web/books-row.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -69,25 +80,12 @@ a{color:inherit;text-decoration:none}
 .bk .cov{aspect-ratio:1/1.16;background:linear-gradient(180deg,#F2F3F5,#E6E8EC);display:flex;align-items:center;justify-content:center;padding:26px;position:relative}
 .bk .cov img{width:auto;max-width:74%;max-height:100%;object-fit:contain;border-radius:1px;box-shadow:0 0 0 1px rgba(20,30,55,.07),0 2px 5px rgba(20,30,55,.13),0 16px 30px -14px rgba(20,30,55,.4);transition:transform .22s}
 .bk:hover .cov img{transform:translateY(-3px)}
-.bk .cov .more{position:absolute;right:14px;bottom:14px;font-size:11.5px;font-weight:700;color:var(--blue);background:var(--bluewash);padding:5px 10px;border-radius:4px}
-.bk .ib{padding:18px 18px 22px;flex:1;display:flex;flex-direction:column}
+.bk .ib{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column}
 .bk .cat{font-size:12px;font-weight:700;color:var(--blue);margin-bottom:8px}
 .bk h3{font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.42}
 .bk .desc{font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:10px}
-.bk.clickable{cursor:pointer}
-
-/* book detail modal */
-.bookmodal{position:fixed;inset:0;z-index:300;display:none}
-.bookmodal.open{display:block}
-.bm-backdrop{position:absolute;inset:0;background:rgba(8,14,30,.62)}
-.bm-panel{position:relative;z-index:1;max-width:620px;margin:8vh auto 0;background:#fff;border-radius:10px;box-shadow:0 30px 70px -20px rgba(8,18,45,.6);padding:40px 40px 44px;max-height:84vh;overflow-y:auto}
-.bm-close{position:absolute;top:16px;right:18px;width:36px;height:36px;border:0;background:var(--gray);border-radius:50%;font-size:20px;color:var(--navy);cursor:pointer;line-height:1;transition:.15s}
-.bm-close:hover{background:var(--line-2)}
-.bm-cat{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:10px}
-.bm-title{font-size:clamp(22px,3vw,28px);font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.3}
-.bm-meta{font-size:13.5px;color:var(--muted-2);margin-top:8px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:22px}
-.bm-body p{font-size:15px;color:#46505F;line-height:1.95}
-@media(max-width:560px){.bm-panel{margin:0;min-height:100vh;border-radius:0;padding:64px 24px 40px}}
+.bk .more{margin-top:auto;padding-top:14px;font-size:12.5px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:4px}
+a.bk{cursor:pointer}
 
 /* footer */
 footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
@@ -168,7 +166,7 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
 <body data-menu="side">
 <header class="subhead">
   <div class="wrap">
-    <a href="index.html#top" class="brand">김현철<span>· 서울대학교 제29대 총장후보</span></a>
+    <a href="index.html#top" class="brand">김현철</a>
     <nav class="subnav" aria-label="주요 메뉴 (바형)">
       <a href="index.html#top">홈페이지</a>
       <a href="about-greeting.html">인사말</a>
@@ -222,30 +220,33 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
     <div class="gsec" data-reveal>
       <h2>국내 저서 <span class="en">Korea</span><span class="cnt">3</span></h2>
       <div class="allgrid">
-        <article class="bk clickable" data-book="lowgrowth">
-          <div class="cov"><img src="assets/web/book-low-growth.webp" alt="저성장시대 어떻게 돌파할 것인가 표지" loading="lazy"><span class="more">자세히 ↗</span></div>
+        <a class="bk" href="book-low-growth.html">
+          <div class="cov"><img src="assets/web/book-low-growth.webp" alt="저성장시대 어떻게 돌파할 것인가 표지" loading="lazy"></div>
           <div class="ib">
             <div class="cat">경제·경영</div>
             <h3>저성장시대 어떻게 돌파할 것인가</h3>
             <div class="desc">다산북스 · 2015</div>
+            <div class="more">자세히 ↗</div>
           </div>
-        </article>
-        <article class="bk clickable" data-book="japan">
-          <div class="cov"><img src="assets/web/book-japan-is-coming.webp" alt="일본이 온다 표지" loading="lazy"><span class="more">자세히 ↗</span></div>
+        </a>
+        <a class="bk" href="book-japan.html">
+          <div class="cov"><img src="assets/web/book-japan-is-coming.webp" alt="일본이 온다 표지" loading="lazy"></div>
           <div class="ib">
             <div class="cat">한일관계</div>
             <h3>일본이 온다</h3>
             <div class="desc">쌤앤파커스 · 2023</div>
+            <div class="more">자세히 ↗</div>
           </div>
-        </article>
-        <article class="bk clickable" data-book="inclusive">
-          <div class="cov"><img src="assets/web/book-inclusive-state.webp" alt="포용국가 표지" loading="lazy"><span class="more">자세히 ↗</span></div>
+        </a>
+        <a class="bk" href="book-inclusive.html">
+          <div class="cov"><img src="assets/web/book-inclusive-state.webp" alt="포용국가 표지" loading="lazy"></div>
           <div class="ib">
             <div class="cat">국가·정부</div>
             <h3>포용국가</h3>
             <div class="desc">21세기북스 · 성경륭 외 공저 · 2017</div>
+            <div class="more">자세히 ↗</div>
           </div>
-        </article>
+        </a>
       </div>
     </div>
 
@@ -253,29 +254,32 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
       <h2>해외 저서·번역판 <span class="en">Overseas</span><span class="cnt">6</span></h2>
       <div class="allgrid jp-tr">
         <a class="bk" href="history-publications.html">
-          <div class="cov"><img src="assets/web/book-convenience-store.webp" alt="편의점 업태의 혁신 표지" loading="lazy"><span class="more">자세히 ↗</span></div>
+          <div class="cov"><img src="assets/web/book-convenience-store.webp" alt="편의점 업태의 혁신 표지" loading="lazy"></div>
           <div class="ib">
             <div class="cat">학술·전문</div>
             <h3>편의점 업태의 혁신</h3>
             <div class="desc">일본 有斐閣 · 2001 · コンビニエンス・ストア 業態の革新</div>
+            <div class="more">자세히 ↗</div>
           </div>
         </a>
-        <article class="bk clickable" data-book="strongest">
-          <div class="cov"><img src="assets/web/book-emperor-mgmt-jp.webp" alt="最強企業のつくり方 표지" loading="lazy"><span class="more">자세히 ↗</span></div>
+        <a class="bk" href="book-strongest.html">
+          <div class="cov"><img src="assets/web/book-emperor-mgmt-jp.webp" alt="最強企業のつくり方 표지" loading="lazy"></div>
           <div class="ib">
             <div class="cat">경영 · 일본</div>
             <h3 lang="ja">最強企業のつくり方</h3>
             <div class="desc">일본 United Books · 2010</div>
+            <div class="more">자세히 ↗</div>
           </div>
-        </article>
-        <article class="bk clickable" data-book="asia">
-          <div class="cov"><img src="assets/web/book-asia-mgmt-jp.webp" alt="アジア最強の経営を考える 표지" loading="lazy"><span class="more">자세히 ↗</span></div>
+        </a>
+        <a class="bk" href="book-asia.html">
+          <div class="cov"><img src="assets/web/book-asia-mgmt-jp.webp" alt="アジア最強の経営を考える 표지" loading="lazy"></div>
           <div class="ib">
             <div class="cat">경영 · 아시아</div>
             <h3 lang="ja">アジア最強の経営を考える</h3>
             <div class="desc">일본 다이아몬드사 · 노나카 이쿠지로 외 공저 · 2013</div>
+            <div class="more">자세히 ↗</div>
           </div>
-        </article>
+        </a>
         <article class="bk">
           <div class="cov"><img src="assets/web/book-jpn-mfg-kor-mkt.webp" alt="日本的製造對上韓國的行銷 표지" loading="lazy"></div>
           <div class="ib">
@@ -306,17 +310,6 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
 
   </div>
 </section>
-
-<div class="bookmodal" id="bookModal" aria-hidden="true">
-  <div class="bm-backdrop" data-close></div>
-  <div class="bm-panel" role="dialog" aria-modal="true" aria-labelledby="bmTitle">
-    <button class="bm-close" data-close aria-label="닫기">×</button>
-    <div class="bm-cat" id="bmCat"></div>
-    <h3 class="bm-title" id="bmTitle"></h3>
-    <div class="bm-meta" id="bmMeta"></div>
-    <div class="bm-body" id="bmBody"></div>
-  </div>
-</div>
 
 <footer>
   <div class="wrap">
@@ -350,27 +343,6 @@ function renderSub(key){const items=subData[key]||[];cnSub.innerHTML=items.map(i
 cnItems.forEach(li=>{li.addEventListener('mouseenter',()=>{cnItems.forEach(x=>x.classList.remove('active'));li.classList.add('active');renderSub(li.dataset.key);});li.addEventListener('click',()=>{location.href=keyHref[li.dataset.key]||'index.html';});});
 document.querySelector('.corner-nav').addEventListener('mouseleave',()=>{cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);});
 cnItems.forEach(x=>x.classList.toggle('active',x.dataset.key===PAGE_KEY));renderSub(PAGE_KEY);
-
-// ----- book detail modal -----
-const bookData={
-  lowgrowth:{cat:'경제·경영',title:'저성장시대 어떻게 돌파할 것인가',meta:'다산북스 · 2015',
-    body:`<p>한국 경제가 저성장에 빠져들면서 저성장 시대를 어떻게 헤쳐 나가야 하는지가 많은 분들의 관심 사항이었습니다. 일본과 한국에서 연구한 경험을 토대로 2015년에 출간한 대중서 《저성장시대 어떻게 돌파할 것인가》는 큰 반향을 일으켰습니다. 척박한 한국의 출판시장에서 2015년과 2016년에 각각 2만부 가까이 판매되었습니다.<br>또한 이 책은 당시 문재인 대통령 후보의 눈에도 띄어 이 인연으로 2년 가까이 청와대 경제보좌관으로 근무하기도 하였습니다.</p>`},
-  japan:{cat:'한일관계',title:'일본이 온다',meta:'쌤앤파커스 · 2023',
-    body:`<p>2023년 하반기에 출간한 이 책은 국제대학원 원장직을 수행하면서 출간한 대중서입니다. 이 책은 일본의 대외적인 팽창이 한국에 어떠한 영향을 미치는지를 설명한 책입니다. 이 책 또한 어려운 출판환경 속에서 만권 가까이 판매되었습니다.</p>`},
-  inclusive:{cat:'국가·정부',title:'포용국가',meta:'21세기북스 · 성경륭 외 공저 · 2017',
-    body:`<p>이 책은 청와대 경제보좌관 시절에 12명의 학자들과 함께 쓴 책입니다. 혁신성과 포용성이라는 2가지 지향성을 가지고 사회와 경제, 정치, 고용, 복지, 교육, 지역 등을 대대적으로 혁신하자는 내용의 책입니다. 이 책의 구상은 문재인 정부에서 채택되어 2018년경부터 포용국가가 국가의 공식적인 비전이 되었습니다.</p>`},
-  strongest:{cat:'경영 · 일본',title:'最強企業のつくり方',meta:'일본 United Books · 2010',
-    body:`<p>2010년 일본에서 출간한 이 책은 저성장기에 혁신을 이루지 못하는 일본기업들의 문제점을 한국기업들의 혁신과 비교하며 지적한 대중서입니다. 이 책은 일본기업들의 문제점을 비교경영학적 관점에서 지적한 책이기에 당시 일본내에서 많은 반향을 불러 일으켰습니다.<br>일본의 대표적인 민간방송 중 하나에 출연하기도 하였고 당시 도요타 자동차 회장은 동사의 간부들에게 이 책의 필독을 권하기도 하였습니다. 이 책은 대만에서도 주목하여 대만에서 번역 출간되기도 하였고 또한 한국에도 역으로 번역되어 출간되기도 하였습니다.</p>`},
-  asia:{cat:'경영 · 아시아',title:'アジア最強の経営を考える',meta:'일본 다이아몬드사 · 노나카 이쿠지로 외 공저 · 2013',
-    body:`<p>《최강기업 만들기》가 일본에서 주목을 받자 일본을 대표하는 경영학자인 히토츠바시 대학의 노나카 교수의 제안으로 한중일 3국 기업들의 경영을 비교하는 연구를 하게 되었습니다. 그 결과 2013년에 일본에서 《아시아 최강 경영》이라는 책을 출간하게 되었습니다. 이 책은 한중일의 대표적인 기업들을 국제비교한 뒤 아시아적 관점에서 최강 기업의 조건을 제시한 책입니다.<br>이 책은 한중일 3국의 주요 기업들을 상호 비교연구한 선구적인 책으로 평가받고 있습니다. 이 책도 이후 대만 및 한국에도 번역되어 출간되었습니다.</p>`}
-};
-const bookModal=document.getElementById('bookModal');
-const bmCat=document.getElementById('bmCat'),bmTitle=document.getElementById('bmTitle'),bmMeta=document.getElementById('bmMeta'),bmBody=document.getElementById('bmBody');
-function openBook(key){const d=bookData[key];if(!d)return;bmCat.textContent=d.cat;bmTitle.textContent=d.title;bmMeta.textContent=d.meta;bmBody.innerHTML=d.body;bookModal.classList.add('open');bookModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeBook(){bookModal.classList.remove('open');bookModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-document.querySelectorAll('.bk.clickable').forEach(el=>el.addEventListener('click',()=>openBook(el.dataset.book)));
-bookModal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeBook));
-addEventListener('keydown',e=>{if(e.key==='Escape')closeBook();});
 
 </script>
 </body>

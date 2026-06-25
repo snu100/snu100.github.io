@@ -3,37 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>인사말 · 김현철 · 서울대 교수 홈페이지</title>
-<meta name="description" content="김현철 인사말 — 서울대에 새로운 혁신의 바람이 붑니다">
+<title>저성장시대 어떻게 돌파할 것인가 · 김현철 · 서울대 교수 홈페이지</title>
+<meta name="description" content="저성장시대 어떻게 돌파할 것인가 — 김현철의 대표 저서">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="김현철 · 서울대 교수 홈페이지">
-<meta property="og:title" content="인사말 · 김현철 · 서울대 교수 홈페이지">
-<meta property="og:description" content="김현철 인사말 — 서울대에 새로운 혁신의 바람이 붑니다">
-<meta property="og:url" content="https://snu100.github.io/about-greeting.html">
+<meta property="og:title" content="저성장시대 어떻게 돌파할 것인가 · 김현철 · 서울대 교수 홈페이지">
+<meta property="og:description" content="저성장시대 어떻게 돌파할 것인가 — 김현철의 대표 저서">
+<meta property="og:url" content="https://snu100.github.io/book-low-growth.html">
 <meta property="og:image" content="https://snu100.github.io/assets/web/books-row.jpg">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="인사말 · 김현철 · 서울대 교수 홈페이지">
-<meta name="twitter:description" content="김현철 인사말 — 서울대에 새로운 혁신의 바람이 붑니다">
+<meta name="twitter:title" content="저성장시대 어떻게 돌파할 것인가 · 김현철 · 서울대 교수 홈페이지">
+<meta name="twitter:description" content="저성장시대 어떻게 돌파할 것인가 — 김현철의 대표 저서">
 <meta name="twitter:image" content="https://snu100.github.io/assets/web/books-row.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root{
-  --navy:#0E1C3F;--navy-2:#0A1530;--blue:#2D55D4;--blue-2:#3961E0;--blue-3:#1E40B0;
-  --blue-bright:#3A66E6;--ink:#1A2230;--muted:#5E6B80;--muted-2:#94A0B2;
-  --line:#E5E8EE;--line-2:#D5DAE3;--gray:#EDEEF0;--bluewash:#E7EDF8;--paper:#FFFFFF;
-  --maxw:1180px;--pad:40px;--headh:68px;
+  --navy:#0E1C3F;
+  --navy-2:#0A1530;
+  --blue:#2D55D4;
+  --blue-2:#3961E0;
+  --blue-3:#1E40B0;
+  --blue-bright:#3A66E6;
+  --ink:#1A2230;
+  --muted:#5E6B80;
+  --muted-2:#94A0B2;
+  --line:#E5E8EE;
+  --line-2:#D5DAE3;
+  --gray:#EDEEF0;
+  --bluewash:#E7EDF8;
+  --paper:#FFFFFF;
+  --mono:'SF Mono',ui-monospace,'Roboto Mono',Menlo,monospace;
+  --maxw:1180px;
+  --pad:40px;
+  --headh:68px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{font-family:'Pretendard',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em}
+body{
+  font-family:'Pretendard',system-ui,sans-serif;
+  color:var(--ink);background:var(--paper);line-height:1.6;
+  -webkit-font-smoothing:antialiased;letter-spacing:-0.01em;
+}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
 
-.eyebrow{font-size:14px;font-weight:700;color:var(--blue);letter-spacing:0.01em;display:inline-block}
-.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:15px 28px;border-radius:5px;transition:.18s ease;cursor:pointer;border:1px solid transparent;line-height:1;white-space:nowrap}
+/* ---------- shared ---------- */
+.eyebrow{
+  font-size:14px;font-weight:700;color:var(--blue);
+  letter-spacing:0.01em;display:inline-block;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-weight:600;font-size:15px;padding:15px 28px;
+  border-radius:5px;transition:.18s ease;cursor:pointer;
+  border:1px solid transparent;line-height:1;white-space:nowrap;
+}
 .btn-outline{border-color:var(--line-2);color:var(--navy);background:#fff}
 .btn-outline:hover{border-color:var(--navy);background:var(--navy);color:#fff}
 .btn-outline-light{border-color:rgba(255,255,255,.45);color:#fff;background:transparent}
@@ -41,7 +68,12 @@ a{color:inherit;text-decoration:none}
 .btn .arr{transition:transform .2s}
 .btn:hover .arr{transform:translateX(4px)}
 
-.subhead{position:sticky;top:0;z-index:60;height:var(--headh);background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+/* ---------- sub-page top header ---------- */
+.subhead{
+  position:sticky;top:0;z-index:60;height:var(--headh);
+  background:var(--navy);color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
 .subhead .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
 .subhead .brand{font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em}
 .subhead .brand span{font-size:13px;font-weight:600;color:#9FB4DE;margin-left:10px;letter-spacing:-0.01em}
@@ -60,46 +92,92 @@ a{color:inherit;text-decoration:none}
 .navgroup .dd a:hover{background:#F1F4FA;color:var(--blue)}
 .navgroup .dd a.active{color:var(--blue);font-weight:700;background:#F1F4FA}
 
-.page-banner{position:relative;background:linear-gradient(180deg,#fff,var(--gray));border-bottom:1px solid var(--line);text-align:center;height:265px;display:flex;flex-direction:column;justify-content:center;padding:44px 0}
+/* ---------- page banner ---------- */
+.page-banner{position:relative;
+  background:linear-gradient(180deg,#fff,var(--gray));
+  border-bottom:1px solid var(--line);
+  text-align:center;height:265px;display:flex;flex-direction:column;justify-content:center;padding:44px 0;
+}
 .page-banner .eyebrow{margin-bottom:16px}
-.page-banner h1{font-size:clamp(34px,4.6vw,54px);font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.1}
+.page-banner h1{
+  font-size:clamp(34px,4.6vw,54px);font-weight:800;color:var(--navy);
+  letter-spacing:-0.03em;line-height:1.1;
+}
 
+/* ---------- detail (sidebar + body) ---------- */
 .detail{padding:64px 0 100px}
 .detail-grid{display:block}
+
 .side{position:sticky;top:calc(var(--headh) + 24px)}
-.side .cat{background:var(--gray);border:1px solid var(--line-2);font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;padding:17px 20px}
+.side .cat{
+  background:var(--gray);border:1px solid var(--line-2);
+  font-size:15px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;
+  padding:17px 20px;
+}
 .side ul{list-style:none;border:1px solid var(--line-2);border-top:0}
-.side li a{display:block;padding:15px 20px;font-size:14.5px;color:#46505F;border-bottom:1px solid var(--line);transition:.15s;letter-spacing:-0.01em}
+.side li a{
+  display:block;padding:15px 20px;font-size:14.5px;color:#46505F;
+  border-bottom:1px solid var(--line);transition:.15s;letter-spacing:-0.01em;
+}
 .side li:last-child a{border-bottom:0}
 .side li a:hover{background:#F4F6FA;color:var(--blue)}
-.side li a.active{background:var(--bluewash);color:var(--navy);font-weight:700;box-shadow:inset 3px 0 0 var(--blue)}
+.side li a.active{
+  background:var(--bluewash);color:var(--navy);font-weight:700;
+  box-shadow:inset 3px 0 0 var(--blue);
+}
 
-.detail-body .bhead{font-size:clamp(24px,2.9vw,32px);font-weight:800;color:var(--blue);letter-spacing:-0.02em;line-height:1.3;margin-bottom:28px}
-.gquote{border-left:5px solid var(--navy);padding:4px 0 4px 26px;margin-bottom:36px}
-.gquote p{font-size:clamp(19px,2.3vw,24px);font-weight:800;color:var(--navy);line-height:1.5;letter-spacing:-0.02em}
-.prose p{font-size:15.5px;color:#46505F;line-height:1.98;margin-bottom:20px;text-wrap:pretty}
-.prose p:last-child{margin-bottom:0}
-.gphoto{float:right;width:240px;margin:0 0 22px 30px;border-radius:6px;overflow:hidden;box-shadow:0 18px 40px -18px rgba(14,28,63,.5)}
-.gphoto img{width:100%;height:auto;display:block}
-.detail-body .back{margin-top:46px;clear:both}
-@media(max-width:560px){.gphoto{float:none;width:100%;max-width:300px;margin:0 0 24px}}
-.factlist{list-style:none;border:1px solid var(--line-2);border-radius:8px;overflow:hidden}
-.factlist li{display:flex;gap:18px;padding:16px 22px;border-bottom:1px solid var(--line);font-size:14.5px}
-.factlist li:last-child{border-bottom:0}
-.factlist .k{flex-shrink:0;width:104px;font-weight:700;color:var(--navy)}
-.factlist .v{color:#46505F;line-height:1.65}
-.note-ph{margin-top:18px;padding:20px 24px;background:var(--gray);border:1px dashed var(--line-2);border-radius:8px;color:var(--muted);font-size:14px;line-height:1.75}
-.timeline{list-style:none;border-left:2px solid var(--line-2);margin-left:6px;padding-left:26px;display:flex;flex-direction:column;gap:24px}
-.timeline li{position:relative}
-.timeline li::before{content:"";position:absolute;left:-33px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px #fff}
-.timeline .role{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:-0.01em}
-.timeline .org{font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.6}
-.topics{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.topic{border:1px solid var(--line-2);border-radius:8px;padding:24px;background:#fff}
-.topic h3{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin-bottom:10px}
-.topic p{font-size:13.5px;color:var(--muted);line-height:1.72}
-@media(max-width:560px){.topics{grid-template-columns:1fr}}
+.detail-body .bhead{
+  font-size:clamp(24px,2.9vw,32px);font-weight:800;color:var(--blue);
+  letter-spacing:-0.02em;line-height:1.25;margin-bottom:26px;
+}
 
+/* ---------- book detail card ---------- */
+.bookcard{
+  display:grid;grid-template-columns:208px 1fr;gap:38px;align-items:start;
+  border:1px solid var(--line-2);border-radius:4px;padding:32px;background:#fff;
+  box-shadow:0 1px 0 rgba(20,30,55,.04);margin-bottom:34px;
+}
+.bookcover{
+  position:relative;aspect-ratio:1/1.42;border-radius:4px;overflow:hidden;
+  background:linear-gradient(135deg,#1E40B0,#2D6FE0);
+  box-shadow:0 14px 30px -16px rgba(20,40,90,.5);
+}
+.bc-fallback{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:20px 18px;color:#fff;
+}
+.bc-fallback::before{
+  content:"";position:absolute;width:130%;aspect-ratio:1;right:-30%;top:-32%;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,rgba(120,170,255,.7),rgba(40,90,210,.12) 70%);
+}
+.bc-jp{position:relative;font-size:17px;font-weight:800;line-height:1.42;letter-spacing:-0.01em}
+.bc-au{position:relative;font-size:12px;color:rgba(255,255,255,.82);margin-top:12px}
+.bookcover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.bookmeta{min-width:0}
+.tagrow{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.tag-chip{font-size:13px;font-weight:700;color:var(--blue);background:var(--bluewash);padding:6px 13px;border-radius:4px;white-space:nowrap}
+.tagrow .date{font-size:12.5px;color:var(--muted-2);white-space:nowrap}
+.bquote{border-left:4px solid var(--navy);padding:2px 0 2px 18px;margin-bottom:20px}
+.bquote p{font-size:clamp(17px,1.9vw,20px);font-weight:800;color:var(--navy);line-height:1.5;letter-spacing:-0.02em}
+.bintro{font-size:15px;color:#46505F;line-height:1.9;text-wrap:pretty}
+
+/* ---------- prose + references ---------- */
+.detail-body .prose p{
+  font-size:15.5px;color:#46505F;line-height:1.95;margin-bottom:20px;text-wrap:pretty;
+}
+.refs{
+  margin-top:4px;padding:22px 24px;background:var(--gray);
+  border:1px solid var(--line);border-radius:6px;
+}
+.refs .refs-label{
+  font-size:12px;font-weight:800;color:var(--blue);
+  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;
+}
+.refs p{font-size:13px;color:var(--muted);line-height:2.0;overflow-wrap:anywhere}
+.detail-body .back{margin-top:46px}
+
+/* ---------- FOOTER ---------- */
 footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.09)}
 .foot-col h4{font-size:14.5px;font-weight:800;color:#fff;letter-spacing:-0.01em;margin-bottom:22px}
@@ -108,20 +186,43 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .foot-bottom{text-align:center;padding-top:30px;font-size:12.5px;color:#6E7C97;letter-spacing:.02em}
 .foot-bottom span{margin:0 8px}
 
-.m-toggle{display:none;position:fixed;top:11px;right:18px;z-index:202;width:46px;height:46px;padding:0;background:rgba(14,28,63,.9);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:6px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+/* ---------- mobile nav ---------- */
+.m-toggle{
+  display:none;position:fixed;top:11px;right:18px;z-index:202;
+  width:46px;height:46px;padding:0;
+  background:rgba(14,28,63,.9);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.14);border-radius:6px;
+  cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
 .m-toggle span{width:20px;height:2px;background:#fff;border-radius:1px;display:block;transition:.25s;transform-origin:center}
 .m-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .m-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .m-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.m-menu{display:none;position:fixed;inset:0;z-index:201;background:var(--navy);overflow-y:auto;flex-direction:column;padding:88px var(--pad) 48px}
+.m-menu{
+  display:none;position:fixed;inset:0;z-index:201;
+  background:var(--navy);overflow-y:auto;
+  flex-direction:column;padding:88px var(--pad) 48px;
+}
 .m-menu.open{display:flex}
-.m-home{display:block;padding:20px 0;font-size:24px;font-weight:800;color:#fff;letter-spacing:-0.025em;border-bottom:1px solid rgba(255,255,255,.12)}
+.m-home{
+  display:block;padding:20px 0;font-size:24px;font-weight:800;color:#fff;
+  letter-spacing:-0.025em;border-bottom:1px solid rgba(255,255,255,.12);
+}
 .m-group{margin-top:26px}
-.m-cat{display:block;font-size:10.5px;font-weight:700;color:#7FA0EE;letter-spacing:0.12em;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:4px}
-.m-group a{display:block;padding:13px 0;font-size:17px;font-weight:600;color:#C4D0E2;border-bottom:1px solid rgba(255,255,255,.06)}
+.m-cat{
+  display:block;font-size:10.5px;font-weight:700;color:#7FA0EE;
+  letter-spacing:0.12em;text-transform:uppercase;padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:4px;
+}
+.m-group a{
+  display:block;padding:13px 0;font-size:17px;font-weight:600;color:#C4D0E2;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
 .m-group a:last-child{border-bottom:0}
+.m-group a:active{color:#fff}
 .m-dl{margin-top:36px;justify-content:center;font-size:15px;padding:16px 28px;background:var(--blue);color:#fff;border-color:transparent}
 
+/* ---------- reveal ---------- */
 /* corner flyout nav */
 .corner-nav{position:absolute;top:0;right:0;z-index:6;display:flex;height:auto;font-size:0}
 .cn-main{list-style:none;background:rgba(14,28,63,.86);backdrop-filter:blur(6px);min-width:118px}
@@ -169,10 +270,30 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
 [data-reveal].in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
 
-@media(max-width:1000px){:root{--pad:30px}.detail-grid{gap:42px}}
-@media(max-width:900px){.detail-grid{grid-template-columns:1fr;gap:34px}.side{position:static}}
-@media(max-width:780px){.subnav,.corner-nav{display:none}.m-toggle{display:flex}body[data-menu="side"] .subhead{display:none}.page-banner{height:150px;padding:48px 0 54px}.detail{padding:46px 0 72px}.foot-grid{grid-template-columns:1fr 1fr;gap:30px}}
-@media(max-width:480px){:root{--pad:20px}.foot-grid{grid-template-columns:1fr}}
+/* ---------- responsive ---------- */
+@media(max-width:1000px){
+  :root{--pad:30px}
+  .detail-grid{gap:42px}
+}
+@media(max-width:900px){
+  .detail-grid{grid-template-columns:1fr;gap:34px}
+  .side{position:static}
+}
+@media(max-width:780px){
+  .subnav,.corner-nav{display:none}
+  .m-toggle{display:flex}body[data-menu="side"] .subhead{display:none}
+  .page-banner{height:150px;padding:48px 0 54px}
+  .detail{padding:46px 0 72px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:560px){
+  .bookcard{grid-template-columns:1fr;gap:24px;padding:24px}
+  .bookcover{max-width:190px;margin:0 auto}
+}
+@media(max-width:480px){
+  :root{--pad:20px}
+  .foot-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body data-menu="side">
@@ -189,7 +310,11 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
   </div>
 </header>
 
-<button class="m-toggle" id="mToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+<!-- Mobile hamburger button -->
+<button class="m-toggle" id="mToggle" aria-label="메뉴 열기">
+  <span></span><span></span><span></span>
+</button>
+<!-- Mobile nav panel -->
 <nav class="m-menu" id="mMenu" aria-hidden="true">
   <a href="index.html#top" class="m-home">홈페이지</a>
   <a href="about-greeting.html" class="m-home">인사말</a>
@@ -209,7 +334,9 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
   <a href="index.html#download" class="btn m-dl">발전계획서 다운로드 →</a>
 </nav>
 
+<!-- ============ TOP HEADER ============ -->
 
+<!-- ============ PAGE BANNER ============ -->
 <section class="page-banner">
   <nav class="corner-nav" aria-label="주요 메뉴">
     <ul class="cn-main">
@@ -221,61 +348,118 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
     <div class="cn-sub" id="cnSub"></div>
   </nav>
   <div class="wrap">
-    <span class="eyebrow">위기와 새로운 리더십</span>
-    <h1>인사말</h1>
+    <span class="eyebrow">이력과 경력 · 대표 저서</span>
+    <h1>저성장시대 어떻게 돌파할 것인가</h1>
   </div>
 </section>
 
+<!-- ============ DETAIL ============ -->
 <section class="detail">
   <div class="wrap detail-grid">
 
+    <!-- left sidebar -->
+
+    <!-- right body -->
     <aside class="side" data-reveal>
-      <div class="cat">인사말</div>
+      <div class="cat">대표 저서</div>
       <ul>
-        <li><a href="about-greeting.html" class="active">인사말</a></li>
+        <li><a href="book-low-growth.html" class="active">저성장시대 어떻게 돌파할 것인가</a></li>
+        <li><a href="book-japan.html">일본이 온다</a></li>
+        <li><a href="book-inclusive.html">포용국가</a></li>
+        <li><a href="history-publications.html">편의점 업태의 혁신</a></li>
+        <li><a href="book-strongest.html">최강기업 만들기</a></li>
+        <li><a href="book-asia.html">아시아 최강 경영</a></li>
       </ul>
     </aside>
     <div class="detail-body" data-reveal>
-      <h2 class="bhead">서울대에 새로운 혁신의 바람이 붑니다</h2>
-      <blockquote class="gquote">
-        <p>“위기의 시대일수록 리더십이 중요합니다. 서울대에 새로운 혁신의 바람을 일으키겠습니다.”</p>
-      </blockquote>
-      <div class="prose">
-        <div class="gphoto"><img src="assets/web/portrait-seated.webp" alt="김현철 교수" loading="lazy"></div>
-        <p>서울대가 위기를 이야기한 지 오래되었습니다.<br>그동안의 성찰과 개혁에도 불구하고 우리는 아직 그 위기를 극복하지 못하고 있습니다.<br>지금이야말로 서울대를 변화시키고 도약시킬 새로운 리더십이 필요합니다.</p>
-        <p>저는 평생 기업의 혁신을 연구해 왔습니다. 최근에는 정부와 국가 혁신을 연구하였습니다.<br>이제 저의 마지막 사명으로, 연구 인생의 결실을 서울대의 미래를 위해 쓰고자 합니다.<br>혁신을 통해 서울대의 위기를 돌파하고 다가올 100주년의 토대를 구축하겠습니다.</p>
-        <p>위기의 시대일수록 리더십이 중요합니다.<br>저는 혁신 총장이 되겠습니다. 서울대가 나아갈 방향을 제시하겠습니다.<br>저는 실행 총장이 되겠습니다. 반드시 체감 가능한 변화를 만들어 내겠습니다.</p>
-        <p>저는 오로지 역량과 성과, 비전과 실행력으로 평가받겠습니다.<br>서울대에 새로운 혁신의 바람을 일으키겠습니다.<br>지금의 위기를 돌파하고, 서울대의 다음 100년을 준비하는 그 길에 함께 해 주십시오.</p>
+      <h2 class="bhead">저성장시대 어떻게 돌파할 것인가</h2>
+
+      <div class="bookcard">
+        <div class="bookcover">
+          <div class="bc-fallback">
+            <div class="bc-jp">저성장시대<br>어떻게<br>돌파할 것인가</div>
+            <div class="bc-au">김현철 · 다산북스</div>
+          </div>
+          <img src="assets/web/book-low-growth.webp" alt="《저성장시대 어떻게 돌파할 것인가》 표지" onerror="this.remove()">
+        </div>
+        <div class="bookmeta">
+          <div class="tagrow">
+            <span class="tag-chip">경제·경영</span>
+            <span class="date">다산북스 · 2015</span>
+          </div>
+          <p class="bintro">2015년 출간 이후 큰 반향을 일으킨 김현철 교수의 대표 대중서입니다.</p>
+        </div>
       </div>
+
+      <div class="prose">
+        <p>한국 경제가 저성장에 빠져들면서 저성장 시대를 어떻게 헤쳐 나가야 하는지가 많은 분들의 관심 사항이었습니다. 일본과 한국에서 연구한 경험을 토대로 2015년에 출간한 대중서 《저성장시대 어떻게 돌파할 것인가》는 큰 반향을 일으켰습니다. 척박한 한국의 출판시장에서 2015년과 2016년에 각각 2만부 가까이 판매되었습니다.</p>
+        <p>또한 이 책은 당시 문재인 대통령 후보의 눈에도 띄어 이 인연으로 2년 가까이 청와대 경제보좌관으로 근무하기도 하였습니다.</p>
+      </div>
+
+      <div class="back"><a href="publications.html" class="btn btn-outline">← 대표 저서 목록</a></div>
+
     </div>
 
   </div>
 </section>
 
+<!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-col"><h4>인사말</h4><a href="about-greeting.html">인사말</a></div>
-      <div class="foot-col"><h4>비전</h4><a href="vision-open.html">열린 총장실</a><a href="vision-incorporation.html">지배구조 개혁</a><a href="vision.html">핵심 공약 03</a><a href="vision.html">핵심 공약 04</a></div>
-      <div class="foot-col"><h4>이력과 경력</h4><a href="about-profile.html">프로필</a><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a></div>
+      <div class="foot-col">
+        <h4>인사말</h4>
+        <a href="about-greeting.html">인사말</a>
+      </div>
+      <div class="foot-col">
+        <h4>비전</h4>
+        <a href="vision-open.html">열린 총장실</a>
+        <a href="vision-incorporation.html">지배구조 개혁</a>
+        <a href="vision.html">핵심 공약 03</a>
+        <a href="vision.html">핵심 공약 04</a>
+      </div>
+      <div class="foot-col">
+        <h4>이력과 경력</h4>
+        <a href="about-profile.html">프로필</a>
+        <a href="publications.html">대표 저서</a>
+        <a href="history-activities.html">주요 활동</a>
+      </div>
     </div>
-    <div class="foot-bottom">© Copyright Text<span>·</span>All rights reserved<span>·</span>More information</div>
+    <div class="foot-bottom">
+      © Copyright Text<span>·</span>All rights reserved<span>·</span>More information
+    </div>
   </div>
 </footer>
 
 <script>
+// ----- reveal on scroll -----
 const reveals=[...document.querySelectorAll('[data-reveal]')];
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+const show=el=>el.classList.add('in');
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})
+},{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
 reveals.forEach(el=>io.observe(el));
-addEventListener('load',()=>reveals.forEach(el=>el.classList.add('in')));
-const mToggle=document.getElementById('mToggle'),mMenuEl=document.getElementById('mMenu');
-function closeMMenu(){mToggle.classList.remove('open');mMenuEl.classList.remove('open');mMenuEl.setAttribute('aria-hidden','true')}
-mToggle.addEventListener('click',()=>{const open=mMenuEl.classList.toggle('open');mToggle.classList.toggle('open',open);mMenuEl.setAttribute('aria-hidden',String(!open))});
+addEventListener('load',()=>reveals.forEach(show));
+setTimeout(()=>reveals.forEach(show),1200);
+
+// ----- mobile menu -----
+const mToggle=document.getElementById('mToggle');
+const mMenuEl=document.getElementById('mMenu');
+function closeMMenu(){
+  mToggle.classList.remove('open');
+  mMenuEl.classList.remove('open');
+  mMenuEl.setAttribute('aria-hidden','true');
+}
+mToggle.addEventListener('click',()=>{
+  const open=mMenuEl.classList.toggle('open');
+  mToggle.classList.toggle('open',open);
+  mMenuEl.setAttribute('aria-hidden',String(!open));
+});
 mMenuEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMMenu));
 
 // ----- corner flyout menu -----
 const subData={home:[],about:[['인사말','about-greeting.html']],vision:[['열린 총장실','vision-open.html'],['지배구조 개혁','vision-incorporation.html'],['핵심 공약 03','vision.html'],['핵심 공약 04','vision.html']],history:[['프로필','about-profile.html'],['대표 저서','publications.html'],['주요 활동','history-activities.html']]};
-const PAGE_KEY='about',PAGE_SUB='about-greeting.html';
+const PAGE_KEY='history',PAGE_SUB='publications.html';
 const keyHref={home:'index.html#top',about:'about-greeting.html',vision:'vision.html',history:'about-profile.html'};
 const cnSub=document.getElementById('cnSub');
 const cnItems=[...document.querySelectorAll('.cn-main li')];
