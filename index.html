@@ -181,7 +181,7 @@ a{color:inherit;text-decoration:none}
 /* ---------- PUBLICATIONS ---------- */
 .pubs{background:var(--bluewash)}
 .pubgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.pubcard{background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 0 rgba(20,30,55,.04);transition:.2s}
+.pubcard{background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 0 rgba(20,30,55,.04);transition:.2s;display:flex;flex-direction:column}
 .pubcard:hover{transform:translateY(-5px);box-shadow:0 24px 44px -26px rgba(20,40,90,.4)}
 .pubcover{aspect-ratio:1/0.7;position:relative;overflow:hidden;background:linear-gradient(180deg,#F2F3F5,#E6E8EC);display:flex;align-items:center;justify-content:center;padding:30px}
 .pubcover .c1,.pubcover .c2{position:absolute;border-radius:50%}
@@ -189,12 +189,13 @@ a{color:inherit;text-decoration:none}
 .pubcover .c2{width:56%;aspect-ratio:1;left:-12%;bottom:-32%;background:radial-gradient(circle at 60% 40%,rgba(150,160,178,.14),rgba(150,160,178,0) 70%)}
 .pubcover .cover{position:relative;z-index:2;width:auto;max-width:72%;max-height:100%;object-fit:contain;border-radius:1px;box-shadow:0 0 0 1px rgba(20,30,55,.07),0 2px 5px rgba(20,30,55,.13),0 18px 34px -14px rgba(20,30,55,.42);transition:transform .22s}
 .pubcard:hover .cover{transform:translateY(-3px)}
-.pubcard .pbody{padding:22px 24px 28px}
+.pubcard .pbody{padding:22px 24px 28px;flex:1;display:flex;flex-direction:column}
 .pubcard .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .pubcard .cat{font-size:13px;font-weight:700;color:var(--blue)}
 .pubcard .date{font-size:12.5px;color:var(--muted-2)}
 .pubcard h3{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;margin-bottom:12px}
 .pubcard p{font-size:13.5px;color:var(--muted);line-height:1.72}
+.pubcard .pmore{margin-top:auto;padding-top:16px;font-size:13px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:4px}
 .pubs .more,.vision .more{text-align:center;margin-top:54px}
 
 /* ---------- FOOTER ---------- */
@@ -418,28 +419,31 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
       <h2>김현철의 대표 저서들</h2>
     </div>
     <div class="pubgrid" data-reveal>
-      <article class="pubcard">
+      <a class="pubcard" href="book-low-growth.html">
         <div class="pubcover"><span class="c1"></span><span class="c2"></span><img class="cover" src="assets/web/book-low-growth.webp" alt="저성장시대 어떻게 돌파할 것인가 표지" loading="lazy"></div>
         <div class="pbody">
-          <div class="meta"><span class="cat">경제·경영</span><span class="date">2015 · More Info</span></div>
+          <div class="meta"><span class="cat">경제·경영</span><span class="date">2015</span></div>
           <h3>저성장시대 어떻게 돌파할 것인가</h3>
           <p>한국 경제가 저성장에 빠져들면서 저성장 시대를 어떻게 헤쳐 나가야 하는가는 많은 분들의 관심사였습니다. 일본과 한국에서의 연구 경험을 토대로 2015년에 출간한 대중서 《저성장시대 어떻게 돌파할 것인가》는 큰 반향을 일으켰습니다.</p>
+          <div class="pmore">자세히 ↗</div>
         </div>
-      </article>
-      <article class="pubcard">
+      </a>
+      <a class="pubcard" href="book-japan.html">
         <div class="pubcover"><span class="c1"></span><span class="c2"></span><img class="cover" src="assets/web/book-japan-is-coming.webp" alt="일본이 온다 표지" loading="lazy"></div>
         <div class="pbody">
-          <div class="meta"><span class="cat">인문·사회</span><span class="date">2023 · More Info</span></div>
+          <div class="meta"><span class="cat">한일관계</span><span class="date">2023</span></div>
           <h3>일본이 온다</h3>
           <p>2023년 하반기에 출간한 이 책은 국제대학원 원장직을 수행하면서 출간한 대중서입니다. 글이 적힌 일본의 대외적인 팽창이 한국에 어떠한 영향을 미치는지를 설명한 책입니다.</p>
+          <div class="pmore">자세히 ↗</div>
         </div>
-      </article>
+      </a>
       <a class="pubcard" href="history-publications.html">
         <div class="pubcover"><span class="c1"></span><span class="c2"></span><img class="cover" src="assets/web/book-convenience-store.webp" alt="편의점 업태의 혁신 표지" loading="lazy"></div>
         <div class="pbody">
-          <div class="meta"><span class="cat">학술·전문</span><span class="date">2001 · More Info</span></div>
+          <div class="meta"><span class="cat">학술·전문</span><span class="date">2001</span></div>
           <h3>편의점 업태의 혁신</h3>
           <p>33권의 저서 중 일본에서 출간된 책은 16권(단독 저서 3권과 공저 13권)입니다. 이들 중 가장 대표적인 저서가 2001년 출간한 《편의점 업태의 혁신》입니다. 이 책은 소매유통에 관한 일본의 기존 이론들을 바꾸어 놓은 책입니다.</p>
+          <div class="pmore">자세히 ↗</div>
         </div>
       </a>
     </div>
