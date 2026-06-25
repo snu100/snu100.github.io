@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소니의 추락 — 주인 없는 일본식 기업구조에서 시작됐다 | 심층분석</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1b1a18;
+    --ink-soft:#403c37;
+    --muted:#7a746c;
+    --paper:#ffffff;
+    --paper-soft:#f6f3ed;
+    --line:#ddd8cf;
+    --line-strong:#b8b2a7;
+    --crimson:#a8141a;
+    --crimson-deep:#7d0f14;
+    --jp:#36506b;
+    --jp-soft:#eef2f6;
+    --kr:#a8141a;
+    --kr-soft:#fbeeee;
+    --serif:'Nanum Myeongjo','Apple SD Gothic Neo',serif;
+    --sans:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.78;
+    font-weight:400;
+    letter-spacing:-.01em;
+  }
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    border-bottom:3px solid var(--ink);
+    padding-top:28px;
+  }
+  .masthead__meta{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:8px 14px;
+    font-family:var(--sans);
+    font-size:12.5px;
+    color:var(--muted);
+    letter-spacing:.02em;
+    padding-bottom:10px;
+  }
+  .masthead__brand{
+    color:var(--crimson);
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.04em;
+  }
+  .masthead__sep{color:var(--line-strong);}
+  .masthead__section{
+    margin-left:auto;
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:.35em;
+    padding-right:.35em;
+  }
+
+  /* ---------- Headline ---------- */
+  .headline{padding:34px 0 8px;}
+  .headline h1{
+    font-family:var(--serif);
+    font-weight:800;
+    font-size:clamp(30px,5.2vw,52px);
+    line-height:1.18;
+    letter-spacing:-.02em;
+    margin:0 0 18px;
+    color:var(--ink);
+    word-break:keep-all;
+  }
+  .deck{
+    display:inline-block;
+    font-family:var(--serif);
+    font-size:clamp(16px,2.4vw,21px);
+    font-weight:700;
+    color:var(--crimson-deep);
+    border-top:1px solid var(--line-strong);
+    border-bottom:1px solid var(--line-strong);
+    padding:9px 0;
+    word-break:keep-all;
+  }
+
+  /* ---------- Article grid ---------- */
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    gap:48px;
+    padding:34px 0 8px;
+    align-items:start;
+  }
+  .article{min-width:0;}
+
+  .byline{
+    font-size:13px;
+    color:var(--muted);
+    border-left:3px solid var(--crimson);
+    padding-left:12px;
+    margin-bottom:26px;
+  }
+  .byline strong{color:var(--ink);font-weight:700;}
+
+  /* figure */
+  figure{margin:0 0 30px;}
+  .photo{
+    display:block;
+    width:100%;
+    height:auto;
+    border:1px solid var(--line);
+    background:#e9e5dd;
+  }
+  figcaption{
+    font-size:13.5px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    padding:11px 2px 0;
+    border-bottom:1px solid var(--line);
+    word-break:keep-all;
+  }
+  figcaption .src{color:var(--muted);font-size:12.5px;}
+
+  /* section heads */
+  .shead{
+    font-family:var(--serif);
+    font-size:clamp(18px,2.6vw,22px);
+    font-weight:700;
+    line-height:1.4;
+    color:var(--ink);
+    margin:34px 0 14px;
+    padding-left:20px;
+    position:relative;
+    word-break:keep-all;
+  }
+  .shead::before{
+    content:"◇";
+    position:absolute;left:0;top:.05em;
+    color:var(--crimson);
+    font-size:.85em;
+  }
+
+  .article p{
+    margin:0 0 17px;
+    font-size:16.5px;
+    color:var(--ink-soft);
+    word-break:keep-all;
+  }
+  .lead::first-letter{
+    font-family:var(--serif);
+    float:left;
+    font-size:3.1em;
+    line-height:.86;
+    font-weight:800;
+    color:var(--crimson);
+    padding:6px 12px 0 0;
+  }
+  .lead{font-size:17px;color:var(--ink);}
+  em.term{
+    font-style:normal;
+    font-weight:700;
+    color:var(--ink);
+    box-shadow:inset 0 -.42em 0 rgba(168,20,26,.12);
+  }
+
+  /* ---------- Sidebar: signature comparison ---------- */
+  .rail{position:sticky;top:20px;}
+  .compare{
+    border:1px solid var(--line-strong);
+    background:var(--paper);
+  }
+  .compare__title{
+    text-align:center;
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:-.01em;
+    padding:14px 14px 12px;
+    border-bottom:2px solid var(--ink);
+    color:var(--ink);
+    word-break:keep-all;
+    line-height:1.5;
+  }
+  .compare__title small{
+    display:block;font-family:var(--sans);
+    font-weight:400;font-size:11.5px;color:var(--muted);
+    letter-spacing:.04em;margin-top:4px;
+  }
+  .compare__cols{display:grid;grid-template-columns:1fr 1fr;}
+  .col{padding:0 0 6px;}
+  .col--jp{background:var(--jp-soft);}
+  .col--kr{background:var(--kr-soft);}
+  .col__cap{
+    text-align:center;padding:13px 10px 11px;
+  }
+  .flag{
+    display:inline-block;width:30px;height:20px;border:1px solid rgba(0,0,0,.12);
+    vertical-align:middle;margin-bottom:8px;
+  }
+  .flag--jp{background:radial-gradient(circle at 50% 50%,#bc002d 0 7px,#fff 7px);}
+  .flag--kr{
+    background:
+      radial-gradient(circle at 50% 50%,#cd2e3a 0 5px,transparent 5px),
+      radial-gradient(circle at 50% 50%,#0047a0 0 9px,transparent 9px),
+      #fff;
+  }
+  .col__country{
+    display:block;font-weight:700;font-size:14px;letter-spacing:.02em;
+  }
+  .col--jp .col__country{color:var(--jp);}
+  .col--kr .col__country{color:var(--kr);}
+  .col__sys{
+    display:block;font-size:11.5px;color:var(--muted);margin-top:2px;
+    letter-spacing:.02em;
+  }
+  .col ul{list-style:none;margin:0;padding:0 13px;}
+  .col li{
+    font-size:12.5px;line-height:1.5;color:var(--ink-soft);
+    padding:9px 0;border-top:1px dashed var(--line);
+    word-break:keep-all;
+  }
+  .col li:first-child{border-top:none;font-weight:700;color:var(--ink);}
+  .compare__divider{display:none;}
+
+  .rail__note{
+    font-size:11.5px;color:var(--muted);line-height:1.6;
+    padding:12px 2px 0;word-break:keep-all;
+  }
+
+  /* ---------- Sub article ---------- */
+  .subarticle{
+    margin-top:54px;
+    border-top:3px solid var(--ink);
+    padding-top:30px;
+  }
+  .subarticle h2{
+    font-family:var(--serif);
+    font-weight:800;
+    font-size:clamp(24px,4vw,36px);
+    line-height:1.22;
+    letter-spacing:-.02em;
+    margin:0 0 10px;
+    word-break:keep-all;
+  }
+  .subarticle .kicker{
+    display:inline-block;
+    font-size:13px;font-weight:700;letter-spacing:.04em;
+    color:var(--crimson);
+    margin-bottom:18px;
+  }
+  .ceos{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin:8px 0 28px;
+    padding:20px;
+    background:var(--paper-soft);
+    border:1px solid var(--line);
+  }
+  .ceo{text-align:center;}
+  .ceo__avatar{
+    width:62px;height:62px;border-radius:50%;
+    margin:0 auto 9px;
+    background:linear-gradient(160deg,#cfc8bc,#a9a294);
+    border:2px solid #fff;
+    box-shadow:0 1px 4px rgba(0,0,0,.12);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-weight:700;font-size:20px;color:#fff;
+  }
+  .ceo__name{font-weight:700;font-size:14px;}
+  .ceo__role{font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.4;}
+  .ceo__arrow{
+    display:flex;align-items:center;justify-content:center;
+    color:var(--line-strong);font-size:18px;
+  }
+  .subarticle p{
+    margin:0 0 16px;font-size:16px;color:var(--ink-soft);word-break:keep-all;
+  }
+
+  .endmark{
+    text-align:right;font-size:13px;color:var(--muted);
+    margin-top:22px;padding-top:14px;border-top:1px solid var(--line);
+  }
+  footer.src-note{
+    margin:40px 0 60px;padding:16px 18px;
+    background:var(--paper-soft);border:1px solid var(--line);
+    font-size:12.5px;color:var(--muted);line-height:1.7;word-break:keep-all;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:880px){
+    .layout{grid-template-columns:1fr;gap:30px;}
+    .rail{position:static;}
+    .compare{max-width:420px;}
+    .ceos{grid-template-columns:repeat(2,1fr) ;gap:18px 10px;}
+    .ceo__arrow{display:none;}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 18px;}
+    .masthead__section{letter-spacing:.2em;}
+    .ceos{padding:16px 12px;}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead__meta">
+      <span class="masthead__brand">조선경제</span>
+      <span class="masthead__sep">|</span>
+      <span>제28420호</span>
+      <span class="masthead__sep">·</span>
+      <span>2012년 5월 16일 수요일</span>
+      <span class="masthead__sep">·</span>
+      <span>11판</span>
+      <span class="masthead__section">심층분석 · B7</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="headline">
+    <h1>소니의 추락… 주인 없는 일본식 기업구조에서 시작됐다</h1>
+    <p class="deck">상대방 기업 주식 보유하는 日 ‘법인 자본주의’의 덫</p>
+  </div>
+
+  <div class="layout">
+    <!-- ====== MAIN ARTICLE ====== -->
+    <article class="article">
+      <p class="byline"><strong>김현철</strong> 서울대 국제대학원 교수 <span style="color:var(--muted)">(일본기업 전공)</span></p>
+
+      <figure>
+        <img class="photo" src="assets/web/sony-cfo.png"
+             alt="소니 최고재무책임자(CFO) 가토 마사루가 마이너스 영업이익이 표시된 스크린 앞에서 물을 마시는 모습">
+        <figcaption>
+          일본 기업 소니가 지난해 57억달러가 넘는 적자를 보며 4년 연속 적자에서 벗어나지 못했다.
+          사진은 소니의 최고재무책임자(CFO) 가토 마사루가 지난 10일 일본 도쿄에서 2011회계연도
+          실적 발표를 위한 기자회견 도중 마이너스 영업이익이 표시된 스크린 앞에서 물을 들이켜는 모습.
+          <span class="src">/로이터 뉴시스</span>
+        </figcaption>
+      </figure>
+
+      <p class="lead">일본의 간판 전자기업인 소니가 한없이 추락하고 있다. 소니는 지난 2011 회계연도에 4570억엔(57억달러)의 적자를 냈다. 2008년 이후 4년 연속 적자 행진이다. 삼성전자와의 경쟁에서 밀린 데 이어 엔고현상까지 겹쳤기 때문이란 분석이 나오고 있다. 하지만 소니를 비롯한 샤프, 파나소닉 등 일본 기업들이 고전하는 근본 이유는 <em class="term">‘법인 자본주의’</em>라는 일본의 독특한 기업 지배구조에서 찾아볼 수 있다.</p>
+
+      <h2 class="shead">일본 법인 자본주의에선 주주 기업들이 경영 관여 안 해</h2>
+      <p>나라마다 기업들의 전략과 행동이 다른 이유는 그 나라의 환경·문화 등의 차이도 있지만, 지배구조 차이 때문이기도 하다. 지배구조(Governance Structure)란 기업의 주인이 누구인가를 나타내는 구조를 말한다. 지배구조 관점에서 보면 미국은 주주가 기업의 주인인 ‘주주 자본주의’이다. 따라서 기업들은 매출이나 시장 점유율보다는 이익이나 주가에 관심을 더 기울인다. 반면 한국은 ‘오너 자본주의’다. 오너의 관심과 지시에 따라 기업의 전략과 행동이 달라진다.</p>
+      <p>일본은 미국이나 한국과 지배구조가 다르다. 기업 주식을 다른 기업들이 서로 보유하는 <em class="term">‘법인 자본주의’</em> 형태를 취하고 있다. 즉 다른 기업들이 기업의 주인인 것이다.</p>
+      <p>이는 일본 기업들이 특정 오너의 혈연관계에 의해 주식을 보유하기보다는, 넓은 의미의 집안(일본에서는 이를 ‘이에’라고 한다)의 테두리 안에서 관련 기업들이 서로 모여 있고 이 기업들이 주식을 나눠 갖고 있기 때문이다. 세계 2차대전 이후 일본의 재벌그룹들이 강제 해체되면서, 기업 간 상호 주식보유가 촉진돼 법인 자본주의가 굳어졌다.</p>
+      <p>법인 자본주의에서는 한 기업이 주주로 있는 다른 회사의 경영에 크게 관여하지 않는다. 주식이 분산돼 있는 데다 그 회사도 자기 회사의 주식을 동시에 갖고 있기 때문이다. 다만 그 회사의 존립이 위태로울 때에만 경영에 관여한다. 주식이 휴지조각이 될 가능성을 막기 위해서다. 일본에선 이를 ‘최후의 심판자’로서의 기능이라고 한다. 몇 해 전 미쓰비시 자동차가 품질 문제를 일으켜 도산위기에 처한 적이 있었는데, 그전까지만 해도 전혀 경영에 관여하지 않던 미쓰비시 그룹의 관계사들이 모여 미쓰비시 자동차를 구제했다. 미쓰비시 자동차의 주주 기업들이 최후의 심판자로서의 지배력을 행사한 것이다.</p>
+
+      <h2 class="shead">日 기업은 종업원 중심, 경영자는 얼굴 역할만… 의사결정 시간 걸려</h2>
+      <p>일본의 법인 자본주의는 종업원 자본주의라는 또 다른 측면을 갖고 있다. 주주인 법인들이 영향력을 행사하지 않으니, 주인 없는 회사가 되어버리고 그 결과 종업원들이 큰 영향력을 발휘하게 된 것이다. 이 때문에 일본 기업에서는 종업원들이 주인의식을 가지고 열심히 일한다. 이 점이 한국 기업과 일본 기업 간의 큰 차이점이다. 일본 기업에서 경영자와 종업원 간의 봉급 차이가 많지 않은 이유나 노사 단합이 잘 되는 이유는 종업원 자본주의 때문이다. 경영자가 하위 임원이나 종업원들을 마음대로 해고하지 못하는 이유도 종업원 자본주의 영향이 크다.</p>
+      <p>또 일본의 기업경영자들은 회사의 얼굴 역할만 하고, 주요 의사결정은 담당 임원이나 현장 간부들에게 위임한다. 이것을 일본에서는 주군(主君)경영이라고 한다.</p>
+      <p>주군경영에서는 기업의 의사결정이 톱 다운(top down)보다는 버텀 업(bottom up) 또는 중간관리자가 많은 역할을 하는 미들 업 다운(middle up down) 방식으로 이뤄진다. 현장이나 중간 관리층에서 실질적인 의사결정을 하는 것이다. 의사결정이 일단 이뤄지면 강한 추진력을 가지고 신속히 실행될 수 있지만, 결정되기까지 많은 시간이 소요되는 게 일본식 경영 스타일이다.</p>
+
+      <h2 class="shead">위기 상황에서 걸림돌 된 일본기업 경영방식</h2>
+      <p>이런 경영방식은 일본경제가 안정적으로 성장할 때에는 큰 힘이 되었다. 기업의 목표가 뚜렷했고, 경영진과 사원들이 합심해 한 방향으로 매진할 수 있었기 때문이다. 특히 노사관계는 한국·미국과 같은 대립적 노사관계가 아닌, 협조적·동지적 노사관계이기 때문에 생산성 향상이나 품질 개선에 크게 기여했다.</p>
+      <p>하지만 최근처럼 글로벌 경쟁이 격화되고 위기가 일상화된 경영환경 속에서는 일본 기업들의 이런 경영방식이 별로 도움이 안 된다. 경영자가 좀 더 강한 리더십을 갖고 위기를 적극적으로 돌파해야 하지만 그렇지 못하기 때문이다. 특히 신속한 의사결정과 과감한 투자결정이 필요할 때 일본 기업들은 번번이 실기(失機)했다. 이 때문에 소니와 파나소닉, 샤프, 엘피다, 도쿄전력과 같은 일본의 명문 기업들이 줄줄이 어려움을 겪었다.</p>
+      <p>최근 일부 일본 기업들이 변화를 시도하려는 움직임이 있다. 하지만 많은 경영자가 이미 연로해서인지 변신을 꺼리고, 임원도 승진 과정에서 리더십을 제대로 발휘해 본 경험이 없어 나서기를 주저하고 있다. 간혹 젊은 경영자를 후계자로 발탁하지만, 층층시하의 선배들 밑에서 좀처럼 리더십을 발휘하지 못하고 있다.</p>
+
+      <h2 class="shead">한국식 오너 자본주의는 강력한 리더십으로 위기에 강해</h2>
+      <p>이에 비하면 한국 기업의 지배구조는 최근의 경영 환경에 보다 적합하다. 오너가 강력한 리더십을 갖고 기업을 운영하고 있기 때문이다. 그 결과 한국 기업들은 신속하고 과감한 의사결정을 무기로 세계시장에서 혁혁한 성과를 내고 있다. 특히 미국발 금융위기나 유럽발 재정위기 속에서 한국 기업과 일본 기업 간의 성과 차이는 더욱 극명히 나타나고 있다.</p>
+      <p>다만 오너가 의사결정을 잘못하면 기업 전체가 위기에 빠질 수 있다는 게 최대 약점이다. 오너에게 권력이 집중돼 있어 견제장치가 사실상 없기 때문이다. 물론 각종 시행착오를 겪으면서 한국 기업들은 오너를 보좌하는 시스템을 갖추고 있다. 전략기획실과 같은 스텝 기능이 강화됐고, 전문경영인층이 성장해 오너를 보완하고 있다. 하지만 한국식 오너 자본주의가 한 단계 더 나아가기 위해서는 오너를 보좌하는 시스템이 보다 강화되어야 할 것이다.</p>
+    </article>
+
+    <!-- ====== SIDEBAR (signature comparison) ====== -->
+    <aside class="rail">
+      <div class="compare">
+        <div class="compare__title">
+          일본의 법인 자본주의와<br>한국의 오너 자본주의 비교
+          <small>지배구조로 본 기업의 주인</small>
+        </div>
+        <div class="compare__cols">
+          <div class="col col--jp">
+            <div class="col__cap">
+              <span class="flag flag--jp" aria-hidden="true"></span>
+              <span class="col__country">일본</span>
+              <span class="col__sys">법인 자본주의</span>
+            </div>
+            <ul>
+              <li>다른 기업들이 기업의 주인</li>
+              <li>경영 관여 않는 법인 주주들</li>
+              <li>부도 위기 전까진 관망만</li>
+              <li>대신 직원들 영향력 커져</li>
+              <li>임원·팀장이 주요 사안 결정</li>
+              <li>위기 돌파할 ‘리더십 실종’</li>
+              <li>신속한 의사결정 쉽지 않아</li>
+              <li>투자 시기 등 번번이 놓쳐</li>
+            </ul>
+          </div>
+          <div class="col col--kr">
+            <div class="col__cap">
+              <span class="flag flag--kr" aria-hidden="true"></span>
+              <span class="col__country">한국</span>
+              <span class="col__sys">오너 자본주의</span>
+            </div>
+            <ul>
+              <li>오너가 기업의 주인</li>
+              <li>위기에 강한 한국식 구조</li>
+              <li>오너가 강력한 권한 가져</li>
+              <li>빠르고 과감한 변화 가능</li>
+              <li>강력한 리더십으로 위기 돌파</li>
+              <li>세계시장서 혁혁한 성과</li>
+              <li>신속한 의사결정이 무기</li>
+              <li>다만 오너 권한 견제 필요</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="rail__note">지배구조에 따라 기업의 주인과 의사결정 방식이 달라진다. 위기가 일상화된 환경에서는 두 구조의 성과 차이가 더 극명하게 나타난다.</p>
+    </aside>
+  </div>
+
+  <!-- ====== SUB ARTICLE ====== -->
+  <section class="subarticle">
+    <span class="kicker">의외의 CEO들이 몰락 자초</span>
+    <h2>기술 모르는 CEO들, 핵심사업 ‘전자’ 무시</h2>
+
+    <div class="ceos">
+      <div class="ceo">
+        <div class="ceo__avatar">大</div>
+        <div class="ceo__name">오가</div>
+        <div class="ceo__role">5대 사장<br>황금기 구축</div>
+      </div>
+      <div class="ceo">
+        <div class="ceo__avatar">出</div>
+        <div class="ceo__name">이데이</div>
+        <div class="ceo__role">관리통 출신<br>‘소니 쇼크’</div>
+      </div>
+      <div class="ceo">
+        <div class="ceo__avatar">S</div>
+        <div class="ceo__name">스트링거</div>
+        <div class="ceo__role">영화·음악 중심<br>전환</div>
+      </div>
+      <div class="ceo">
+        <div class="ceo__avatar">平</div>
+        <div class="ceo__name">히라이</div>
+        <div class="ceo__role">전 소니뮤직<br>현 사장</div>
+      </div>
+    </div>
+
+    <p>일본의 전자왕국 소니의 몰락은 주인 없는 일본식 법인 자본주의의 한계를 극명하게 보여준다.</p>
+    <p>소니 몰락의 단초는 5대 사장인 오가로부터 시작됐다. 오가 사장은 CD플레이어, 플레이스테이션 등을 잇달아 히트시키며 소니의 황금기를 구축했다. 하지만 음악·영화산업에 뛰어들어 콜롬비아 픽처스사의 매수 등을 위해 거금을 투자한 게 버블 붕괴와 함께 독으로 돌아와 대규모 부채를 떠안았다. 이 부채가 후계자 지명에 큰 영향을 미쳤다. 1995년 오가 사장은 회장으로 물러나면서 의외의 인물인 이데이씨를 사장으로 지명한다.</p>
+    <p>이데이 사장은 그러나 소니의 핵심 사업인 전자 부문에는 전혀 문외한인 관리통이었다. 그때까지 소니에는 기술계와 영업마케팅계가 번갈아 가며 사장을 맡는 전통이 있었다. 영업통인 오가 사장도 후임 사장을 기술계 출신으로 앉히고 싶었지만 자신이 남긴 거액의 부채가 부담이 되어 14명의 선배 임원들을 제치고 관리통인 이데이씨를 CEO(최고경영자)로 지명했다.</p>
+    <p>이데이는 당시 인터넷 열풍에 발맞춰 인터넷과 소니의 전자기기를 연결하는 디지털 드림 키츠(Digital Dream Kits) 전략을 제시했다. 그러나 소니는 전자기기 전문 메이커였으며 인터넷 기반 기술을 갖추지 못했다. 사내의 베테랑 기술자나 선배 임원들이 거세게 반발해 갈등이 증폭됐다. 이 와중에 소니 쇼크가 발생했다. 2003년도 결산에서 전자 부문이 1조5000억엔의 적자를 낸 것이다. ‘기술의 소니’란 신화는 사라졌고, 내부 난맥상이 처음으로 언론에 노출됐다. 결국 이데이는 2005년에 안도 사장과 동반 사퇴하는 초유의 사태가 벌어졌다.</p>
+    <p>하지만 소니의 불행은 이것으로 끝나지 않았다. 이데이 회장도 의외의 인물을 후계자로 지명했다. 전 CBS방송의 프로듀서이자 소니 아메리카의 사장이었던 스트링거를 CEO로 임명한 것이다. 이데이 회장은 자신을 사사건건 반대하던 일본인 경영진을 일소하고, 차세대 경영진으로 넘어가기 전의 중간계투 정도로 스트링거를 임명했지만 큰 오산이었다. 스트링거 회장은 기술의 소니를 영화·음악 중심의 회사로 바꾸기 시작했다. 기술 경시로 핵심 기술자들이 등을 돌리자 워크맨이나 트리니트론 TV 같은 소니다운 혁신 제품들은 자취를 감췄다. 반면 배터리 폭발사고 같은 품질 불량문제가 불거져 나왔다. 전자 부문 적자가 눈덩이처럼 불어나 영화나 음악, 금융 부문에서의 이익을 모두 까먹었고 회사 전체가 적자 체질로 전락했다.</p>
+    <p>스트링거 회장 후임으로 지난달 51세의 히라이 사장이 취임했다. 스트링거 차일드(child)로 불리는 그는 소니 뮤직 아메리카 출신으로 역시 기술을 전혀 모른다. 히라이 사장도 음악과 영화, 금융을 소니의 핵심 사업으로 간주한다. 다만 전자 부문의 부활 없이는 소니 재건이 불가능하다는 사실 때문에 아직은 경쟁력이 있는 디지털카메라와 게임기, 휴대폰을 육성하는 전략을 내놨다. 문제는 TV 사업이다. 이미 LCD 패널을 삼성전자로부터 조달할 정도로 핵심 기술도 사라졌고, 이데이 회장과 스트링거 회장 시절에 TV의 핵심 기술자들이 회사를 많이 떠났다.</p>
+
+    <p class="endmark">김현철 서울대 국제대학원 교수</p>
+  </section>
+
+  <footer class="src-note">
+    출처 · 조선경제(조선일보) 2012년 5월 16일자 B7면 ‘심층분석’ · 글 김현철 서울대 국제대학원 교수.
+    이 페이지는 지면 기사를 웹 게재용으로 재구성한 예시 템플릿입니다. 실제 사내 게재 시 해당 매체의
+    전재(轉載) 허가 또는 라이선스 확보 여부를 확인하시기 바랍니다.
+  </footer>
+</div>
+
+</body>
+</html>
