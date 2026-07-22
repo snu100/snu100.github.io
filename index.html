@@ -133,7 +133,14 @@ a{color:inherit;text-decoration:none}
 .about-body .btn{margin-top:30px}
 
 /* ---------- VIDEO ---------- */
-.video{background:var(--bluewash)}
+.video{background:var(--bluewash)}                 /* A안: 독립 섹션 */
+.about-video{margin-top:72px}                      /* B안: 인사말 영역 안 */
+.about-video .vbox{margin-left:0}                  /* B안은 좌측 정렬 */
+body[data-video="a"] .about-video{display:none}
+body[data-video="b"] .video{display:none}
+.ab-toggle{position:fixed;right:18px;bottom:18px;z-index:300;display:flex;gap:4px;background:var(--navy);padding:5px;border-radius:30px;box-shadow:0 10px 26px -8px rgba(8,18,45,.5)}
+.ab-toggle button{border:0;background:transparent;color:#C4D0E2;font:600 13px/1 'Pretendard',system-ui,sans-serif;padding:10px 18px;border-radius:30px;cursor:pointer;letter-spacing:-0.01em}
+.ab-toggle button.on{background:var(--blue);color:#fff}
 .vbox{max-width:860px;margin:0 auto;aspect-ratio:16/9;background:#fff;border:1px dashed var(--line-2);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
 .vbox .play{width:66px;height:66px;border-radius:50%;background:#fff;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--navy);box-shadow:0 14px 30px -16px rgba(14,28,63,.45)}
 .vbox p{font-size:14px;color:var(--muted)}
@@ -281,7 +288,13 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 }
 </style>
 </head>
-<body data-plan="a">
+<body data-plan="a" data-video="a">
+<!-- 영상 배치 A/B 비교용 임시 토글 -->
+<div class="ab-toggle" role="group" aria-label="영상 배치 A/B">
+  <button type="button" data-v="a" class="on">영상 A</button>
+  <button type="button" data-v="b">영상 B</button>
+</div>
+
 
 <!-- Mobile hamburger button -->
 <button class="m-toggle" id="mToggle" aria-label="메뉴 열기">
@@ -350,6 +363,13 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
         <p>저는 오로지 역량과 성과, 비전과 실행력으로 평가받겠습니다.<br>서울대에 새로운 혁신의 바람을 일으키겠습니다.<br>지금의 위기를 돌파하고, 서울대의 다음 100년을 준비하는 그 길에 함께 해 주십시오.</p>
       </div>
       <a href="about-greeting.html" class="btn btn-outline">More Information <span class="arr">→</span></a>
+    </div>
+  </div>
+  <!-- B안: 인사말 영역 안, 본문 아래 영상 자리 -->
+  <div class="wrap about-video" data-reveal>
+    <div class="vbox">
+      <span class="play" aria-hidden="true">▶</span>
+      <p>영상 준비 중입니다</p>
     </div>
   </div>
 </section>
@@ -553,6 +573,14 @@ function revealInView(){
 }
 addEventListener('load',revealInView);revealInView();
 setTimeout(()=>reveals.forEach(show),1400);
+
+// ----- 영상 배치 A/B 토글 -----
+const abBtns=[...document.querySelectorAll('.ab-toggle button')];
+abBtns.forEach(b=>b.addEventListener('click',()=>{
+  document.body.dataset.video=b.dataset.v;
+  abBtns.forEach(x=>x.classList.toggle('on',x===b));
+  document.getElementById('about').scrollIntoView({behavior:'smooth'});
+}));
 
 // ----- mobile menu -----
 const mToggle=document.getElementById('mToggle');
