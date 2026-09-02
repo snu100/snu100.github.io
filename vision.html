@@ -148,8 +148,8 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
     <a href="index.html#top" class="brand">김현철</a>
     <nav class="subnav" aria-label="주요 메뉴 (바형)">
       <a href="index.html#top">홈페이지</a>
-      <a href="about-greeting.html">인사말</a>
-      <div class="navgroup"><a href="vision.html">비전</a><div class="dd"><a href="vision-open.html">새로운 총장실</a><a href="vision-incorporation.html">지배구조 개혁</a><a href="vision.html">핵심 공약 03</a><a href="vision.html">핵심 공약 04</a></div></div>
+      <div class="navgroup"><a href="about-greeting.html">인사말</a><div class="dd"><a href="about-greeting.html">인사말</a><a href="about-statement.html">소견서</a></div></div>
+      <div class="navgroup"><a href="vision.html">비전</a><div class="dd"><a href="vision-open.html">책임 총장</a><a href="vision-empowerment.html">권한 위임</a><a href="vision-government.html">대정부 활동</a><a href="vision-fundraising.html">재정 자립</a><a href="vision-incorporation.html">지배구조 혁신</a><a href="vision-education.html">교육 혁신</a><a href="vision-research.html">연구 혁신</a><a href="vision-globalization.html">국제화 혁신</a><a href="vision-community.html">구성원 존중</a><a href="vision-campus.html">미래형 캠퍼스</a></div></div>
       <div class="navgroup"><a href="about-profile.html">이력과 경력</a><div class="dd"><a href="about-profile.html">프로필</a><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a></div></div>
       <a href="index.html#download" class="btn btn-outline-light">발전계획서 <span class="arr">→</span></a>
     </nav>
@@ -159,13 +159,23 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
 <button class="m-toggle" id="mToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
 <nav class="m-menu" id="mMenu" aria-hidden="true">
   <a href="index.html#top" class="m-home">홈페이지</a>
-  <a href="about-greeting.html" class="m-home">인사말</a>
+  <div class="m-group">
+    <span class="m-cat">인사말</span>
+    <a href="about-greeting.html">인사말</a>
+    <a href="about-statement.html">소견서</a>
+  </div>
   <div class="m-group">
     <span class="m-cat">비전 · 10대 핵심 공약</span>
-    <a href="vision-open.html">새로운 총장실</a>
-    <a href="vision-incorporation.html">지배구조 개혁</a>
-    <a href="vision.html">핵심 공약 03</a>
-    <a href="vision.html">핵심 공약 04</a>
+    <a href="vision-open.html">책임 총장</a>
+    <a href="vision-empowerment.html">권한 위임</a>
+    <a href="vision-government.html">대정부 활동</a>
+    <a href="vision-fundraising.html">재정 자립</a>
+    <a href="vision-incorporation.html">지배구조 혁신</a>
+    <a href="vision-education.html">교육 혁신</a>
+    <a href="vision-research.html">연구 혁신</a>
+    <a href="vision-globalization.html">국제화 혁신</a>
+    <a href="vision-community.html">구성원 존중</a>
+    <a href="vision-campus.html">미래형 캠퍼스</a>
   </div>
   <div class="m-group">
     <span class="m-cat">이력과 경력</span>
@@ -196,39 +206,93 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
   <div class="wrap">
     <div class="vgrid" data-reveal>
       <a href="vision-open.html" class="vcard">
-        <div class="thumb"><img src="assets/web/SNU_Main_V_01.webp" alt="새로운 총장실" loading="lazy"></div>
+        <div class="thumb"><img src="assets/web/SNU_Main_V_01.webp" alt="책임 총장" loading="lazy"></div>
         <div class="body">
           <div class="arrow">→</div>
-          <div class="vtitle">새로운 총장실</div>
-          <div class="vlabel">Open Governance</div>
-          <div class="vdesc">총장의 활동을 투명하게 공개하고 매년 평가를 받겠습니다.</div>
+          <div class="vtitle">책임 총장</div>
+          <div class="vlabel">Accountability</div>
+          <div class="vdesc">총장의 일정과 활동, 예산 집행과 업무 성과를 투명하게 공개하고 매년 평가를 받겠습니다.</div>
+        </div>
+      </a>
+      <a href="vision-empowerment.html" class="vcard">
+        <div class="thumb"><img src="assets/web/pledge-empowerment.png" alt="권한 위임" loading="lazy"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">권한 위임</div>
+          <div class="vlabel">Empowerment</div>
+          <div class="vdesc">본부의 권한을 줄이고 단과대학의 권한을 늘리겠습니다.</div>
+        </div>
+      </a>
+      <a href="vision-government.html" class="vcard">
+        <div class="thumb"><img src="assets/web/pledge-government.png" alt="대정부 활동" loading="lazy"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">대정부 활동</div>
+          <div class="vlabel">Government</div>
+          <div class="vdesc">전략적 협력을 통해 서울대 발전을 위한 정책 환경을 만들겠습니다.</div>
+        </div>
+      </a>
+      <a href="vision-fundraising.html" class="vcard">
+        <div class="thumb"><img src="assets/web/pledge-fundraising.png" alt="재정 자립" loading="lazy"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">재정 자립</div>
+          <div class="vlabel">Fundraising</div>
+          <div class="vdesc">재정 확대와 본부 효율화로 2027년을 재정 자립 원년으로 만들겠습니다.</div>
         </div>
       </a>
       <a href="vision-incorporation.html" class="vcard">
-        <div class="thumb"><img src="assets/web/SNU_Main_V_02.webp" alt="지배구조 개혁" loading="lazy"></div>
+        <div class="thumb"><img src="assets/web/SNU_Main_V_02.webp" alt="지배구조 혁신" loading="lazy"></div>
         <div class="body">
           <div class="arrow">→</div>
-          <div class="vtitle">지배구조 개혁</div>
-          <div class="vlabel">Restructuring</div>
-          <div class="vdesc">이사회를 비롯한 본부의 지배구조를 대대적으로 개혁하겠습니다.</div>
+          <div class="vtitle">지배구조 혁신</div>
+          <div class="vlabel">Governance</div>
+          <div class="vdesc">대학본부와 이사회 등이 유기적으로 협력하는 새로운 운영체계를 구축하겠습니다.</div>
         </div>
       </a>
-      <a href="vision.html" class="vcard ghost">
-        <div class="thumb"><img src="assets/web/SNU_Main_V_03.webp" alt="핵심 공약 03" loading="lazy"></div>
+      <a href="vision-education.html" class="vcard">
+        <div class="thumb"><img src="assets/web/pledge-education.png" alt="교육 혁신" loading="lazy"></div>
         <div class="body">
           <div class="arrow">→</div>
-          <div class="vtitle">핵심 공약 03</div>
-          <div class="vlabel">Coming soon</div>
-          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+          <div class="vtitle">교육 혁신</div>
+          <div class="vlabel">Education</div>
+          <div class="vdesc">다양한 인재를 발굴하고 세계와 미래를 이끌 리더를 육성하겠습니다.</div>
         </div>
       </a>
-      <a href="vision.html" class="vcard ghost">
-        <div class="thumb"><img src="assets/web/SNU_Main_V_04.webp" alt="핵심 공약 04" loading="lazy"></div>
+      <a href="vision-research.html" class="vcard">
+        <div class="thumb"><img src="assets/web/pledge-research.png" alt="연구 혁신" loading="lazy"></div>
         <div class="body">
           <div class="arrow">→</div>
-          <div class="vtitle">핵심 공약 04</div>
-          <div class="vlabel">Coming soon</div>
-          <div class="vdesc">세부 공약이 곧 공개됩니다.</div>
+          <div class="vtitle">연구 혁신</div>
+          <div class="vlabel">Research</div>
+          <div class="vdesc">모든 연구자가 안심하고 세계적인 연구에 도전하는 서울대를 만들겠습니다.</div>
+        </div>
+      </a>
+      <a href="vision-globalization.html" class="vcard">
+        <div class="thumb"><img src="assets/web/pledge-globalization.png" alt="국제화 혁신" loading="lazy"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">국제화 혁신</div>
+          <div class="vlabel">Globalization</div>
+          <div class="vdesc">세계와 경쟁하고 세계와 협력하는 서울대를 만들겠습니다.</div>
+        </div>
+      </a>
+      <a href="vision-community.html" class="vcard">
+        <div class="thumb"><img src="assets/web/pledge-community.png" alt="구성원 존중" loading="lazy"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">구성원 존중</div>
+          <div class="vlabel">Community</div>
+          <div class="vdesc">공정한 보상과 합당한 처우를 마련하겠습니다.</div>
+        </div>
+      </a>
+      <a href="vision-campus.html" class="vcard">
+        <div class="thumb"><img src="assets/web/pledge-campus.png" alt="미래형 캠퍼스" loading="lazy"></div>
+        <div class="body">
+          <div class="arrow">→</div>
+          <div class="vtitle">미래형 캠퍼스</div>
+          <div class="vlabel">Campus</div>
+          <div class="vdesc">개교 100주년을 향한 캠퍼스 그랜드 디자인을 시작하겠습니다.</div>
         </div>
       </a>
     </div>
@@ -238,8 +302,8 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-col"><h4>인사말</h4><a href="about-greeting.html">인사말</a></div>
-      <div class="foot-col"><h4>비전</h4><a href="vision-open.html">새로운 총장실</a><a href="vision-incorporation.html">지배구조 개혁</a><a href="vision.html">핵심 공약 03</a><a href="vision.html">핵심 공약 04</a></div>
+      <div class="foot-col"><h4>인사말</h4><a href="about-greeting.html">인사말</a><a href="about-statement.html">소견서</a></div>
+      <div class="foot-col"><h4>비전</h4><a href="vision-open.html">책임 총장</a><a href="vision-empowerment.html">권한 위임</a><a href="vision-government.html">대정부 활동</a><a href="vision-fundraising.html">재정 자립</a><a href="vision-incorporation.html">지배구조 혁신</a><a href="vision-education.html">교육 혁신</a><a href="vision-research.html">연구 혁신</a><a href="vision-globalization.html">국제화 혁신</a><a href="vision-community.html">구성원 존중</a><a href="vision-campus.html">미래형 캠퍼스</a></div>
       <div class="foot-col"><h4>이력과 경력</h4><a href="about-profile.html">프로필</a><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a></div>
     </div>
   </div>
@@ -257,7 +321,7 @@ mToggle.addEventListener('click',()=>{const open=mMenuEl.classList.toggle('open'
 mMenuEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMMenu));
 
 // ----- corner flyout menu -----
-const subData={home:[],about:[['인사말','about-greeting.html']],vision:[['새로운 총장실','vision-open.html'],['지배구조 개혁','vision-incorporation.html'],['핵심 공약 03','vision.html'],['핵심 공약 04','vision.html']],history:[['프로필','about-profile.html'],['대표 저서','publications.html'],['주요 활동','history-activities.html']]};
+const subData={home:[],about:[['인사말','about-greeting.html'],['소견서','about-statement.html']],vision:[['책임 총장','vision-open.html'],['권한 위임','vision-empowerment.html'],['대정부 활동','vision-government.html'],['재정 자립','vision-fundraising.html'],['지배구조 혁신','vision-incorporation.html'],['교육 혁신','vision-education.html'],['연구 혁신','vision-research.html'],['국제화 혁신','vision-globalization.html'],['구성원 존중','vision-community.html'],['미래형 캠퍼스','vision-campus.html']],history:[['프로필','about-profile.html'],['대표 저서','publications.html'],['주요 활동','history-activities.html']]};
 const PAGE_KEY='vision',PAGE_SUB='';
 const keyHref={home:'index.html#top',about:'about-greeting.html',vision:'vision.html',history:'about-profile.html'};
 const cnSub=document.getElementById('cnSub');

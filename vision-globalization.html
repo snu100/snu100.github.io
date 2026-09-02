@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>일본이 온다 · 김현철 · 서울대 교수 홈페이지</title>
-<meta name="description" content="일본이 온다 — 김현철의 대표 저서">
+<title>국제화 혁신 · 김현철 · 서울대 교수 홈페이지</title>
+<meta name="description" content="세계와 경쟁하고 세계와 협력하는 서울대를 만들겠습니다 — 김현철의 10대 핵심 공약">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="김현철 · 서울대 교수 홈페이지">
-<meta property="og:title" content="일본이 온다 · 김현철 · 서울대 교수 홈페이지">
-<meta property="og:description" content="일본이 온다 — 김현철의 대표 저서">
-<meta property="og:url" content="https://snu100.github.io/book-japan.html">
+<meta property="og:title" content="국제화 혁신 · 김현철 · 서울대 교수 홈페이지">
+<meta property="og:description" content="세계와 경쟁하고 세계와 협력하는 서울대를 만들겠습니다 — 김현철의 10대 핵심 공약">
+<meta property="og:url" content="https://snu100.github.io/vision-globalization.html">
 <meta property="og:image" content="https://snu100.github.io/assets/web/share-card.jpg">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="일본이 온다 · 김현철 · 서울대 교수 홈페이지">
-<meta name="twitter:description" content="일본이 온다 — 김현철의 대표 저서">
+<meta name="twitter:title" content="국제화 혁신 · 김현철 · 서울대 교수 홈페이지">
+<meta name="twitter:description" content="세계와 경쟁하고 세계와 협력하는 서울대를 만들겠습니다 — 김현철의 10대 핵심 공약">
 <meta name="twitter:image" content="https://snu100.github.io/assets/web/share-card.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -128,53 +128,25 @@ a{color:inherit;text-decoration:none}
 
 .detail-body .bhead{
   font-size:clamp(24px,2.9vw,32px);font-weight:800;color:var(--blue);
-  letter-spacing:-0.02em;line-height:1.25;margin-bottom:26px;
+  letter-spacing:-0.02em;line-height:1.25;margin-bottom:30px;
 }
-
-/* ---------- book detail card ---------- */
-.bookcard{
-  display:grid;grid-template-columns:208px 1fr;gap:38px;align-items:start;
-  border:1px solid var(--line-2);border-radius:4px;padding:32px;background:#fff;
-  box-shadow:0 1px 0 rgba(20,30,55,.04);margin-bottom:34px;
+.detail-body .quote{
+  border-left:5px solid var(--navy);padding:4px 0 4px 26px;margin-bottom:40px;
 }
-.bookcover{
-  position:relative;aspect-ratio:1/1.42;border-radius:4px;overflow:hidden;
-  background:linear-gradient(135deg,#1E40B0,#2D6FE0);
-  box-shadow:0 14px 30px -16px rgba(20,40,90,.5);
+.detail-body .quote p{
+  font-size:clamp(20px,2.5vw,27px);font-weight:800;color:var(--navy);
+  line-height:1.5;letter-spacing:-0.02em;
 }
-.bc-fallback{
-  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:20px 18px;color:#fff;
-}
-.bc-fallback::before{
-  content:"";position:absolute;width:130%;aspect-ratio:1;right:-30%;top:-32%;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,rgba(120,170,255,.7),rgba(40,90,210,.12) 70%);
-}
-.bc-jp{position:relative;font-size:17px;font-weight:800;line-height:1.42;letter-spacing:-0.01em}
-.bc-au{position:relative;font-size:12px;color:rgba(255,255,255,.82);margin-top:12px}
-.bookcover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-
-.bookmeta{min-width:0}
-.tagrow{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
-.tag-chip{font-size:13px;font-weight:700;color:var(--blue);background:var(--bluewash);padding:6px 13px;border-radius:4px;white-space:nowrap}
-.tagrow .date{font-size:12.5px;color:var(--muted-2);white-space:nowrap}
-.bquote{border-left:4px solid var(--navy);padding:2px 0 2px 18px;margin-bottom:20px}
-.bquote p{font-size:clamp(17px,1.9vw,20px);font-weight:800;color:var(--navy);line-height:1.5;letter-spacing:-0.02em}
-.bintro{font-size:15px;color:#46505F;line-height:1.9;text-wrap:pretty}
-
-/* ---------- prose + references ---------- */
 .detail-body .prose p{
   font-size:15.5px;color:#46505F;line-height:1.95;margin-bottom:20px;text-wrap:pretty;
 }
-.refs{
-  margin-top:4px;padding:22px 24px;background:var(--gray);
-  border:1px solid var(--line);border-radius:6px;
-}
-.refs .refs-label{
-  font-size:12px;font-weight:800;color:var(--blue);
-  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;
-}
-.refs p{font-size:13px;color:var(--muted);line-height:2.0;overflow-wrap:anywhere}
+.detail-body .prose p:last-child{margin-bottom:0}
+.detail-body .prose h3{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin:34px 0 14px}
+.detail-body .prose h3:first-child{margin-top:0}
+.detail-body .prose ul{list-style:none;margin-bottom:24px}
+.detail-body .prose ul:last-child{margin-bottom:0}
+.detail-body .prose li{position:relative;padding-left:20px;font-size:15.5px;color:#46505F;line-height:1.9;margin-bottom:8px}
+.detail-body .prose li::before{content:"";position:absolute;left:2px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
 .detail-body .back{margin-top:46px}
 
 /* ---------- FOOTER ---------- */
@@ -286,10 +258,6 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
   .detail{padding:46px 0 72px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
 }
-@media(max-width:560px){
-  .bookcard{grid-template-columns:1fr;gap:24px;padding:24px}
-  .bookcover{max-width:190px;margin:0 auto}
-}
 @media(max-width:480px){
   :root{--pad:20px}
   .foot-grid{grid-template-columns:1fr}
@@ -358,8 +326,8 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
     <div class="cn-sub" id="cnSub"></div>
   </nav>
   <div class="wrap">
-    <span class="eyebrow">이력과 경력 · 대표 저서</span>
-    <h1>일본이 온다</h1>
+    <span class="eyebrow">비전 · 10대 핵심 공약</span>
+    <h1>국제화 혁신</h1>
   </div>
 </section>
 
@@ -371,41 +339,48 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
 
     <!-- right body -->
     <aside class="side" data-reveal>
-      <div class="cat">대표 저서</div>
+      <div class="cat">10대 핵심 공약</div>
       <ul>
-        <li><a href="book-low-growth.html">저성장시대 어떻게 돌파할 것인가</a></li>
-        <li><a href="book-japan.html" class="active">일본이 온다</a></li>
-        <li><a href="book-inclusive.html">포용국가</a></li>
-        <li><a href="history-publications.html">편의점 업태의 혁신</a></li>
-        <li><a href="book-strongest.html">최강기업 만들기</a></li>
-        <li><a href="book-asia.html">아시아 최강 경영</a></li>
+        <li><a href="vision-open.html">책임 총장</a></li>
+        <li><a href="vision-empowerment.html">권한 위임</a></li>
+        <li><a href="vision-government.html">대정부 활동</a></li>
+        <li><a href="vision-fundraising.html">재정 자립</a></li>
+        <li><a href="vision-incorporation.html">지배구조 혁신</a></li>
+        <li><a href="vision-education.html">교육 혁신</a></li>
+        <li><a href="vision-research.html">연구 혁신</a></li>
+        <li><a href="vision-globalization.html" class="active">국제화 혁신</a></li>
+        <li><a href="vision-community.html">구성원 존중</a></li>
+        <li><a href="vision-campus.html">미래형 캠퍼스</a></li>
       </ul>
     </aside>
     <div class="detail-body" data-reveal>
-      <h2 class="bhead">일본이 온다</h2>
+      <h2 class="bhead">명실상부한 국제화</h2>
 
-      <div class="bookcard">
-        <div class="bookcover">
-          <div class="bc-fallback">
-            <div class="bc-jp">일본이<br>온다</div>
-            <div class="bc-au">김현철 · 쌤앤파커스</div>
-          </div>
-          <img src="assets/web/book-japan-is-coming.webp" alt="《일본이 온다》 표지" onerror="this.remove()">
-        </div>
-        <div class="bookmeta">
-          <div class="tagrow">
-            <span class="tag-chip">한일관계</span>
-            <span class="date">쌤앤파커스 · 2023</span>
-          </div>
-          <p class="bintro">국제대학원 원장 재임 중 출간한, 일본의 대외 팽창과 그 영향을 다룬 대중서입니다.</p>
-        </div>
-      </div>
+      <blockquote class="quote">
+        <p>“세계와 경쟁하고 세계와 협력하는 서울대를 만들겠습니다.”</p>
+      </blockquote>
 
       <div class="prose">
-        <p>2023년 하반기에 출간한 이 책은 국제대학원 원장직을 수행하면서 출간한 대중서입니다. 이 책은 일본의 대외적인 팽창이 한국에 어떠한 영향을 미치는지를 설명한 책입니다. 이 책 또한 어려운 출판환경 속에서 만권 가까이 판매되었습니다.</p>
+        <h3>1. 세계적 수준의 국제화 전략 추진</h3>
+        <ul>
+          <li>세계 주요 대학평가의 국제화 지표를 체계적으로 분석, 맞춤형 전략 수립</li>
+          <li>국제화 수준을 획기적으로 높여 서울대의 글로벌 경쟁력 강화</li>
+        </ul>
+        <h3>2. 세계와 함께하는 교육 환경 조성</h3>
+        <ul>
+          <li>외국인 교원 비율 확대와 국제 수준의 초빙 및 정착 지원</li>
+          <li>국가별 조세협정 등을 활용한 우수 비전임 외국인 교원 적극 초빙</li>
+          <li>해외 대학과 2 + 2 학부 공동학위제도 도입</li>
+          <li>해외 학부 및 대학원 졸업자 모집 확대</li>
+          <li>국제하계프로그램(ISP) 강화</li>
+        </ul>
+        <h3>3. 양방향 국제화 확대</h3>
+        <ul>
+          <li>해외 우수 학생과 연구자의 유입(inbound) 확대</li>
+          <li>학생, 교수의 해외 진출(outbound)과 국제교류 활성화</li>
+          <li>교육, 연구, 인재 교류가 선순환하는 글로벌 네트워크 구축</li>
+        </ul>
       </div>
-
-      <div class="back"><a href="publications.html" class="btn btn-outline">← 대표 저서 목록</a></div>
 
     </div>
 
@@ -472,7 +447,7 @@ mMenuEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMMenu))
 
 // ----- corner flyout menu -----
 const subData={home:[],about:[['인사말','about-greeting.html'],['소견서','about-statement.html']],vision:[['책임 총장','vision-open.html'],['권한 위임','vision-empowerment.html'],['대정부 활동','vision-government.html'],['재정 자립','vision-fundraising.html'],['지배구조 혁신','vision-incorporation.html'],['교육 혁신','vision-education.html'],['연구 혁신','vision-research.html'],['국제화 혁신','vision-globalization.html'],['구성원 존중','vision-community.html'],['미래형 캠퍼스','vision-campus.html']],history:[['프로필','about-profile.html'],['대표 저서','publications.html'],['주요 활동','history-activities.html']]};
-const PAGE_KEY='history',PAGE_SUB='publications.html';
+const PAGE_KEY='vision',PAGE_SUB='vision-globalization.html';
 const keyHref={home:'index.html#top',about:'about-greeting.html',vision:'vision.html',history:'about-profile.html'};
 const cnSub=document.getElementById('cnSub');
 const cnItems=[...document.querySelectorAll('.cn-main li')];

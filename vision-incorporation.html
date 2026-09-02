@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>지배구조 개혁 · 김현철 · 서울대 교수 홈페이지</title>
-<meta name="description" content="혁신을 위한 지배구조 개혁 — 김현철의 10대 핵심 공약">
+<title>지배구조 혁신 · 김현철 · 서울대 교수 홈페이지</title>
+<meta name="description" content="대학본부와 이사회 등이 유기적으로 협력하는 새로운 운영체계를 구축하겠습니다 — 김현철의 10대 핵심 공약">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="김현철 · 서울대 교수 홈페이지">
-<meta property="og:title" content="지배구조 개혁 · 김현철 · 서울대 교수 홈페이지">
-<meta property="og:description" content="혁신을 위한 지배구조 개혁 — 김현철의 10대 핵심 공약">
+<meta property="og:title" content="지배구조 혁신 · 김현철 · 서울대 교수 홈페이지">
+<meta property="og:description" content="대학본부와 이사회 등이 유기적으로 협력하는 새로운 운영체계를 구축하겠습니다 — 김현철의 10대 핵심 공약">
 <meta property="og:url" content="https://snu100.github.io/vision-incorporation.html">
 <meta property="og:image" content="https://snu100.github.io/assets/web/share-card.jpg">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="지배구조 개혁 · 김현철 · 서울대 교수 홈페이지">
-<meta name="twitter:description" content="혁신을 위한 지배구조 개혁 — 김현철의 10대 핵심 공약">
+<meta name="twitter:title" content="지배구조 혁신 · 김현철 · 서울대 교수 홈페이지">
+<meta name="twitter:description" content="대학본부와 이사회 등이 유기적으로 협력하는 새로운 운영체계를 구축하겠습니다 — 김현철의 10대 핵심 공약">
 <meta name="twitter:image" content="https://snu100.github.io/assets/web/share-card.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -141,6 +141,12 @@ a{color:inherit;text-decoration:none}
   font-size:15.5px;color:#46505F;line-height:1.95;margin-bottom:20px;text-wrap:pretty;
 }
 .detail-body .prose p:last-child{margin-bottom:0}
+.detail-body .prose h3{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin:34px 0 14px}
+.detail-body .prose h3:first-child{margin-top:0}
+.detail-body .prose ul{list-style:none;margin-bottom:24px}
+.detail-body .prose ul:last-child{margin-bottom:0}
+.detail-body .prose li{position:relative;padding-left:20px;font-size:15.5px;color:#46505F;line-height:1.9;margin-bottom:8px}
+.detail-body .prose li::before{content:"";position:absolute;left:2px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
 .detail-body .back{margin-top:46px}
 
 /* ---------- FOOTER ---------- */
@@ -264,8 +270,8 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
     <a href="index.html#top" class="brand">김현철</a>
     <nav class="subnav" aria-label="주요 메뉴 (바형)">
       <a href="index.html#top">홈페이지</a>
-      <a href="about-greeting.html">인사말</a>
-      <div class="navgroup"><a href="vision.html">비전</a><div class="dd"><a href="vision-open.html">새로운 총장실</a><a href="vision-incorporation.html">지배구조 개혁</a><a href="vision.html">핵심 공약 03</a><a href="vision.html">핵심 공약 04</a></div></div>
+      <div class="navgroup"><a href="about-greeting.html">인사말</a><div class="dd"><a href="about-greeting.html">인사말</a><a href="about-statement.html">소견서</a></div></div>
+      <div class="navgroup"><a href="vision.html">비전</a><div class="dd"><a href="vision-open.html">책임 총장</a><a href="vision-empowerment.html">권한 위임</a><a href="vision-government.html">대정부 활동</a><a href="vision-fundraising.html">재정 자립</a><a href="vision-incorporation.html">지배구조 혁신</a><a href="vision-education.html">교육 혁신</a><a href="vision-research.html">연구 혁신</a><a href="vision-globalization.html">국제화 혁신</a><a href="vision-community.html">구성원 존중</a><a href="vision-campus.html">미래형 캠퍼스</a></div></div>
       <div class="navgroup"><a href="about-profile.html">이력과 경력</a><div class="dd"><a href="about-profile.html">프로필</a><a href="publications.html">대표 저서</a><a href="history-activities.html">주요 활동</a></div></div>
       <a href="index.html#download" class="btn btn-outline-light">발전계획서 <span class="arr">→</span></a>
     </nav>
@@ -279,13 +285,23 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
 <!-- Mobile nav panel -->
 <nav class="m-menu" id="mMenu" aria-hidden="true">
   <a href="index.html#top" class="m-home">홈페이지</a>
-  <a href="about-greeting.html" class="m-home">인사말</a>
+  <div class="m-group">
+    <span class="m-cat">인사말</span>
+    <a href="about-greeting.html">인사말</a>
+    <a href="about-statement.html">소견서</a>
+  </div>
   <div class="m-group">
     <span class="m-cat">비전 · 10대 핵심 공약</span>
-    <a href="vision-open.html">새로운 총장실</a>
-    <a href="vision-incorporation.html">지배구조 개혁</a>
-    <a href="vision.html">핵심 공약 03</a>
-    <a href="vision.html">핵심 공약 04</a>
+    <a href="vision-open.html">책임 총장</a>
+    <a href="vision-empowerment.html">권한 위임</a>
+    <a href="vision-government.html">대정부 활동</a>
+    <a href="vision-fundraising.html">재정 자립</a>
+    <a href="vision-incorporation.html">지배구조 혁신</a>
+    <a href="vision-education.html">교육 혁신</a>
+    <a href="vision-research.html">연구 혁신</a>
+    <a href="vision-globalization.html">국제화 혁신</a>
+    <a href="vision-community.html">구성원 존중</a>
+    <a href="vision-campus.html">미래형 캠퍼스</a>
   </div>
   <div class="m-group">
     <span class="m-cat">이력과 경력</span>
@@ -311,7 +327,7 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
   </nav>
   <div class="wrap">
     <span class="eyebrow">비전 · 10대 핵심 공약</span>
-    <h1>지배구조 개혁</h1>
+    <h1>지배구조 혁신</h1>
   </div>
 </section>
 
@@ -325,24 +341,48 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
     <aside class="side" data-reveal>
       <div class="cat">10대 핵심 공약</div>
       <ul>
-        <li><a href="vision-open.html">새로운 총장실</a></li>
-        <li><a href="vision-incorporation.html" class="active">지배구조 개혁</a></li>
-        <li><a href="vision.html">핵심 공약 03</a></li>
-        <li><a href="vision.html">핵심 공약 04</a></li>
+        <li><a href="vision-open.html">책임 총장</a></li>
+        <li><a href="vision-empowerment.html">권한 위임</a></li>
+        <li><a href="vision-government.html">대정부 활동</a></li>
+        <li><a href="vision-fundraising.html">재정 자립</a></li>
+        <li><a href="vision-incorporation.html" class="active">지배구조 혁신</a></li>
+        <li><a href="vision-education.html">교육 혁신</a></li>
+        <li><a href="vision-research.html">연구 혁신</a></li>
+        <li><a href="vision-globalization.html">국제화 혁신</a></li>
+        <li><a href="vision-community.html">구성원 존중</a></li>
+        <li><a href="vision-campus.html">미래형 캠퍼스</a></li>
       </ul>
     </aside>
     <div class="detail-body" data-reveal>
-      <h2 class="bhead">혁신을 위한 지배구조 개혁</h2>
+      <h2 class="bhead">미래지향적 지배구조 구축</h2>
 
       <blockquote class="quote">
-        <p>“이사회를 비롯한 본부의 지배구조를 대대적으로 개혁하겠습니다.”</p>
+        <p>“대학본부와 이사회 등이 유기적으로 협력하는 새로운 운영체계를 구축하겠습니다.”</p>
       </blockquote>
 
       <div class="prose">
-        <p><strong>본부의 조직과 예산을 대대적으로 구조조정하겠습니다.</strong><br>부총장직을 축소하고 본부 예산의 상당부분을 각 단과대학으로 이전하겠습니다. 교육과 연구가 각 단과대학을 중심으로 운영될 수 있도록 하겠습니다.</p>
-        <p><strong>평의원회의 역할을 조정하겠습니다.</strong><br>평의원회 대표성을 높이고 대학운영에 관한 심의 기능과 자문 기능을 강화 하겠습니다.</p>
-        <p><strong>명목뿐인 이사회 기능을 재정립하겠습니다.</strong><br>이사회를 최고 기구로 만들고 서울대 재정 개혁을 위한 특별 위원회도 설치하겠습니다. 이 위원회는 모두 외부인으로 구성하겠습니다.</p>
-        <p><strong>서울대 학교법인과 병원법인의 연계를 강화하겠습니다.</strong><br>양 법인을 총괄하는 상위 기구를 설치하여 학교법인과 병원법인이 하나의 서울대로 운영될 수 있도록 하겠습니다.</p>
+        <h3>1. 학원장, 부학원장 회의</h3>
+        <ul>
+          <li>학원장 회의를 실질적인 학내 최고 의사결정 기구로 전환, 이를 위해 세부 안건은 서면 등으로 처리하고 학원장 회의는 학교 전체의 문제를 집중 논의</li>
+          <li>부학원장 회의 강화, 학내 문제의 대부분은 부학원장 회의에서 논의 결정</li>
+        </ul>
+        <h3>2. 평의원회</h3>
+        <ul>
+          <li>평의원회의 대표성 강화</li>
+          <li>본부 운영에 관한 심의 기능 강화</li>
+          <li>대학 발전에 관한 전문적 자문 기능 강화</li>
+        </ul>
+        <h3>3. 이사회</h3>
+        <ul>
+          <li>명실상부한 대학 최고 의사결정 기구로 운영</li>
+          <li>이사장 임기를 연장하고 이사장실을 본부 행정관으로 이전</li>
+          <li>재정 확대를 위한 특별위원회를 이사회 산하에 설치</li>
+        </ul>
+        <h3>4. 학교법인과 병원법인</h3>
+        <ul>
+          <li>서울대 학교법인과 병원법인을 총괄하는 상위 기구 설치</li>
+          <li>관악과 연건 등의 연계 협력 강화</li>
+        </ul>
       </div>
 
     </div>
@@ -357,13 +397,20 @@ body[data-menu="side"] .detail-grid{display:grid;grid-template-columns:262px 1fr
       <div class="foot-col">
         <h4>인사말</h4>
         <a href="about-greeting.html">인사말</a>
+        <a href="about-statement.html">소견서</a>
       </div>
       <div class="foot-col">
         <h4>비전</h4>
-        <a href="vision-open.html">새로운 총장실</a>
-        <a href="vision-incorporation.html">지배구조 개혁</a>
-        <a href="vision.html">핵심 공약 03</a>
-        <a href="vision.html">핵심 공약 04</a>
+        <a href="vision-open.html">책임 총장</a>
+        <a href="vision-empowerment.html">권한 위임</a>
+        <a href="vision-government.html">대정부 활동</a>
+        <a href="vision-fundraising.html">재정 자립</a>
+        <a href="vision-incorporation.html">지배구조 혁신</a>
+        <a href="vision-education.html">교육 혁신</a>
+        <a href="vision-research.html">연구 혁신</a>
+        <a href="vision-globalization.html">국제화 혁신</a>
+        <a href="vision-community.html">구성원 존중</a>
+        <a href="vision-campus.html">미래형 캠퍼스</a>
       </div>
       <div class="foot-col">
         <h4>이력과 경력</h4>
@@ -402,7 +449,7 @@ mToggle.addEventListener('click',()=>{
 mMenuEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMMenu));
 
 // ----- corner flyout menu -----
-const subData={home:[],about:[['인사말','about-greeting.html']],vision:[['새로운 총장실','vision-open.html'],['지배구조 개혁','vision-incorporation.html'],['핵심 공약 03','vision.html'],['핵심 공약 04','vision.html']],history:[['프로필','about-profile.html'],['대표 저서','publications.html'],['주요 활동','history-activities.html']]};
+const subData={home:[],about:[['인사말','about-greeting.html'],['소견서','about-statement.html']],vision:[['책임 총장','vision-open.html'],['권한 위임','vision-empowerment.html'],['대정부 활동','vision-government.html'],['재정 자립','vision-fundraising.html'],['지배구조 혁신','vision-incorporation.html'],['교육 혁신','vision-education.html'],['연구 혁신','vision-research.html'],['국제화 혁신','vision-globalization.html'],['구성원 존중','vision-community.html'],['미래형 캠퍼스','vision-campus.html']],history:[['프로필','about-profile.html'],['대표 저서','publications.html'],['주요 활동','history-activities.html']]};
 const PAGE_KEY='vision',PAGE_SUB='vision-incorporation.html';
 const keyHref={home:'index.html#top',about:'about-greeting.html',vision:'vision.html',history:'about-profile.html'};
 const cnSub=document.getElementById('cnSub');
