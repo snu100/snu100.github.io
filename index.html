@@ -203,6 +203,44 @@ a{color:inherit;text-decoration:none}
 .pubcard .pmore{margin-top:auto;padding-top:16px;font-size:13px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:4px}
 .pubs .more,.vision .more{text-align:center;margin-top:54px}
 
+/* ---------- CARD NEWS ---------- */
+.cards{background:var(--paper)}
+.cn-wrap{position:relative}
+.cardtrack{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 56px)/3);gap:28px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.cardtrack::-webkit-scrollbar{display:none}
+.cardnews{margin:0;scroll-snap-align:start}
+.cardnews img{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 18px 34px -26px rgba(20,40,90,.45)}
+.cardnews .cn-no{display:block;font-size:13px;font-weight:700;color:var(--muted-2);margin:20px 0 7px}
+.cardnews h3{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.35}
+.cn-arrow{
+  position:absolute;top:0;bottom:104px;margin:auto 0;z-index:3;
+  width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);background:#fff;
+  color:var(--navy);font-size:22px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px -8px rgba(20,40,90,.35);transition:.18s;
+}
+.cn-arrow:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cn-arrow[disabled]{opacity:.32;cursor:default;pointer-events:none}
+.cn-arrow.prev{left:-23px}
+.cn-arrow.next{right:-23px}
+.cn-bar{margin-top:34px;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.cn-bar span{display:block;height:100%;width:0;background:var(--navy);transition:width .18s}
+
+/* ---------- SHORTS ---------- */
+.shorts{background:var(--bluewash)}
+.shorts .cn-arrow{bottom:88px}
+.shorttrack{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 56px)/3);gap:28px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.shorttrack::-webkit-scrollbar{display:none}
+.shortcard{scroll-snap-align:start}
+.shortcard a{display:block}
+.sc-thumb{position:relative;display:block;aspect-ratio:496/759;border-radius:8px;overflow:hidden;background:var(--navy-2);box-shadow:0 18px 34px -26px rgba(20,40,90,.45)}
+.sc-thumb img{width:100%;height:auto;display:block;aspect-ratio:496/759;object-fit:cover;transition:transform .25s}
+.shortcard a:hover .sc-thumb img{transform:scale(1.03)}
+.sc-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sc-dur{position:absolute;right:10px;bottom:10px;background:rgba(10,21,48,.82);color:#fff;font-size:12px;font-weight:700;padding:3px 7px;border-radius:3px}
+.sc-no{display:block;font-size:13px;font-weight:700;color:var(--blue);margin:18px 0 6px}
+.sc-title{display:block;font-size:17.5px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.4}
+
 /* ---------- FOOTER ---------- */
 footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 .foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.09)}
@@ -257,6 +295,8 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
 @media(max-width:1000px){
   :root{--pad:30px}
   .vgrid{grid-template-columns:repeat(2,1fr)}
+  .cardtrack{grid-auto-columns:calc((100% - 28px)/2)}
+  .shorttrack{grid-auto-columns:calc((100% - 28px)/2)}
   .about-grid{gap:48px}
 }
 @media(max-width:780px){
@@ -269,6 +309,8 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   .about-body .btn{margin:30px auto 0;display:flex;width:fit-content}
   .about-photo{max-width:420px}
   .pubgrid{grid-template-columns:1fr}
+  .cardtrack{grid-auto-columns:100%}
+  .shorttrack{grid-auto-columns:100%}
   .download .dlbg{display:none}
   .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
   .pad-y{padding:74px 0}
@@ -277,6 +319,9 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   :root{--pad:20px}
   .vgrid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
+  .cn-arrow{width:40px;height:40px;font-size:20px}
+  .cn-arrow.prev{left:-4px}
+  .cn-arrow.next{right:-4px}
 }
 </style>
 </head>
@@ -540,6 +585,95 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
   </div>
 </section>
 
+<!-- ============ CARD NEWS ============ -->
+<section class="cards pad-y" id="cards" data-screen-label="Cards">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">한눈에 보는 공약</span>
+      <h2>서울대가 경험하게 될 변화</h2>
+    </div>
+    <div class="cn-wrap" data-reveal>
+      <button class="cn-arrow prev" id="cardPrev" type="button" aria-label="이전 카드">‹</button>
+      <div class="cardtrack" id="cardTrack" tabindex="0" role="group" aria-label="카드뉴스">
+        <figure class="cardnews">
+          <img src="assets/web/card-00.jpg" alt="표지 — 서울대에 혁신의 바람이 붑니다" loading="lazy">
+          <figcaption><span class="cn-no">표지</span><h3>서울대에 혁신의 바람이 붑니다</h3></figcaption>
+        </figure>
+        <figure class="cardnews">
+          <img src="assets/web/card-01.jpg" alt="1장 — 공약을 평가받는 총장" loading="lazy">
+          <figcaption><span class="cn-no">1장</span><h3>공약을 평가받는 총장</h3></figcaption>
+        </figure>
+        <figure class="cardnews">
+          <img src="assets/web/card-02.jpg" alt="2장 — 본부 개혁" loading="lazy">
+          <figcaption><span class="cn-no">2장</span><h3>본부 개혁</h3></figcaption>
+        </figure>
+        <figure class="cardnews">
+          <img src="assets/web/card-03.jpg" alt="3장 — 단과대학 자율경영" loading="lazy">
+          <figcaption><span class="cn-no">3장</span><h3>단과대학 자율경영</h3></figcaption>
+        </figure>
+        <figure class="cardnews">
+          <img src="assets/web/card-04.jpg" alt="4장 — 지원하는 총장" loading="lazy">
+          <figcaption><span class="cn-no">4장</span><h3>지원하는 총장</h3></figcaption>
+        </figure>
+        <figure class="cardnews">
+          <img src="assets/web/card-05.jpg" alt="5장 — 체감할 수 있는 변화" loading="lazy">
+          <figcaption><span class="cn-no">5장</span><h3>체감할 수 있는 변화</h3></figcaption>
+        </figure>
+        <figure class="cardnews">
+          <img src="assets/web/card-06.jpg" alt="6장 — 총장이 바뀌면, 대학이 바뀝니다" loading="lazy">
+          <figcaption><span class="cn-no">6장</span><h3>총장이 바뀌면, 대학이 바뀝니다</h3></figcaption>
+        </figure>
+      </div>
+      <button class="cn-arrow next" id="cardNext" type="button" aria-label="다음 카드">›</button>
+      <div class="cn-bar"><span id="cardFill"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHORTS ============ -->
+<section class="shorts pad-y" id="shorts" data-screen-label="Shorts">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">1분으로 묻고 답하는</span>
+      <h2>서울대의 현재, 변화 그리고 약속</h2>
+    </div>
+    <div class="cn-wrap" data-reveal>
+      <button class="cn-arrow prev" id="shortPrev" type="button" aria-label="이전 영상">‹</button>
+      <div class="shorttrack" id="shortTrack" tabindex="0" role="group" aria-label="쇼츠 영상">
+        <article class="shortcard">
+          <a href="https://www.youtube.com/shorts/LOfHlaGN0mw" target="_blank" rel="noopener" data-vid="LOfHlaGN0mw">
+            <span class="sc-thumb"><img src="assets/mail/shorts-efg.jpg" alt="본부를 바꾸면 무엇이 달라집니까? 영상 보기" loading="lazy"></span>
+            <span class="sc-no">본부 개혁</span>
+            <span class="sc-title">본부를 바꾸면 무엇이 달라집니까?</span>
+          </a>
+        </article>
+        <article class="shortcard">
+          <a href="https://www.youtube.com/shorts/5xZ2UFi7PS8" target="_blank" rel="noopener" data-vid="5xZ2UFi7PS8">
+            <span class="sc-thumb"><img src="assets/mail/shorts-salary.jpg" alt="임금 — 연 1천만 원 인상 목표, 조·부교수부터 영상 보기" loading="lazy"></span>
+            <span class="sc-no">임금</span>
+            <span class="sc-title">연 1천만 원 인상 목표, 조·부교수부터</span>
+          </a>
+        </article>
+        <article class="shortcard">
+          <a href="https://www.youtube.com/shorts/Y1UEfkGYcT0" target="_blank" rel="noopener" data-vid="Y1UEfkGYcT0">
+            <span class="sc-thumb"><img src="assets/mail/shorts-research.jpg" alt="연구비 — 모든 교수에게 필수연구비 500만 원에서 1천만 원으로 영상 보기" loading="lazy"></span>
+            <span class="sc-no">연구비</span>
+            <span class="sc-title">모든 교수에게 필수연구비 500만 원에서 1천만 원으로</span>
+          </a>
+        </article>
+        <article class="shortcard">
+          <a href="https://www.youtube.com/shorts/15M1DVHmUaM" target="_blank" rel="noopener" data-vid="15M1DVHmUaM">
+            <span class="sc-thumb"><img src="assets/mail/shorts-funding.jpg" alt="연구비, 어디서 더 가져옵니까 영상 보기" loading="lazy"></span>
+            <span class="sc-no">연구비 재원</span>
+            <span class="sc-title">연구비, 어디서 더 가져옵니까</span>
+          </a>
+        </article>
+      </div>
+      <button class="cn-arrow next" id="shortNext" type="button" aria-label="다음 영상">›</button>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer data-screen-label="Footer">
   <div class="wrap">
@@ -626,6 +760,57 @@ function revealInView(){
 }
 addEventListener('load',revealInView);revealInView();
 setTimeout(()=>reveals.forEach(show),1400);
+
+// ----- 카드뉴스 캐러셀 -----
+const cTrack=document.getElementById('cardTrack');
+if(cTrack){
+  const cPrev=document.getElementById('cardPrev'),cNext=document.getElementById('cardNext'),cFill=document.getElementById('cardFill');
+  const cStep=()=>(cTrack.firstElementChild.getBoundingClientRect().width+28)*(innerWidth<=780?1:2); // PC 2장 / 모바일 1장씩 이동
+  cPrev.addEventListener('click',()=>cTrack.scrollBy({left:-cStep(),behavior:'smooth'}));
+  cNext.addEventListener('click',()=>cTrack.scrollBy({left:cStep(),behavior:'smooth'}));
+  function cSync(){
+    const max=cTrack.scrollWidth-cTrack.clientWidth;
+    cPrev.disabled=cTrack.scrollLeft<=1;
+    cNext.disabled=cTrack.scrollLeft>=max-1;
+    cFill.style.width=Math.min(100,(cTrack.clientWidth+cTrack.scrollLeft)/cTrack.scrollWidth*100)+'%';
+  }
+  cTrack.addEventListener('scroll',cSync,{passive:true});
+  addEventListener('resize',cSync);
+  cSync();
+}
+
+// ----- 쇼츠 캐러셀 (무한 순환) -----
+const sTrack=document.getElementById('shortTrack');
+if(sTrack){
+  const sPrev=document.getElementById('shortPrev'),sNext=document.getElementById('shortNext');
+  [...sTrack.children].forEach(el=>{ // 같은 목록을 한 벌 더 붙여 끝에서 처음으로 이어지게 한다
+    const c=el.cloneNode(true);
+    c.setAttribute('aria-hidden','true');
+    c.querySelectorAll('a').forEach(a=>a.tabIndex=-1);
+    sTrack.appendChild(c);
+  });
+  const sSlot=()=>sTrack.firstElementChild.getBoundingClientRect().width+28;
+  const sHalf=()=>sTrack.scrollWidth/2;
+  function sJump(x){sTrack.style.scrollBehavior='auto';sTrack.scrollLeft=x;sTrack.style.scrollBehavior='';}
+  function sWrap(){
+    if(sTrack.scrollLeft>=sHalf())sJump(sTrack.scrollLeft-sHalf());
+    else if(sTrack.scrollLeft<1)sJump(sTrack.scrollLeft+sHalf());
+  }
+  let sIdle;
+  sTrack.addEventListener('scroll',()=>{clearTimeout(sIdle);sIdle=setTimeout(sWrap,140);},{passive:true});
+  sPrev.addEventListener('click',()=>{
+    if(sTrack.scrollLeft<1)sJump(sHalf());
+    sTrack.scrollBy({left:-sSlot(),behavior:'smooth'});
+  });
+  sNext.addEventListener('click',()=>sTrack.scrollBy({left:sSlot(),behavior:'smooth'}));
+  sTrack.addEventListener('click',e=>{ // 카드를 누르면 그 자리에서 재생 (JS가 없으면 유튜브로 이동)
+    const a=e.target.closest('a[data-vid]');
+    if(!a||e.metaKey||e.ctrlKey||e.shiftKey)return;
+    e.preventDefault();
+    const box=a.querySelector('.sc-thumb'),title=a.querySelector('.sc-title').textContent;
+    box.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${a.dataset.vid}?autoplay=1&rel=0&playsinline=1" title="${title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  });
+}
 
 // ----- mobile menu -----
 const mToggle=document.getElementById('mToggle');
