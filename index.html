@@ -237,6 +237,8 @@ a{color:inherit;text-decoration:none}
 .sc-thumb img{width:100%;height:auto;display:block;aspect-ratio:496/759;object-fit:cover;transition:transform .25s}
 .shortcard a:hover .sc-thumb img{transform:scale(1.03)}
 .sc-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sc-thumb.is-generated::after{content:"";position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(10,21,48,.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center/32px no-repeat;pointer-events:none}
+.sc-thumb.is-generated:has(iframe)::after{display:none}
 .sc-dur{position:absolute;right:10px;bottom:10px;background:rgba(10,21,48,.82);color:#fff;font-size:12px;font-weight:700;padding:3px 7px;border-radius:3px}
 .sc-no{display:block;font-size:13px;font-weight:700;color:var(--blue);margin:18px 0 6px}
 .sc-title{display:block;font-size:17.5px;font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.4}
@@ -641,6 +643,20 @@ footer{background:var(--navy-2);color:#A6B2C9;padding:74px 0 40px}
     <div class="cn-wrap" data-reveal>
       <button class="cn-arrow prev" id="shortPrev" type="button" aria-label="이전 영상">‹</button>
       <div class="shorttrack" id="shortTrack" tabindex="0" role="group" aria-label="쇼츠 영상">
+        <article class="shortcard">
+          <a href="https://www.youtube.com/shorts/_AfsRD36bCc" target="_blank" rel="noopener" data-vid="_AfsRD36bCc">
+            <span class="sc-thumb is-generated"><img src="https://i.ytimg.com/vi/_AfsRD36bCc/hqdefault.jpg" alt="김현철 교수가 학생들에게 전하고 싶은 말 영상 보기" loading="lazy"></span>
+            <span class="sc-no">YouTube Shorts</span>
+            <span class="sc-title">김현철 교수가 학생들에게 전하고 싶은 말</span>
+          </a>
+        </article>
+        <article class="shortcard">
+          <a href="https://www.youtube.com/shorts/tM_edbnil0A" target="_blank" rel="noopener" data-vid="tM_edbnil0A">
+            <span class="sc-thumb is-generated"><img src="https://i.ytimg.com/vi/tM_edbnil0A/hqdefault.jpg" alt="왜 김현철인가요? 영상 보기" loading="lazy"></span>
+            <span class="sc-no">YouTube Shorts</span>
+            <span class="sc-title">왜 김현철인가요?</span>
+          </a>
+        </article>
         <article class="shortcard">
           <a href="https://www.youtube.com/shorts/LOfHlaGN0mw" target="_blank" rel="noopener" data-vid="LOfHlaGN0mw">
             <span class="sc-thumb"><img src="assets/mail/shorts-efg.jpg" alt="본부를 바꾸면 무엇이 달라집니까? 영상 보기" loading="lazy"></span>
